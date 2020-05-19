@@ -1,53 +1,145 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>오설록, 차와 제주가 선사하는 삶의 아름다움</title>
-  </head>
-  <body>
+    <link rel="stylesheet" href="./src/css/reset.css">
+    <link rel="stylesheet" href="./src/css/index.css">
+    <script src="./src/js/jquery-1.10.2.min.js"></script>
+    <script src="./src/js/index.js"></script>
+</head>
+
+<body>
     <header>
-      <div>
-        <h1 class="logo">
-          <a href="#"><img src="./src/img/logo_m.png" alt="오설록 로고" /></a>
-        </h1>
-        <nav class="tnb">
-          <ul class="util">
-            <li><a href="#">로그인</a></li>
-            <li><a href="#">회원가입</a></li>
-            <li class="language">
-              <select name="language">
-                <option value="korean" selected>한국어</option>
-                <option value="English">English</option>
-                <option value="chinese">中文</option>
-              </select>
-            </li>
-          </ul>
-        </nav>
-      </div>
-      <nav>
-        <h2 class="a11y-hidden">메뉴</h2>
-        <nav class="gnb">
-          <ul>
-            <li><a href="#">Shop</a></li>
-            <li><a href="#">Tea Life</a></li>
-            <li><a href="#">Event</a></li>
-            <li><a href="#">About OSULLOC</a></li>
-            <li><a href="#">Jeju Tea Museum</a></li>
-            <li class="btn-search"><button type="button">검색</button></li>
-            <li><a href="#">장바구니</a></li>
-            <li>
-              더보기
-              <ul>
-                <li><a href="#">고객센터</a></li>
-                <li><a href="#">매장찾기</a></li>
-                <li><a href="#">주문배송 조회</a></li>
-                <li><a href="#">뷰티포인트 추후적립</a></li>
-              </ul>
-            </li>
-          </ul>
-        </nav>
-      </nav>
+        <div class="logo-area">
+            <h1 class="logo">
+                <a href="#"><img src="./src/img/logo_m.png" alt="오설록 로고" /></a>
+            </h1>
+            <nav class="tnb">
+                <ul class="util">
+                    <li><a href="#">로그인</a></li>
+                    <li><a href="#">회원가입</a></li>
+                    <li class="language">
+                        <select name="language">
+                          <option value="korean" selected>한국어</option>
+                          <option value="English">English</option>
+                          <option value="chinese">中文</option>
+                        </select>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="gnb-area">
+            <h2 class="a11y-hidden">메뉴</h2>
+            <nav class="gnb">
+                <ul class="gnb-list">
+                    <li><a href="#">Shop</a>
+                        <ul>
+                            <li><a href="#">Tea Shop</a></li>
+                            <li><a href="#">Tea wear Shop</a></li>
+                            <li><a href="#">Gift Shop</a></li>
+                            <li><a href="#">Weekly Best</a></li>
+                            <li><a href="#">공동구매</a></li>
+                            <li><a href="#">오설록 라운지</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Tea Life</a>
+                        <ul>
+                            <li><a href="#">상품 구매후기</a></li>
+                            <li><a href="#">선물하기</a></li>
+                            <li><a href="#">다다일상(정기구독)</a></li>
+                            <li><a href="#">맞춤추천</a></li>
+                            <li><a href="#">MD's PICK</a></li>
+                            <li><a href="#">매장 방문기</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Event</a>
+                        <ul>
+                            <li><a href="#">2020 GOLDEN PICK</a></li>
+                            <li><a href="#">이벤트</a></li>
+                            <li><a href="#">온라인 쇼핑혜택</a></li>
+                            <li><a href="#">인스타그램</a></li>
+                            <li><a href="#">About Tea</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">About OSULLOC</a>
+                        <ul>
+                            <li><a href="#">Brand Story</a></li>
+                            <li><a href="#">Since 1979</a></li>
+                            <li><a href="#">오설록 차밭 이야기</a></li>
+                            <li><a href="#">숫자로 보는 오설록</a></li>
+                            <li><a href="#">티하우스 메뉴</a></li>
+                            <li><a href="#">매거진</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Jeju Tea Museum</a>
+                        <ul>
+                            <li><a href="#">티뮤지엄 소개</a></li>
+                            <li><a href="#">티스톤 예약</a></li>
+                            <li><a href="#">제주 오설록 맵</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="addmenu-list">
+                    <li class="btn-search"><button type="button"><span class="a11y-hidden">검색</span></button></li>
+                    <li class="cart"><a href="#"><span class="a11y-hidden">장바구니</span></a></li>
+                    <li class="add">
+                        <span class="a11y-hidden">더보기</span>
+                        <ul class="add-menu">
+                            <li><a href="#">고객센터</a></li>
+                            <li><a href="#">매장찾기</a></li>
+                            <li><a href="#">주문배송 조회</a></li>
+                            <li><a href="#">뷰티포인트 추후적립</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
     </header>
-  </body>
+
+    <div class="visual">
+        <div class="visual-wrap">
+            <div class="img-slide">
+                <a href="#" class="slide">
+                    <p class="title">2020 GOLDEN PICK</p>
+                    <p class="sub-title">이맘때에만 만날 수 있는 황금빛 찻잎</p>
+                    <time>2020년 4월 29일 ~ 2020년 5월 31일</time>
+                </a>
+                <a href="#" class="slide">
+                    <p class="title">MAY Be Love, 5월 출석체크</p>
+                    <p class="sub-title">행사의 달, 오설록으로 뜻깊은 마음을 전하세요.</p>
+                    <time>2020년 5월 01일 ~ 2020년 5월 31일</time>
+                </a>
+                <a href="#" class="slide">
+                    <p class="title">다다일상, 집에서 즐기는 싱그러운 제주여행</p>
+                    <p class="sub-title">싱그러운 5월의 제주를 집에서도 즐겨보세요!</p>
+                    <time>2020년 4월 29일 ~ 2020년 5월 31일</time></a>
+                <a href="#" class="slide">
+                    <p class="title">텅장에도 포기할 수 없는 티타임을 위해</p>
+                    <p class="sub-title">지출이 많은 5월엔 프리미엄 티백으로 티타임 어떠세요?</p>
+                    <time>2020년 5월 18일 ~ 2020년 5월 31일</time></a>
+            </div>
+
+            <div class="slide-select-area">
+                <ul>
+                    <li>
+                        <a href="#">한정판 골든 티켓 증정</a>
+                    </li>
+                    <li>
+                        <a href="#">5월 출석체크</a>
+                    </li>
+                    <li>
+                        <a href="#">차 정기구독</a>
+                    </li>
+                    <li>
+                        <a href="#">텅장을 위한 티타임</a>
+                    </li>
+                </ul>
+                <button class="btn-slide-stop"><span class="a11y-hidden">슬라이드 일시정지</span></button>
+            </div>
+            </dov>
+        </div>
+</body>
+
 </html>
