@@ -311,3 +311,103 @@ header .gnb-area .addmenu-list li .add-menu li+li {
     height: 20px;
     display: inline-block;
 }
+
+
+/* ------ end - visual ------ */
+
+
+/* ------ start - main ------ */
+
+
+/* ------ start - weekly-best ------ */
+
+.weekly-best {}
+
+.weekly-best .wrap {
+    width: 80%;
+    height: 550px;
+    overflow: hidden;
+    margin: 100px auto;
+    background: blue;
+    position: relative;
+}
+
+.weekly-best .wrap h2 {
+    font-size: 42px;
+    font-weight: bold;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.weekly-best .wrap h2::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    background: url('../img/tit_bg.png') no-repeat center;
+    width: 31px;
+    height: 31px;
+    margin-left: 10px;
+}
+
+.weekly-best .review h3,
+.weekly-best .sales h3 {
+    font-size: 22px;
+    margin-bottom: 30px;
+}
+
+.weekly-best .review h3::after {
+    content: '';
+    display: inline-block;
+    margin: 0 25px;
+    width: 2px;
+    height: 17px;
+    background: url('../img/border_2x17.png');
+}
+
+.weekly-best .review .rate {
+    font-size: 20px;
+    margin: 5px 0;
+}
+
+.weekly-best .review .item-title {
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.weekly-best .review .review-content {
+    height: 100px;
+    background: pink;
+    border-top: 1px solid #D3D3D3;
+}
+
+.weekly-best .sales h3 {
+    position: absolute;
+    top: 81px;
+    left: 120px;
+}
+
+.weekly-best .wrap ol {
+    font-size: 0;
+    text-align: center;
+    height: 485px;
+}
+
+.weekly-best .wrap ol li {
+    font-size: 15px;
+    width: 18%;
+    overflow: hidden;
+    display: inline-block;
+    margin-right: 23px;
+}
+
+.weekly-best .wrap ol li .image-wrap {
+    width: 100%;
+    height: 270px;
+    background: #fff;
+}
+
+.sales-rank-container {
+    position: absolute;
+    top: 112px;
+    display: none;
+}
