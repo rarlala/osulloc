@@ -280,9 +280,6 @@ header .gnb-area .addmenu-list li .add-menu li+li {
 }
 
 
-/* ------ end - header ------ */
-
-
 /* ------ start - visual ------ */
 
 .visual {
@@ -342,22 +339,22 @@ header .gnb-area .addmenu-list li .add-menu li+li {
 }
 
 .visual-wrap .img-slide a:first-child {
-    background: url('../img/20200429165936082RP.jpg') no-repeat 50% 50%;
+    background: url('../img/visual/visual01.jpg') no-repeat 50% 50%;
     background-size: cover;
 }
 
 .visual-wrap .img-slide a:nth-child(2) {
-    background: url('../img/20191021102748338WH.jpg') no-repeat 50% 50%;
+    background: url('../img/visual/visual02.jpg') no-repeat 50% 50%;
     background-size: cover;
 }
 
 .visual-wrap .img-slide a:nth-child(3) {
-    background: url('../img/20200422142224804WT.jpg') no-repeat 50% 50%;
+    background: url('../img/visual/visual03.jpg') no-repeat 50% 50%;
     background-size: cover;
 }
 
 .visual-wrap .img-slide a:last-child {
-    background: url('../img/20200515150401296JK.jpg') no-repeat 50% 50%;
+    background: url('../img/visual/visual04.jpg') no-repeat 50% 50%;
     background-size: cover;
 }
 
@@ -415,25 +412,17 @@ header .gnb-area .addmenu-list li .add-menu li+li {
 }
 
 
-/* ------ end - visual ------ */
-
-
 /* ------ start - main ------ */
 
 
 /* ------ start - weekly-best ------ */
 
-.weekly-best {
-    visibility: hidden;
-}
-
 .weekly-best .wrap {
     max-width: 1400px;
-    width: 80%;
-    height: 550px;
+    min-width: 1280;
+    height: 610px;
     overflow: hidden;
     margin: 100px auto;
-    /* background: blue; */
     position: relative;
 }
 
@@ -442,6 +431,7 @@ header .gnb-area .addmenu-list li .add-menu li+li {
     font-weight: bold;
     position: relative;
     margin-bottom: 20px;
+    letter-spacing: -2px;
 }
 
 .weekly-best .wrap h2::after {
@@ -454,13 +444,46 @@ header .gnb-area .addmenu-list li .add-menu li+li {
     margin-left: 10px;
 }
 
+.review-rank-container {
+    counter-reset: item;
+    list-style-type: none;
+}
+
+.review-rank-container li {
+    display: block;
+    position: relative;
+}
+
+.review-rank-container li:before {
+    content: counter(item) "  ";
+    counter-increment: item;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 2.5rem;
+    color: #4d4d4d;
+}
+
+.review-rank-container li:first-child:before {
+    color: red;
+}
+
 .weekly-best .review h3,
 .weekly-best .sales h3 {
     font-size: 22px;
     margin-bottom: 30px;
+    letter-spacing: -0.3px;
+    color: #67625d;
+    cursor: pointer;
 }
 
-.weekly-best .review h3::after {
+.weekly-best .wrap h3:hover {
+    color: #000;
+}
+
+.weekly-best .review>h3::after {
     content: '';
     display: inline-block;
     margin: 0 25px;
@@ -469,25 +492,57 @@ header .gnb-area .addmenu-list li .add-menu li+li {
     background: url('../img/border_2x17.png');
 }
 
+.weekly-best .wrap .active h3 {
+    color: #748346;
+}
+
 .weekly-best .review .rate {
-    font-size: 20px;
-    margin: 5px 0;
+    font-size: 24px;
+    margin: 10px 0;
+    letter-spacing: -2px;
 }
 
 .weekly-best .review .item-title {
     font-size: 21px;
-    margin-bottom: 10px;
+    margin: 20px 0;
+    letter-spacing: -1px;
 }
 
 .weekly-best .review .review-content {
     height: 100px;
-    background: pink;
     border-top: 1px solid #d3d3d3;
+    padding-top: 10px;
+    color: #8b8b8b;
+}
+
+.weekly-best .review .review-content .review-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-height: 1.2em;
+    height: 38px;
+    letter-spacing: -1px;
+}
+
+.weekly-best .review .review-content .write-info {
+    padding-top: 10px;
+}
+
+.weekly-best .review .review-content .write-info .id {
+    float: left;
+    margin-left: 5px;
+}
+
+.weekly-best .review .review-content .write-info .date {
+    float: right;
+    margin-right: 5px;
 }
 
 .weekly-best .sales h3 {
     position: absolute;
-    top: 81px;
+    top: 76px;
     left: 120px;
 }
 
@@ -499,16 +554,63 @@ header .gnb-area .addmenu-list li .add-menu li+li {
 
 .weekly-best .wrap ol li {
     font-size: 15px;
-    width: 18%;
-    overflow: hidden;
-    display: inline-block;
-    margin-right: 23px;
+    width: 240px;
+    float: left;
+}
+
+.weekly-best .wrap ol li+li {
+    margin-left: 50px;
 }
 
 .weekly-best .wrap ol li .image-wrap {
     width: 100%;
     height: 270px;
-    background: #fff;
+    background: #f7f7f7;
+}
+
+
+/* arrow-area */
+
+.weekly-best .arrow-area {
+    position: absolute;
+    width: 70px;
+    height: 21px;
+    top: 80px;
+    right: 30px;
+}
+
+.weekly-best .arrow-area .prev {
+    float: left;
+    width: 12px;
+    height: 21px;
+    background: url('../img/review/arr_l_12x21.png') no-repeat center;
+}
+
+.weekly-best .arrow-area .next {
+    float: right;
+    width: 12px;
+    height: 21px;
+    background: url('../img/review/arr_r_12x21.png') no-repeat center;
+}
+
+
+/* progress Bar */
+
+.weekly-best .progressBar {
+    position: absolute;
+    top: 100px;
+    right: 200px;
+    width: 540px;
+    height: 3px;
+    background: #efefef;
+}
+
+.weekly-best .progressBar .progress {
+    position: absolute;
+    top: 0;
+    width: 20%;
+    height: 3px;
+    background: #000;
 }
 
 .sales-rank-container {
