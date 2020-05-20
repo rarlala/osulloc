@@ -12,6 +12,14 @@ button {
     text-indent: -9999px;
 }
 
+.red {
+    color: red;
+}
+
+.green {
+    color: #1db875;
+}
+
 
 /* ------start - header------ */
 
@@ -976,4 +984,200 @@ header .gnb-area .addmenu-list li .add-menu li+li {
 
 .custom-recommendation img:last-child {
     margin-left: 10px;
+}
+
+
+/* ------ saleUp - start ------ */
+
+.saleUp {
+    max-width: 1400px;
+    margin: 100px auto;
+}
+
+.saleUp h2 {
+    position: relative;
+    margin: 50px 0 20px;
+    font-size: 42px;
+    font-weight: bold;
+    letter-spacing: -2px;
+}
+
+.saleUp h2::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    background: url('../img/tit_bg.png') no-repeat center;
+    width: 31px;
+    height: 31px;
+    margin-left: 10px;
+}
+
+.saleUp>p {
+    margin: 20px 0;
+    font-size: 18px;
+    color: #6c6c6c;
+}
+
+.saleUp .image-area {
+    overflow: hidden;
+}
+
+.saleUp .image-area>.left {
+    float: left;
+    width: 875px;
+    height: 465px;
+    background: skyblue;
+    background: url('../img/saleUp/sale.jpg') no-repeat center;
+    position: relative;
+}
+
+.saleUp .image-area>.left .text-area {
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 20px 30px;
+    overflow: hidden;
+}
+
+.saleUp .image-area>.left .text-area>.left {
+    float: left;
+}
+
+.saleUp .image-area>.left .text-area>.left .item-title {
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.saleUp .image-area>.left .text-area>.left .date {
+    font-size: 16px;
+}
+
+.saleUp .image-area>.left .text-area>.right {
+    float: right;
+    text-align: right;
+    margin-right: 120px;
+    position: relative;
+}
+
+.saleUp .image-area>.left .text-area>.right::after {
+    content: 'D-5';
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -50%;
+    font-size: 32px;
+}
+
+.saleUp .image-area>.left .text-area>.right .price {
+    text-decoration: line-through;
+    font-size: 18px;
+    color: #8b8b8b;
+}
+
+.saleUp .image-area>.left .text-area>.right .s-price span {
+    font-size: 24px;
+    margin-left: 5px;
+    color: orange;
+}
+
+.saleUp .image-area>.right {
+    float: right;
+    width: 505px;
+    height: 465px;
+    background: pink;
+}
+
+.saleUp .image-area>.right .cupon-area {
+    height: 340px;
+    background: #F9F9F9;
+    text-align: center;
+    position: relative;
+}
+
+.saleUp .image-area>.right .cupon-area .cupon-text {
+    padding: 50px 0 50px 70px;
+    font-size: 20px;
+    background: url('../img/saleUp/bg_ticket.gif') no-repeat center 25%;
+    background-size: 286px 173px;
+    color: #1db875;
+}
+
+.saleUp .image-area>.right .cupon-area .cupon-text span {
+    font-size: 50px;
+}
+
+.saleUp .image-area>.right .percent-area {
+    width: 100%;
+    height: 125px;
+    background: #E2E2E2;
+    position: relative;
+}
+
+.saleUp .image-area>.right .percent-area .percent {
+    width: 12%;
+    height: inherit;
+    background: #B3DF86;
+}
+
+.saleUp .image-area>.right .percent-area .number {
+    z-index: 10;
+    position: absolute;
+    top: 0;
+}
+
+.saleUp .image-area>.right .percent-area .number span {
+    margin-left: 65px;
+    position: relative;
+    color: #ababab;
+}
+
+.saleUp .image-area>.right .percent-area .number span::after {
+    content: '';
+    display: inline-block;
+    background: url('../img/saleUp/leaf_1.png') no-repeat bottom;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: -20px;
+    left: 0;
+}
+
+.saleUp .image-area>.right .percent-area .number span:nth-child(1)::after {
+    content: '';
+    display: inline-block;
+    background: url('../img/saleUp/leaf_2.png') no-repeat center;
+    /* background: red; */
+    width: 69px;
+    height: 79px;
+    position: absolute;
+    top: -79px;
+    left: -20px;
+}
+
+.saleUp .image-area>.right .percent-area .number span:nth-child(3)::after {
+    content: '';
+    display: inline-block;
+    background: url('../img/saleUp/leaf_3.png') no-repeat center;
+    /* background: red; */
+    width: 69px;
+    height: 79px;
+    position: absolute;
+    top: -79px;
+    left: -20px;
+}
+
+.saleUp .image-area>.right .percent-area .number span:nth-child(5)::after {
+    content: '';
+    display: inline-block;
+    background: url('../img/saleUp/leaf_6.png') no-repeat center;
+    /* background: red; */
+    width: 69px;
+    height: 79px;
+    position: absolute;
+    top: -79px;
+    left: -20px;
 }
