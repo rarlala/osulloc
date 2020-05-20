@@ -960,3 +960,20 @@ header .gnb-area .addmenu-list li .add-menu li+li {
     color: #fff;
     transition: all 0.5s;
 }
+
+
+/* ------ custom-recommendation - start ------ */
+
+.custom-recommendation {
+    max-width: 1400px;
+    margin: 100px auto;
+    font-size: 0;
+}
+
+.custom-recommendation img {
+    width: 695px;
+}
+
+.custom-recommendation img:last-child {
+    margin-left: 10px;
+}
