@@ -434,6 +434,9 @@ header .gnb-area .addmenu-list li .add-menu li+li {
     letter-spacing: -2px;
 }
 
+
+/* 나뭇잎 공통 */
+
 .weekly-best .wrap h2::after {
     content: '';
     position: absolute;
@@ -569,9 +572,9 @@ header .gnb-area .addmenu-list li .add-menu li+li {
 }
 
 
-/* arrow-area */
+/* arrow-area 공통 */
 
-.weekly-best .arrow-area {
+.arrow-area {
     position: absolute;
     width: 70px;
     height: 21px;
@@ -579,14 +582,14 @@ header .gnb-area .addmenu-list li .add-menu li+li {
     right: 30px;
 }
 
-.weekly-best .arrow-area .prev {
+.arrow-area .prev {
     float: left;
     width: 12px;
     height: 21px;
     background: url('../img/review/arr_l_12x21.png') no-repeat center;
 }
 
-.weekly-best .arrow-area .next {
+.arrow-area .next {
     float: right;
     width: 12px;
     height: 21px;
@@ -594,9 +597,9 @@ header .gnb-area .addmenu-list li .add-menu li+li {
 }
 
 
-/* progress Bar */
+/* progress Bar 공통 */
 
-.weekly-best .progressBar {
+.progressBar {
     position: absolute;
     top: 100px;
     right: 200px;
@@ -605,7 +608,7 @@ header .gnb-area .addmenu-list li .add-menu li+li {
     background: #efefef;
 }
 
-.weekly-best .progressBar .progress {
+.progressBar .progress {
     position: absolute;
     top: 0;
     width: 20%;
@@ -617,4 +620,228 @@ header .gnb-area .addmenu-list li .add-menu li+li {
     position: absolute;
     top: 112px;
     display: none;
+}
+
+
+/* ------ md-pick - start------ */
+
+.md-pick {
+    max-width: 1400px;
+    height: 520px;
+    margin: 100px auto;
+}
+
+.md-pick-left {
+    width: 525px;
+    height: inherit;
+    float: left;
+    margin-right: 90px;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/md-pick/md-pick-bg.jpg') no-repeat center;
+    background-size: cover;
+}
+
+.md-pick-left a {
+    display: block;
+    padding: 50px;
+    color: #fff;
+}
+
+.md-pick-left a .sub-title {
+    margin-top: 240px;
+}
+
+.md-pick-left a .title {
+    margin: 20px 0;
+    font-size: 34px;
+}
+
+.md-pick-left a .move {
+    font-size: 18px;
+}
+
+.md-pick-left a .move img {
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+    margin-left: 10px;
+}
+
+.md-pick-right {
+    position: relative;
+    width: 780px;
+    height: 520px;
+    float: right;
+}
+
+.md-pick-right .arrow-area {
+    top: 30px;
+}
+
+.md-pick-right>p {
+    margin: 20px 0 50px;
+    font-size: 24px;
+}
+
+.md-pick-right>p>.point {
+    color: red;
+    margin-right: 20px;
+}
+
+.md-pick-right .md-pick-list {
+    height: 400px;
+    overflow: hidden;
+}
+
+.md-pick-right .md-pick-list li {
+    float: left;
+    height: 400px;
+    text-align: center;
+    margin-right: 50px;
+}
+
+.md-pick-right .md-pick-list li>img {
+    background: #f7f7f7;
+    width: 240px;
+    height: 270px;
+}
+
+.md-pick-right .md-pick-list li .item-title {
+    margin: 20px 0;
+    font-size: 22px;
+}
+
+.md-pick-right .md-pick-list li .item-price {
+    font-size: 18px;
+}
+
+.md-pick-right .progressBar {
+    width: 100%;
+    left: 0;
+    top: 517px;
+}
+
+.md-pick-right .progressBar .progress {
+    width: 33%;
+}
+
+
+/* ------ tea-ware-shop ------*/
+
+.tea-ware-shop {
+    max-width: 1400px;
+    height: 620px;
+    margin: 100px auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.tea-ware-shop-left {
+    float: left;
+    width: 320px;
+    margin-right: 30px;
+}
+
+.tea-ware-shop-left h2 {
+    position: relative;
+    margin: 50px 0 20px;
+    font-size: 42px;
+    font-weight: bold;
+    letter-spacing: -2px;
+}
+
+.tea-ware-shop-left .text {
+    width: 90%;
+    font-size: 18px;
+    color: #6c6c6c;
+}
+
+.tea-ware-shop-left .move {
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+.tea-ware-shop-left h2::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    background: url('../img/tit_bg.png') no-repeat center;
+    width: 31px;
+    height: 31px;
+    margin-left: 10px;
+}
+
+.tea-ware-shop-right {
+    float: right;
+    width: 1050px;
+    height: inherit;
+    margin-top: 70px;
+}
+
+.tea-ware-shop-right .group1 {
+    overflow: hidden;
+    height: inherit;
+}
+
+.tea-ware-shop-right .group1 a:hover {
+    transform: scale(1.2);
+    transition: all 1s;
+}
+
+.tea-ware-shop-right .group1 .left {
+    float: left;
+}
+
+.tea-ware-shop-right .group1 .left .img-box {
+    width: 580px;
+    height: 250px;
+    overflow: hidden;
+}
+
+.tea-ware-shop-right .group1 .left a {
+    width: 580px;
+    height: 250px;
+    background: green;
+    display: block;
+}
+
+.tea-ware-shop-right .group1 .left .img-box:first-child {
+    margin-bottom: 50px;
+}
+
+.tea-ware-shop-right .group1 .left .img-box:first-child a {
+    background: url("../img/teaWare/kinto.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.tea-ware-shop-right .group1 .left .img-box:nth-child(2) a {
+    background: url("../img/teaWare/seoulbund.jpg") no-repeat center top;
+    background-size: cover;
+}
+
+.tea-ware-shop-right .group1 .right .img-box {
+    width: 440px;
+    height: 550px;
+    overflow: hidden;
+    float: right;
+}
+
+.tea-ware-shop-right .group1 .right a {
+    display: block;
+    width: inherit;
+    height: inherit;
+    background: url("../img/teaWare/torim.jpg") no-repeat center;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.tea-ware-shop .arrow-area {
+    top: 10px;
+    right: 30px;
+}
+
+.tea-ware-shop .progressBar {
+    top: 30px;
+}
+
+.tea-ware-shop .progressBar .progress {
+    width: 50%;
 }
