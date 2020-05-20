@@ -1189,7 +1189,7 @@ header .gnb-area .addmenu-list li .add-menu li+li {
 .shop {
   width: 1400px;
   margin: 100px auto;
-  height: 720px;
+  height: 1400px;
 }
 
 .shop h2 {
@@ -1408,4 +1408,105 @@ header .gnb-area .addmenu-list li .add-menu li+li {
   background: url('../img/md-pick/arr_42x12.png');
   width: 42px;
   height: 12px;
+}
+
+/* ------ sns - start ------ */
+
+.sns {
+  max-width: 1400px;
+  margin: 50px auto 0;
+}
+
+.sns h3 {
+  color: #757575;
+  font-size: 20px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.sns h3 span {
+  position: absolute;
+  left: 100px;
+  top: -10px;
+  color: #505051;
+  font-size: 36px;
+}
+
+.sns ul {
+  overflow: hidden;
+}
+
+.sns li {
+  float: left;
+}
+
+.sns img {
+  width: 233px;
+  display: block;
+}
+
+
+/* ------ notice - start ------ */
+
+.notice {
+  background: #67625d;
+  height: 60px;
+
+}
+
+.notice .wrap {
+  max-width: 1400px;
+  margin: 0 auto;
+  color: #fff;
+  position: relative;
+}
+
+.notice .wrap h2 {
+  display: inline-block;
+  position: relative;
+  font-size: 14px;
+  margin-right: 15px;
+  line-height: 60px;
+}
+
+.notice .wrap h2::after {
+  content: '|';
+  position: absolute;
+  top: -1px;
+  width: 1px;
+  height: 3px;
+  margin-left: 5px;
+}
+
+.notice .wrap ul {
+  display: inline-block;
+  height: 16px;
+  overflow: hidden;
+  font-size: 12px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.notice .wrap ul li {
+  letter-spacing: -0.3px;
+  font-weight: bold;
+}
+
+.notice .view-more {
+  position: absolute;
+  top: 50%;
+  left: 500px;
+  transform: translateY(-50%);
+  font-size: 12px;
+  line-height: 60px;
+}
+
+.notice .sns-icon {
+  float: right;
+  margin: 12px 30px 0 0;
+}
+
+.notice .sns-icon .instagram {
+  margin-left: 15px;
 }
