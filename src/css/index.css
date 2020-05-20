@@ -845,3 +845,118 @@ header .gnb-area .addmenu-list li .add-menu li+li {
 .tea-ware-shop .progressBar .progress {
     width: 50%;
 }
+
+
+/* ------ today-price-start ------ */
+
+.today-price {
+    max-width: 1400px;
+    margin: 100px auto;
+    height: 600px;
+}
+
+.today-price h2 {
+    position: relative;
+    margin: 50px 0 20px;
+    font-size: 42px;
+    font-weight: bold;
+    letter-spacing: -2px;
+}
+
+.today-price h2::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    background: url('../img/tit_bg.png') no-repeat center;
+    width: 31px;
+    height: 31px;
+    margin-left: 10px;
+}
+
+.today-price>p {
+    margin: 20px 0;
+    font-size: 18px;
+    color: #6c6c6c;
+}
+
+.today-price .today-price-content .top {
+    width: 100%;
+    height: 360px;
+    background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../img/today-price/today-price-bg.jpg') no-repeat;
+    text-align: center;
+    color: #fff;
+    position: relative;
+}
+
+.today-price .today-price-content .top .timer {
+    padding: 70px 0 20px;
+    font-size: 48px;
+}
+
+.today-price .today-price-content .top .item-title {
+    font-size: 22px;
+}
+
+.today-price .today-price-content .top .item-price {
+    position: absolute;
+    left: 59%;
+    bottom: 20px;
+    text-align: left;
+}
+
+.today-price .today-price-content .top .item-price::before {
+    content: '';
+    position: absolute;
+    left: -125%;
+    top: 10px;
+    background: url('../img/today-price/today-item.png') no-repeat center;
+    width: 200px;
+    height: 200px;
+}
+
+.today-price .today-price-content .top .item-price .sale {
+    font-size: 22px;
+}
+
+.today-price .today-price-content .top .item-price .price {
+    font-size: 18px;
+    color: #8b8b8b;
+    text-decoration: line-through;
+}
+
+.today-price .today-price-content .top .item-price .t-price {
+    font-weight: bold;
+    font-size: 36px;
+}
+
+.today-price .today-price-content .top .tommorow-item-area {
+    position: absolute;
+    right: 20px;
+    bottom: -50px;
+    font-weight: lighter;
+    color: #d3d3d3;
+}
+
+.today-price .today-price-content .bottom {
+    width: 100%;
+    height: 130px;
+    background: #EDEDED;
+}
+
+.today-price .today-price-content .bottom .btn-buy {
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: center;
+    width: 130px;
+    height: 45px;
+    vertical-align: 45px;
+    background: #e1e1e1;
+    padding-top: 10px;
+    margin: 40px 0 0 59%;
+}
+
+.today-price .today-price-content .bottom .btn-buy:hover {
+    background: #A1AF25;
+    color: #fff;
+    transition: all 0.5s;
+}
