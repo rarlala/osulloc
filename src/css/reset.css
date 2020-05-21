@@ -18,6 +18,7 @@ caption, figcaption, .blind{
   height: 0;
   text-indent: -9999px;
 }
+  *:focus { outline: none;}
 .clear::before, .clear::after{
   clear: both;
   display: block;

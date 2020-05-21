@@ -15,7 +15,7 @@
 
 <body>
   <header>
-    <div class="logo-area hidden">
+    <div class="logo-area ">
       <h1 class="logo">
         <a href="#"><img src="./src/img/logo_m.png" alt="오설록 로고" /></a>
       </h1>
@@ -35,7 +35,8 @@
     </div>
     <div class="gnb-area">
       <h2 class="a11y-hidden">메뉴</h2>
-      <nav class="gnb scroll">
+      <nav class="gnb">
+        <h3><a href="#"><span class="a11y-hidden">logo</span></a></h3>
         <ul class="gnb-list">
           <li><a href="#">Shop</a></li>
           <li><a href="#">Tea Life</a></li>
@@ -599,8 +600,8 @@
 
     <section class="custom-recommendation">
       <h2 class="a11y-hidden">맞춤추천</h2>
-      <img src="./src/img/recommend/recommend01.jpg" alt="맞춤추천">
-      <img src="./src/img/recommend/recommend02.jpg" alt="차 어렵지 않아요">
+      <a class="left-img" href="#"><img src="./src/img/recommend/recommend01.jpg" alt="맞춤추천"></a>
+      <a class="right-img" href="#"><img src="./src/img/recommend/recommend02.jpg" alt="차 어렵지 않아요"></a>
     </section>
 
     <section class="saleUp">
@@ -621,8 +622,8 @@
           </div>
         </div>
         <div class="right">
-          <div class="cupon-area">
-            <p class="cupon-text"><span>20%</span><br>쿠폰 지급예정</p>
+          <div class="coupon-area">
+            <p class="coupon-text"><span>20%</span><br>쿠폰 지급예정</p>
             <p><span class="red">11</span>개만 더 모이면 <span class="green">20%</span> 쿠폰이 지급됩니다.<br> 주변 사람들에게 소문내고, 최대 할인율에
               도전하세요!</p>
           </div>
@@ -676,7 +677,7 @@
       <div class="item-list">
         <div class="review active">
           <h3>
-            <a href="#" role="button">리뷰많은순</a></h3>
+            <a class="active" href="#" role="button">리뷰많은순</a></h3>
           <ul>
             <li>
               <a href="#">

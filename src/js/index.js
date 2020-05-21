@@ -1,38 +1,34 @@
 $(function() {
 
-  // 헤더 고정
-
-  // -------------------------------------------------------------------------
-
-  // 메뉴 n번째 선택 시 해당하는 ul의 색상 변경
+  // 메뉴 n번째 선택 시 해당하는 ul의 색상 변경 [미완료]
 
   // -------------------------------------------------------------------------
 
   // weekly-best 내 li hover 효과
-  // 1. list-style: none; [미해결]
-  // 2. 이미지 바꾸기 [해결]
-  // 3. 리뷰보기 | 장바구니 표시 [해결]
+  // 1. list-style: none; [미완료]
+  // 2. 이미지 바꾸기 [완료]
+  // 3. 리뷰보기 | 장바구니 표시 [완료]
 
   var $weeklylist = $('.weekly-best .review-rank-container li')
 
-    $weeklylist
-        .on('mouseover', function() {
-            var img_src = $(this).find('img').attr("src");
-            var new_img_src = img_src.split('.')[1];
-            $(this).find('img').css('opacity', '0').stop().attr("src", '.' + new_img_src + '-1.png').animate({
-                opacity: 1
-            }, 500);
-            $(this).find('.detail').removeClass('hidden');
-        })
-        .on('mouseout', function() {
-            var img_src = $(this).find('img').attr("src");
-            var new_img_src = img_src.split('-')[0];
+  $weeklylist
+      .on('mouseover', function() {
+          var img_src = $(this).find('img').attr("src");
+          var new_img_src = img_src.split('.')[1];
+          $(this).find('img').css('opacity', '0').stop().attr("src", '.' + new_img_src + '-1.png').animate({
+              opacity: 1
+          }, 500);
+          $(this).find('.detail').removeClass('hidden');
+      })
+      .on('mouseout', function() {
+          var img_src = $(this).find('img').attr("src");
+          var new_img_src = img_src.split('-')[0];
 
-            $(this).find('img').css('opacity', '0').stop().attr("src", new_img_src + '.png').animate({
-                opacity: 1
-            }, 500);
-            $(this).find('.detail').addClass('hidden');
-        })
+          $(this).find('img').css('opacity', '0').stop().attr("src", new_img_src + '.png').animate({
+              opacity: 1
+          }, 500);
+          $(this).find('.detail').addClass('hidden');
+      })
 
   // -------------------------------------------------------------------------
 
@@ -93,15 +89,15 @@ $(function() {
 
   // -------------------------------------------------------------------------
 
-  // 시계
+  // 남은 시간 시계 [완료]
 
   var $timer = $('.today-price .timer');
 
   setInterval(function () {
     const nowTime = new Date();
-    const hours = nowTime.getHours();
-    const minutes = nowTime.getMinutes();
-    const seconds = nowTime.getSeconds();
+    const hours = 24 - nowTime.getHours();
+    const minutes = 60 - nowTime.getMinutes();
+    const seconds = 60 - nowTime.getSeconds();
 
     const time = (hours < 10 ? '0' + hours : hours) + ':' + (minutes < 10 ? '0' + minutes : minutes) + ':' + (seconds < 10 ? '0' + seconds : seconds);
 
@@ -110,30 +106,117 @@ $(function() {
 
   // -------------------------------------------------------------------------
 
-  // top button 클릭 시 맨 위로 움직이게 하기
+  // scroll event
+
+  // 고정 헤더 [완료]
+  // top button 클릭 시 맨 위로 움직이게 하기 [완료]
+
   var $window = $(window),
     $btnTop = $('.btn-top'),
     $scrollableElement = $('html', 'body');
 
-    $window.scroll(function() {
-        if ($window.scrollTop() > 300) {
-            $btnTop.stop(true).animate({
-                right: '10px'
-            }, 200)
+  var $logoArea = $('header .logo-area'),
+    $gnbArea = $('header .gnb-area'),
+    $gnb = $gnbArea.find('.gnb'),
+    $gnbLogo = $('header .gnb-area .gnb h3'),
+    $addMenu = $('.addmenu-list >li');
+
+  $window.scroll(function () {
+    if ($window.scrollTop() === 0) {
+      $logoArea.css({
+        display: 'block',
+      });
+      $gnbArea.css({
+        position: 'relative',
+        background: '#67625d',
+      });
+      $gnb.css({
+        background: '#67625d',
+      });
+      $gnb.find('.gnb-list li a').css({
+        color: '#fff',
+        marginLeft: '0',
+      });
+      $gnb
+        .find('.gnb-list li a')
+        .on('mouseover', function () {
+          $(this).css({
+            color: '#daf100',
+          });
+        })
+        .on('mouseout', function () {
+          $(this).css({
+            color: '#fff',
+          });
+        });
+      $gnbLogo.css({
+        display: 'none',
+      });
+      $addMenu.css({
+        filter: 'invert(0%)',
+      });
+      $addMenu.find('.add-menu').css({
+        filter: 'invert(0%)',
+      });
+    } else if ($window.scrollTop() > 0) {
+      $logoArea.css({
+        display: 'none',
+      });
+      $gnbArea.css({
+        position: 'fixed',
+        background: '#fff',
+      });
+      $gnb.css({
+        background: '#fff',
+        width: '1400px',
+        margin: '0 auto',
+      });
+      $gnb.find('.gnb-list li a').css({
+        marginLeft: '-70px',
+        color: '#000',
+      });
+      $gnb
+        .find('.gnb-list li a')
+        .on('mouseover', function () {
+          $(this).css({
+            color: '#6c801a',
+          });
+        })
+        .on('mouseout', function () {
+          $(this).css({
+            color: '#000',
+          });
+        });
+      $gnbLogo.css({
+        display: 'inline-block',
+      });
+      $addMenu.css({
+        filter: 'invert(100%)',
+      });
+      $addMenu.find('.add-menu').css({
+        filter: 'invert(100%)',
+      });
+    } else if ($window.scrollTop() > 300) {
+      $btnTop.stop(true).animate(
+        {
+          right: '10px',
+        },
+        200
+      );
       $btnTop.removeClass('hidden');
     } else {
-        $btnTop.stop(true).animate({
-            right: '-100px'
-        }, 200);
-      $btnTop.addClass('hidden');
-    }
-  });
+      $btnTop.stop(true).animate({
+          right: '-100px'
+      }, 200);
+    $btnTop.addClass('hidden');
+  }
+});
 
-  $btnTop.on('click', function(e) {
-    $scrollableElement.animate({
-        scrollTop: 0
-    }, 1000, 'swing');
+$btnTop.on('click', function(e) {
+  $scrollableElement.animate({
+      scrollTop: 0
+  }, 1000, 'swing');
 })
 
-  $window.trigger('scroll');
+$window.trigger('scroll');
 });
