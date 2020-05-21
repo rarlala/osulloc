@@ -51,8 +51,6 @@ $(function() {
     $selectNum = $selectList.find('li').length;
 
   var NextSlide = function () {
-    console.log('실행');
-
     $visualSlide.find('a').eq($nowSlide).removeClass('active');
     $nowSlide = ($nowSlide + 1) % $slideNum;
     $visualSlide.find('a').eq($nowSlide).addClass('active');

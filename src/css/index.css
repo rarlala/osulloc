@@ -154,7 +154,7 @@ header .gnb-area .gnb h3 {
 
 header .gnb-area .gnb h3 a {
   display: inline-block;
-  background: url('../img/logo_m.png') no-repeat center;
+  background: url('../img/header/logo_m.png') no-repeat center;
   background-size: cover;
   width: 90px;
   height: 32px;
@@ -303,7 +303,7 @@ header .gnb-area .addmenu-list .btn-search::after {
   top: 50%;
   left: 0;
   transform: translateY(-50%);
-  background: url('../img/ico_search_off.png') no-repeat center;
+  background: url('../img/header/ico_search_off.png') no-repeat center;
 }
 
 header .gnb-area .addmenu-list .cart,
@@ -320,11 +320,11 @@ header .gnb-area .addmenu-list .add::after {
   top: 50%;
   left: 0;
   transform: translateY(-50%);
-  background: url('../img/ico_gnbBucket_off.png') no-repeat center;
+  background: url('../img/header/ico_gnbBucket_off.png') no-repeat center;
 }
 
 header .gnb-area .addmenu-list .add::after {
-  background: url('../img/ico_gnbMore_off.png') no-repeat center;
+  background: url('../img/header/ico_gnbMore_off.png') no-repeat center;
 }
 
 /* 해결하지 못한 영역: hover 시 이미지에 filter로 이미지색 변경하기
@@ -501,7 +501,7 @@ header .gnb-area .addmenu-list li .add-menu li+li {
 
 .visual-wrap .btn-slide-state::after {
   content: '';
-  background: url('../img/btn_pause.png') no-repeat center;
+  background: url('../img/visual/btn_pause.png') no-repeat center;
   width: 20px;
   height: 20px;
   display: inline-block;
@@ -509,7 +509,7 @@ header .gnb-area .addmenu-list li .add-menu li+li {
 
 .visual-wrap .btn-slide-state.start::after {
   content: '';
-  background: url('../img/btn-play.png') no-repeat center;
+  background: url('../img/visual/btn-play.png') no-repeat center;
   width: 20px;
   height: 20px;
   display: inline-block;
