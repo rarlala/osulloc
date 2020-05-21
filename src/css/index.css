@@ -1525,3 +1525,171 @@ footer .top {
 footer .escrow {
   border: 1px solid #555;
 }
+
+footer .top .wrap {
+  overflow: hidden;
+  padding: 30px 0;
+}
+
+footer .top .wrap .left {
+  float: left;
+  /* overflow: hidden; */
+}
+
+footer .top .wrap .left>div {
+  float: left;
+  color: #8b8b8b;
+}
+
+footer .top .wrap .left .tel1 {
+  margin-right: 100px;
+}
+
+footer .top .wrap .left .tel1 p:first-child,
+footer .top .wrap .left .tel2 p:first-child {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+footer .top .wrap .left a {
+  font-size: 32px;
+  font-weight: bold;
+  color: #555555;
+}
+
+footer .top .wrap .left .tel2 a {
+  font-size: 18px;
+  text-decoration: underline;
+  color: #555555;
+
+}
+
+footer .top .wrap .left .tel2 p:nth-of-type(2) {
+  font-size: 11px;
+  font-weight: bold;
+  margin-top: 3px;
+}
+
+footer .top .wrap .left p:last-child {
+  font-size: 10px;
+  margin-top: 5px;
+}
+
+
+footer .top .wrap .icon {
+  float: right;
+  height: 80px;
+  padding: 10px 0 10px 30px;
+  border-left: 1px solid #e1e1e1;
+}
+
+
+footer .top .wrap .icon a {
+  display: inline-block;
+  height: 80px;
+  width: 80px;
+  text-align: center;
+}
+
+footer .top .wrap .icon a+a {
+  margin-left: 30px;
+}
+
+footer .top .wrap .icon a img {
+  display: block;
+  height: 40px;
+  margin: 0 auto 10px;
+}
+
+
+footer .bottom .wrap {
+  box-sizing: border-box;
+  padding: 30px 330px 30px 150px;
+  position: relative;
+  font-size: 11px;
+}
+
+footer .bottom .wrap .footer-logo {
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  transform: translateY(-50%);
+}
+
+footer ul {
+  overflow: hidden;
+}
+
+footer ul li {
+  float: left;
+  position: relative;
+  margin-right: 20px;
+}
+
+footer ul li strong {
+  font-weight: bold;
+}
+
+footer ul li+li::before {
+  content: '|';
+  position: absolute;
+  left: -10px;
+}
+
+footer .company-info {
+  margin: 10px 0;
+  color: #8b8b8b;
+  line-height: 1.5;
+}
+
+footer .company-info a {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 100px;
+  height: 24px;
+  border: 1px solid #e1e1e1;
+  text-align: center;
+  background: #fafafa;
+  margin-left: 5px;
+  color: #555555;
+  padding-top: 2px;
+}
+
+footer .company-info address {
+  display: inline;
+}
+
+footer .message {
+  color: #8b8b8b;
+  line-height: 1.5;
+}
+
+footer .escrow {
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 320px;
+  border: 1px solid #e1e1e1;
+  padding: 10px 20px;
+  color: #8b8b8b;
+}
+
+footer .escrow dt {
+  margin-bottom: 10px;
+}
+
+footer .escrow dd {
+  display: inline-block;
+}
+
+footer .escrow dd:first-child {
+  float: left;
+}
+
+footer .escrow dd:last-child {
+  float: right;
+  width: 220px;
+  word-break: keep-all;
+}
