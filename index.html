@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>오설록, 차와 제주가 선사하는 삶의 아름다움</title>
   <link rel="stylesheet" href="./src/css/reset.css">
-  <link href='http://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="./src/css/font.css">
   <link rel="stylesheet" href="./src/css/index.css">
   <script src="./src/js/jquery-1.10.2.min.js"></script>
   <script src="./src/js/index.js"></script>
@@ -14,7 +14,7 @@
 
 <body>
   <header>
-    <div class="logo-area">
+    <div class="logo-area hidden">
       <h1 class="logo">
         <a href="#"><img src="./src/img/logo_m.png" alt="오설록 로고" /></a>
       </h1>
@@ -34,7 +34,7 @@
     </div>
     <div class="gnb-area">
       <h2 class="a11y-hidden">메뉴</h2>
-      <nav class="gnb">
+      <nav class="gnb scroll">
         <ul class="gnb-list">
           <li><a href="#">Shop</a></li>
           <li><a href="#">Tea Life</a></li>
@@ -110,22 +110,22 @@
   <div class="visual">
     <div class="visual-wrap">
       <div class="img-slide">
-        <a href="#" class="slide">
+        <a href="#" class="slide one">
           <p class="title">2020 GOLDEN PICK</p>
           <p class="sub-title">이맘때에만 만날 수 있는 황금빛 찻잎</p>
           <time>2020년 4월 29일 ~ 2020년 5월 31일</time>
         </a>
-        <a href="#" class="slide">
+        <a href="#" class="slide two">
           <p class="title">MAY Be Love, 5월 출석체크</p>
           <p class="sub-title">행사의 달, 오설록으로 뜻깊은 마음을 전하세요.</p>
           <time>2020년 5월 01일 ~ 2020년 5월 31일</time>
         </a>
-        <a href="#" class="slide">
+        <a href="#" class="slide three">
           <p class="title">다다일상, 집에서 즐기는 싱그러운 제주여행</p>
           <p class="sub-title">싱그러운 5월의 제주를 집에서도 즐겨보세요!</p>
           <time>2020년 4월 29일 ~ 2020년 5월 31일</time>
         </a>
-        <a href="#" class="slide">
+        <a href="#" class="slide four">
           <p class="title">텅장에도 포기할 수 없는 티타임을 위해</p>
           <p class="sub-title">지출이 많은 5월엔 프리미엄 티백으로 티타임 어떠세요?</p>
           <time>2020년 5월 18일 ~ 2020년 5월 31일</time>
@@ -155,7 +155,7 @@
   <main>
     <section class="weekly-best">
       <div class="wrap">
-        <h2>Weekly Best</h2>
+        <h2 class="section-title">Weekly Best</h2>
         <div class="review active">
           <h3>
             <a href="#" role="button">리뷰순</a>
@@ -166,6 +166,10 @@
                 <a href="#">
                   <img src="./src/img/review/review01.png" alt="">
                 </a>
+                <div class="detail hidden">
+                  <a>리뷰보기</a>
+                  <a>장바구니</a>
+                </div>
               </div>
               <div class="rate">★★★★★</div>
               <p class="item-title"><a href="#">프리미엄 티 컬렉션</a></p>
@@ -182,6 +186,10 @@
                 <a href="#">
                   <img src="./src/img/review/review02.png" alt="">
                 </a>
+                <div class="detail hidden">
+                  <a>리뷰보기</a>
+                  <a>장바구니</a>
+                </div>
               </div>
               <div class="rate">★★★★★</div>
               <p class="item-title"><a href="#">그린티 웨하스 100g</a></p>
@@ -197,6 +205,10 @@
                 <a href="#">
                   <img src="./src/img/review/review03.png" alt="">
                 </a>
+                <div class="detail hidden">
+                  <a>리뷰보기</a>
+                  <a>장바구니</a>
+                </div>
               </div>
               <div class="rate">★★★★☆</div>
               <p class="item-title"><a href="#">그린티 롤케이크(화이트)</a></p>
@@ -213,6 +225,10 @@
                 <a href="#">
                   <img src="./src/img/review/review04.png" alt="">
                 </a>
+                <div class="detail hidden">
+                  <a>리뷰보기</a>
+                  <a>장바구니</a>
+                </div>
               </div>
               <div class="rate">★★★★★</div>
               <p class="item-title"><a href="#">러블리티박스</a></p>
@@ -231,6 +247,10 @@
                 <a href="#">
                   <img src="./src/img/review/review05.png" alt="">
                 </a>
+                <div class="detail hidden">
+                  <a>리뷰보기</a>
+                  <a>장바구니</a>
+                </div>
               </div>
               <div class="rate">★★★★★</div>
               <p class="item-title"><a href="#">그린티 랑드샤 10입</a></p>
@@ -247,6 +267,10 @@
                 <a href="#">
                   <img src="./src/img/review/review06.png" alt="">
                 </a>
+                <div class="detail hidden">
+                  <a>리뷰보기</a>
+                  <a>장바구니</a>
+                </div>
               </div>
               <div class="rate">★★★★★</div>
               <p class="item-title"><a href="#">마스터블렌드</a></p>
@@ -263,6 +287,10 @@
                 <a href="#">
                   <img src="./src/img/review/review07.png" alt="">
                 </a>
+                <div class="detail hidden">
+                  <a>리뷰보기</a>
+                  <a>장바구니</a>
+                </div>
               </div>
               <div class="rate">★★★★★</div>
               <p class="item-title"><a href="#">세작 40g(잎차)</a></p>
@@ -279,6 +307,10 @@
                 <a href="#">
                   <img src="./src/img/review/review08.png" alt="">
                 </a>
+                <div class="detail hidden">
+                  <a>리뷰보기</a>
+                  <a>장바구니</a>
+                </div>
               </div>
               <div class="rate">★★★★★</div>
               <p class="item-title"><a href="#">덖음차 50g (햇차, 2020)</a></p>
@@ -295,6 +327,10 @@
                 <a href="#">
                   <img src="./src/img/review/review09.png" alt="">
                 </a>
+                <div class="detail hidden">
+                  <a>리뷰보기</a>
+                  <a>장바구니</a>
+                </div>
               </div>
               <div class="rate">★★★★☆</div>
               <p class="item-title"><a href="#">제주 녹차 크레이프 케이크</a></p>
@@ -311,6 +347,10 @@
                 <a href="#">
                   <img src="./src/img/review/review10.png" alt="">
                 </a>
+                <div class="detail hidden">
+                  <a>리뷰보기</a>
+                  <a>장바구니</a>
+                </div>
               </div>
               <div class="rate">★★★★☆</div>
               <p class="item-title"><a href="#">삼다꿀배티 20입(티백)</a></p>
@@ -509,7 +549,7 @@
 
     <section class="tea-ware-shop">
       <div class="tea-ware-shop-left">
-        <h2>Tea ware shop</h2>
+        <h2 class="section-title">Tea ware shop</h2>
         <p class="text">다채로운 오설록의 차를 즐길 수 있는 다양한 Tea ware를 만나보세요.</p>
         <p class="move">전체보기 <img src="./src/img/md-pick/arr_42x12.png" alt=""></p>
       </div>
@@ -534,7 +574,7 @@
     </section>
 
     <section class="today-price">
-      <h2>오늘만 이 가격</h2>
+      <h2 class="section-title">오늘만 이 가격</h2>
       <p>오늘 하루만 이 가격으로 구매할 수 있는 상품을 지금 바로 만나보세요.</p>
       <div class="today-price-content">
         <div class="top">
@@ -563,7 +603,7 @@
     </section>
 
     <section class="saleUp">
-      <h2>뭉치면 할인 <strong>UP</strong></h2>
+      <h2 class="section-title">뭉치면 할인 <strong>UP</strong></h2>
       <p>모이면 모일수록 커지는 할인쿠폰 혜택을 만나보세요 !</p>
       <div class="image-area">
         <div class="left">
@@ -600,7 +640,7 @@
     </section>
 
     <section class="shop">
-      <h2>Shop</h2>
+      <h2 class="section-title">Shop</h2>
       <p>오설록이 준비한 티 라인에서 당신이 찾는 티 스타일을 찾아보세요.</p>
       <div class="slide-area">
         <div class="top">
@@ -613,7 +653,7 @@
         <div class="bottom">
           <ul class="shop-list">
             <li>명차</li>
-            <li>녹차/발효차/홍차</li>
+            <li class="active">녹차/발효차/홍차</li>
             <li>허브티(무카페인)</li>
             <li>블렌디드티</li>
             <li>웰니스티</li>
@@ -624,7 +664,13 @@
             <li>기프트몰</li>
             <li>라이프스타일몰</li>
           </ul>
+          <div class="arrow-area">
+            <div class="prev"><span class="a11y-hidden">prev</span></div>
+            <div class="a11y-hidden next"><span class="a11y-hidden">next</span>
+            </div>
+          </div>
         </div>
+
       </div>
       <div class="item-list">
         <div class="review active">
@@ -838,7 +884,7 @@
 
     <section class="notice">
       <div class="wrap">
-        <h2>공지사항</h2>
+        <h2 class="section-title">공지사항</h2>
         <ul>
           <li><a href="#">[공지] L.POINT 서비스 점검(일시중단) 안내_ 3/16(월) 00:00~08:10</a></li>
           <li><a href="#">[공지] 구매사은품 지류쿠폰 지급 종료 및 혜택 변경 예정 안내</a></li>
@@ -884,7 +930,7 @@
         <ul>
           <li><a href="">회사소개</a></li>
           <li><a href="">서비스 이용약관</a></li>
-          <li><a href=""><strong>개인정보 처리방침</stron></a></li>
+          <li><a href=""><strong>개인정보 처리방침</strong></a></li>
           <li><a href="">영상정보 처리방침</a></li>
           <li><a href="">뷰티포인트</a></li>
           <li><a href="">임직원할인</a></li>
@@ -911,6 +957,8 @@
       </div>
     </div>
   </footer>
+
+  <a href="#" class="btn-top hidden"><img src="./src/img/btn_goTop.png" alt=""></a>
 
 </body>
 

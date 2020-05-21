@@ -1,11 +1,7 @@
 @charset "utf-8";
 
-body,
-input,
-textarea,
-select,
-button {
-  font-family: 'Noto_M', '본고딕', 'Noto Sans CJK kR Medium', 'Noto Sans CJK kR Medium';
+body {
+  font-family: 'notokr-regular', 'Noto Sans CJK kR', 'Noto Sans KR', 'Arita-buri-SemiBold', '맑은 고딕';
 }
 
 .a11y-hidden {
@@ -21,6 +17,68 @@ button {
   color: #1db875;
 }
 
+/* wrapper */
+header .logo-area,
+header .gnb-area .gnb,
+header .gnb-area .gnb .sub-menu .wrap,
+.weekly-best .wrap,
+.md-pick,
+.tea-ware-shop,
+.today-price,
+.custom-recommendation,
+.saleUp,
+.sns,
+.notice .wrap,
+footer .wrap {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* arrow-area 공통 */
+
+.arrow-area {
+  position: absolute;
+  width: 70px;
+  height: 21px;
+  top: 80px;
+  right: 30px;
+  cursor: pointer;
+}
+
+.arrow-area .prev {
+  float: left;
+  width: 12px;
+  height: 21px;
+  background: url('../img/review/arr_l_12x21.png') no-repeat center;
+  filter: invert(80%);
+}
+
+.arrow-area .next {
+  float: right;
+  width: 12px;
+  height: 21px;
+  background: url('../img/review/arr_r_12x21.png') no-repeat center;
+}
+
+/* 나뭇잎 공통 */
+
+.section-title {
+  font-size: 42px;
+  font-weight: 600;
+  position: relative;
+  margin-bottom: 20px;
+  letter-spacing: -2px;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 10px;
+  background: url('../img/tit_bg.png') no-repeat center;
+  width: 31px;
+  height: 31px;
+  margin-left: 10px;
+}
 
 /* ------start - header------ */
 
@@ -30,8 +88,6 @@ header {
 }
 
 header .logo-area {
-  max-width: 1400px;
-  margin: 0 auto;
   position: relative;
   height: 90px;
   background: #fff;
@@ -52,8 +108,8 @@ header .logo-area .tnb {
 
 header .logo-area .tnb .util li {
   display: inline-block;
-  font-size: 12px;
-  font-weight: 100;
+  font-size: 13px;
+  color: #636363;
   letter-spacing: -0.3px;
 }
 
@@ -65,9 +121,10 @@ header .logo-area .tnb .util .language select {
   border: none;
   background: transparent;
   height: 25px;
-  font-size: 12px;
+  font-size: 13px;
   appearance: none;
   margin-right: 10px;
+  color: #636363;
 }
 
 header .logo-area .tnb .util .language select:focus {
@@ -75,18 +132,30 @@ header .logo-area .tnb .util .language select:focus {
 }
 
 header .gnb-area {
+  position: relative;
   width: 100%;
   background: #67625d;
-  position: relative;
   z-index: 10;
 }
 
 header .gnb-area .gnb {
   height: 63px;
   position: relative;
-  max-width: 1400px;
-  margin: 0 auto;
 }
+
+/* scroll 시 */
+/* header .logo-area.hidden {
+  display: none;
+}
+
+header .gnb-area .gnb.scroll {
+  height: 63px;
+  position: fixed;
+  top: 0;
+  background: #fff;
+  width: 100%;
+  color: #000;
+} */
 
 header .gnb-area .gnb .gnb-list {
   text-align: center;
@@ -142,16 +211,14 @@ header .gnb-area .gnb .sub-menu {
   display: none;
   width: 100vw;
   height: 370px;
-  margin-left: calc(-51vw + 50%);
+  margin-left: calc(-50vw + 50%);
   background: #fff;
   border-bottom: 1px solid #ccc;
   overflow: hidden;
 }
 
 header .gnb-area .gnb .sub-menu .wrap {
-  max-width: 1400px;
   height: inherit;
-  margin: 0 auto;
   position: relative;
 }
 
@@ -175,7 +242,7 @@ header .gnb-area .gnb .sub-menu .wrap .sub-menu-area {
   width: 1280px;
   height: inherit;
   margin: 0 auto;
-  padding-left: 280px;
+  padding-left: 265px;
 }
 
 header .gnb-area .gnb .sub-menu .wrap ul {
@@ -210,6 +277,7 @@ header .gnb-area .gnb .addmenu-list {
   position: absolute;
   top: 0;
   right: 25px;
+  cursor: pointer;
 }
 
 header .gnb-area .addmenu-list li {
@@ -256,6 +324,10 @@ header .gnb-area .addmenu-list .add::after {
   background: url('../img/ico_gnbMore_off.png') no-repeat center;
 }
 
+/* 해결하지 못한 영역: hover 시 이미지에 filter로 이미지색 변경하기
+ header .gnb-area .gnb .addmenu-list>li:hover::after {
+} */
+
 header .gnb-area .addmenu-list li:last-child {
   position: relative;
 }
@@ -294,39 +366,40 @@ header .gnb-area .addmenu-list li .add-menu li+li {
 .visual {
   height: 640px;
   border-bottom: 1px solid #d3d3d3;
-  z-index: 1;
 }
 
 .visual-wrap {
   height: 550px;
   width: 100%;
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .visual-wrap .img-slide {
+  width: 100%;
   height: 100%;
   position: absolute;
-  width: 100%;
 }
 
 .visual-wrap .img-slide a {
-  float: left;
+  position: absolute;
+  top: 0;
   width: 100%;
   height: 550px;
   text-align: center;
 }
 
 .visual-wrap .img-slide a .title {
-  margin-top: 170px;
-  font-size: 50px;
+  margin-top: 180px;
+  font-size: 52px;
+  font-family: 'aritasm', 'Arita-buri-SemiBold', sans-serif;
 }
 
 .visual-wrap .img-slide a .sub-title {
   font-size: 26px;
-  font-weight: 500;
-  letter-spacing: -0.1rem;
-  color: #86857b;
+  font-weight: 400;
+  letter-spacing: -0.3px;
+  color: #666;
   position: relative;
   margin-bottom: 40px;
 }
@@ -347,22 +420,22 @@ header .gnb-area .addmenu-list li .add-menu li+li {
   letter-spacing: -0.3px;
 }
 
-.visual-wrap .img-slide a:first-child {
+.visual-wrap .img-slide a.one {
   background: url('../img/visual/visual01.jpg') no-repeat 50% 50%;
   background-size: cover;
 }
 
-.visual-wrap .img-slide a:nth-child(2) {
+.visual-wrap .img-slide a.two {
   background: url('../img/visual/visual02.jpg') no-repeat 50% 50%;
   background-size: cover;
 }
 
-.visual-wrap .img-slide a:nth-child(3) {
+.visual-wrap .img-slide a.three {
   background: url('../img/visual/visual03.jpg') no-repeat 50% 50%;
   background-size: cover;
 }
 
-.visual-wrap .img-slide a:last-child {
+.visual-wrap .img-slide a.four {
   background: url('../img/visual/visual04.jpg') no-repeat 50% 50%;
   background-size: cover;
 }
@@ -395,7 +468,7 @@ header .gnb-area .addmenu-list li .add-menu li+li {
 .visual-wrap .slide-select-area ul li:hover {
   background: #a1af1b;
   color: #fff;
-  transition: background 0.5s;
+  transition: all 0.5s;
 }
 
 .visual-wrap .slide-select-area ul li a {
@@ -427,33 +500,11 @@ header .gnb-area .addmenu-list li .add-menu li+li {
 /* ------ start - weekly-best ------ */
 
 .weekly-best .wrap {
-  max-width: 1400px;
   min-width: 1280;
   height: 610px;
   overflow: hidden;
   margin: 100px auto;
   position: relative;
-}
-
-.weekly-best .wrap h2 {
-  font-size: 42px;
-  font-weight: bold;
-  position: relative;
-  margin-bottom: 20px;
-  letter-spacing: -2px;
-}
-
-
-/* 나뭇잎 공통 */
-
-.weekly-best .wrap h2::after {
-  content: '';
-  position: absolute;
-  bottom: 10px;
-  background: url('../img/tit_bg.png') no-repeat center;
-  width: 31px;
-  height: 31px;
-  margin-left: 10px;
 }
 
 .review-rank-container {
@@ -467,15 +518,17 @@ header .gnb-area .addmenu-list li .add-menu li+li {
 }
 
 .review-rank-container li:before {
-  content: counter(item) "  ";
+  content: counter(item);
   counter-increment: item;
   position: absolute;
-  top: 0;
-  left: 10px;
+  top: 10px;
+  left: 15px;
   font-style: italic;
+  font-family: '맑은 고딕';
   font-weight: bold;
   font-size: 2.5rem;
   color: #4d4d4d;
+  z-index: 1;
 }
 
 .review-rank-container li:first-child:before {
@@ -535,7 +588,7 @@ header .gnb-area .addmenu-list li .add-menu li+li {
   -webkit-box-orient: vertical;
   line-height: 1.2em;
   height: 38px;
-  letter-spacing: -1px;
+  text-align: left;
 }
 
 .weekly-best .review .review-content .write-info {
@@ -554,7 +607,7 @@ header .gnb-area .addmenu-list li .add-menu li+li {
 
 .weekly-best .sales h3 {
   position: absolute;
-  top: 76px;
+  top: 82px;
   left: 120px;
 }
 
@@ -578,33 +631,42 @@ header .gnb-area .addmenu-list li .add-menu li+li {
   width: 100%;
   height: 270px;
   background: #f7f7f7;
+  position: relative;
+  box-sizing: border-box;
 }
 
+.weekly-best .wrap ol li .image-wrap .detail.hidden {
+  visibility: hidden;
+}
 
-/* arrow-area 공통 */
-
-.arrow-area {
+.weekly-best .wrap ol li .image-wrap .detail {
   position: absolute;
-  width: 70px;
-  height: 21px;
-  top: 80px;
-  right: 30px;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background: rgba(0, 0, 0, 0.8);
 }
 
-.arrow-area .prev {
+.weekly-best .wrap ol li .image-wrap .detail a {
+  position: relative;
   float: left;
-  width: 12px;
-  height: 21px;
-  background: url('../img/review/arr_l_12x21.png') no-repeat center;
+  width: 120px;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
 }
 
-.arrow-area .next {
-  float: right;
-  width: 12px;
-  height: 21px;
-  background: url('../img/review/arr_r_12x21.png') no-repeat center;
+.weekly-best .wrap ol li .image-wrap .detail a+a:before {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  content: '';
+  width: 1px;
+  height: 20px;
+  background: #fff;
 }
-
 
 /* progress Bar 공통 */
 
@@ -635,7 +697,6 @@ header .gnb-area .addmenu-list li .add-menu li+li {
 /* ------ md-pick - start------ */
 
 .md-pick {
-  max-width: 1400px;
   height: 520px;
   margin: 100px auto;
 }
@@ -688,6 +749,7 @@ header .gnb-area .addmenu-list li .add-menu li+li {
 .md-pick-right>p {
   margin: 20px 0 50px;
   font-size: 24px;
+  font-weight: bold;
 }
 
 .md-pick-right>p>.point {
@@ -695,9 +757,14 @@ header .gnb-area .addmenu-list li .add-menu li+li {
   margin-right: 20px;
 }
 
-.md-pick-right .md-pick-list {
-  height: 400px;
+.md-pick-right {
   overflow: hidden;
+}
+
+.md-pick-right .md-pick-list {
+  width: 100vh;
+  height: 400px;
+  overflow: visible;
 }
 
 .md-pick-right .md-pick-list li {
@@ -705,6 +772,10 @@ header .gnb-area .addmenu-list li .add-menu li+li {
   height: 400px;
   text-align: center;
   margin-right: 50px;
+}
+
+.md-pick-right .md-pick-list li:nth-child(3) {
+  margin-left: -30px;
 }
 
 .md-pick-right .md-pick-list li>img {
@@ -736,7 +807,6 @@ header .gnb-area .addmenu-list li .add-menu li+li {
 /* ------ tea-ware-shop ------*/
 
 .tea-ware-shop {
-  max-width: 1400px;
   height: 620px;
   margin: 100px auto;
   overflow: hidden;
@@ -752,9 +822,6 @@ header .gnb-area .addmenu-list li .add-menu li+li {
 .tea-ware-shop-left h2 {
   position: relative;
   margin: 50px 0 20px;
-  font-size: 42px;
-  font-weight: bold;
-  letter-spacing: -2px;
 }
 
 .tea-ware-shop-left .text {
@@ -766,16 +833,6 @@ header .gnb-area .addmenu-list li .add-menu li+li {
 .tea-ware-shop-left .move {
   margin-top: 30px;
   font-size: 20px;
-}
-
-.tea-ware-shop-left h2::after {
-  content: '';
-  position: absolute;
-  bottom: 10px;
-  background: url('../img/tit_bg.png') no-repeat center;
-  width: 31px;
-  height: 31px;
-  margin-left: 10px;
 }
 
 .tea-ware-shop-right {
@@ -859,27 +916,12 @@ header .gnb-area .addmenu-list li .add-menu li+li {
 /* ------ today-price-start ------ */
 
 .today-price {
-  max-width: 1400px;
   margin: 100px auto;
   height: 600px;
 }
 
 .today-price h2 {
-  position: relative;
   margin: 50px 0 20px;
-  font-size: 42px;
-  font-weight: bold;
-  letter-spacing: -2px;
-}
-
-.today-price h2::after {
-  content: '';
-  position: absolute;
-  bottom: 10px;
-  background: url('../img/tit_bg.png') no-repeat center;
-  width: 31px;
-  height: 31px;
-  margin-left: 10px;
 }
 
 .today-price>p {
@@ -974,7 +1016,6 @@ header .gnb-area .addmenu-list li .add-menu li+li {
 /* ------ custom-recommendation - start ------ */
 
 .custom-recommendation {
-  max-width: 1400px;
   margin: 100px auto;
   font-size: 0;
 }
@@ -991,26 +1032,15 @@ header .gnb-area .addmenu-list li .add-menu li+li {
 /* ------ saleUp - start ------ */
 
 .saleUp {
-  max-width: 1400px;
   margin: 100px auto;
 }
 
 .saleUp h2 {
-  position: relative;
   margin: 50px 0 20px;
-  font-size: 42px;
-  font-weight: bold;
-  letter-spacing: -2px;
 }
 
-.saleUp h2::after {
-  content: '';
-  position: absolute;
-  bottom: 10px;
-  background: url('../img/tit_bg.png') no-repeat center;
-  width: 31px;
-  height: 31px;
-  margin-left: 10px;
+.saleUp h2 strong {
+  color: #758246;
 }
 
 .saleUp>p {
@@ -1193,21 +1223,7 @@ header .gnb-area .addmenu-list li .add-menu li+li {
 }
 
 .shop h2 {
-  position: relative;
   margin: 50px 0 20px;
-  font-size: 42px;
-  font-weight: bold;
-  letter-spacing: -2px;
-}
-
-.shop h2::after {
-  content: '';
-  position: absolute;
-  bottom: 10px;
-  background: url('../img/tit_bg.png') no-repeat center;
-  width: 31px;
-  height: 31px;
-  margin-left: 10px;
 }
 
 .shop>p {
@@ -1246,9 +1262,11 @@ header .gnb-area .addmenu-list li .add-menu li+li {
 }
 
 .shop .bottom {
+  width: inherit;
   height: 95px;
   background: #000;
   padding: 0 200px;
+  position: relative;
 }
 
 .shop .bottom .shop-list {
@@ -1259,7 +1277,7 @@ header .gnb-area .addmenu-list li .add-menu li+li {
 .shop .bottom .shop-list li {
   float: left;
   white-space: nowrap;
-  color: #fff;
+  color: #767676;
   width: 250px;
   height: 95px;
   line-height: 95px;
@@ -1267,6 +1285,34 @@ header .gnb-area .addmenu-list li .add-menu li+li {
   font-size: 20px;
 }
 
+.shop .bottom .shop-list li.active {
+  color: #fff;
+}
+
+.shop .arrow-area {
+  position: absolute;
+  width: 1300px;
+  height: 21px;
+  top: 40px;
+  right: 50px;
+}
+
+.shop .bottom .prev {
+  left: 100px;
+  top: 0;
+  filter: invert(80%);
+}
+
+.shop .bottom .next {
+  right: 0;
+  filter: invert(80%);
+}
+
+.shop .bottom .prev:hover,
+.shop .bottom .next:hover {
+  right: 0;
+  filter: invert(100%);
+}
 
 /* item-list */
 
@@ -1413,12 +1459,12 @@ header .gnb-area .addmenu-list li .add-menu li+li {
 /* ------ sns - start ------ */
 
 .sns {
-  max-width: 1400px;
   margin: 50px auto 0;
 }
 
 .sns h3 {
   color: #757575;
+  font-family: 'AritaBuriSB', sans-serif;
   font-size: 20px;
   position: relative;
   margin-bottom: 20px;
@@ -1451,14 +1497,12 @@ header .gnb-area .addmenu-list li .add-menu li+li {
 .notice {
   background: #67625d;
   height: 60px;
-
 }
 
 .notice .wrap {
-  max-width: 1400px;
-  margin: 0 auto;
   color: #fff;
   position: relative;
+  height: inherit;
 }
 
 .notice .wrap h2 {
@@ -1490,7 +1534,6 @@ header .gnb-area .addmenu-list li .add-menu li+li {
 
 .notice .wrap ul li {
   letter-spacing: -0.3px;
-  font-weight: bold;
 }
 
 .notice .view-more {
@@ -1512,11 +1555,6 @@ header .gnb-area .addmenu-list li .add-menu li+li {
 }
 
 /* ------ footer - start ------*/
-
-footer .wrap {
-  max-width: 1400px;
-  margin: 0 auto;
-}
 
 footer .top {
   background: #fafafa;
@@ -1553,7 +1591,7 @@ footer .top .wrap .left .tel2 p:first-child {
 
 footer .top .wrap .left a {
   font-size: 32px;
-  font-weight: bold;
+  font-weight: 400;
   color: #555555;
 }
 
@@ -1561,7 +1599,8 @@ footer .top .wrap .left .tel2 a {
   font-size: 18px;
   text-decoration: underline;
   color: #555555;
-
+  font-weight: 600;
+  letter-spacing: -1px;
 }
 
 footer .top .wrap .left .tel2 p:nth-of-type(2) {
@@ -1692,4 +1731,15 @@ footer .escrow dd:last-child {
   float: right;
   width: 220px;
   word-break: keep-all;
+}
+
+/* top button */
+.btn-top {
+  position: fixed;
+  right: 10px;
+  bottom: 35px;
+}
+
+.btn-top.hidden {
+  right: -100px;
 }
