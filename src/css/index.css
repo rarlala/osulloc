@@ -1510,3 +1510,18 @@ header .gnb-area .addmenu-list li .add-menu li+li {
 .notice .sns-icon .instagram {
   margin-left: 15px;
 }
+
+/* ------ footer - start ------*/
+
+footer .wrap {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+footer .top {
+  background: #fafafa;
+}
+
+footer .escrow {
+  border: 1px solid #555;
+}
