@@ -804,8 +804,7 @@ header .gnb-area .addmenu-list li .add-menu li+li {
   margin-right: 50px;
 }
 
-
-.md-pick-right .md-pick-list li>img {
+.md-pick-right .md-pick-list li>a>img {
   background: #f7f7f7;
   width: 240px;
   height: 270px;
@@ -1403,6 +1402,26 @@ header .gnb-area .addmenu-list li .add-menu li+li {
   height: 500px;
   display: none;
   font-size: 20px;
+}
+
+.shop .item-list li a {
+  position: relative;
+  display: block;
+}
+
+.shop .item-list li a img {
+  height: 300px;
+}
+
+.shop .item-list li a:hover::after {
+  content: '';
+  position: absolute;
+  right: 10px;
+  bottom: 150px;
+  background: url('../img/shop/ico_big_bucket_filled.png') no-repeat center;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
 }
 
 .shop .item-list ul li+li {

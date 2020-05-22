@@ -87,6 +87,53 @@ $(function() {
 
   // -------------------------------------------------------------------------
 
+  // shopt list hover 효과 [완료]
+
+  var $shopList = $('.shop .item-list li');
+
+  $shopList
+    .on('mouseover', function() {
+      var img_src = $(this).find('img').attr("src");
+      var new_img_src = img_src.split('.')[1];
+      $(this).find('img').css('opacity', '0').stop().attr("src", '.' + new_img_src + '-1.png').animate({
+        opacity: 1
+      }, 500);
+      $(this).find('.detail').removeClass('hidden');
+    })
+    .on('mouseout', function() {
+      var img_src = $(this).find('img').attr("src");
+      var new_img_src = img_src.split('-')[0];
+
+      $(this).find('img').css('opacity', '0').stop().attr("src", new_img_src + '.png').animate({
+        opacity: 1
+      }, 500);
+      $(this).find('.detail').addClass('hidden');
+    })
+
+  // -------------------------------------------------------------------------
+
+  // md-pick-list hover 시 이미지 변경 [완료]
+
+  var $mdPickList = $('.md-pick-right .md-pick-list li');
+
+  $mdPickList.find('a')
+    .on('mouseover', function() {
+      var img_src = $(this).find('img').attr("src");
+      var new_img_src = img_src.split('0')[0];
+      $(this).find('img').css('opacity', '0').stop().attr("src", new_img_src + '-hover.png').animate({
+        opacity: 1
+      }, 500);
+    })
+    .on('mouseout', function() {
+      var $num = $(this).parent().index();
+      var img_src = $('.md-pick-list li').eq($num).find('img').attr("src");
+      var new_img_src = img_src.split('-hover')[0];
+
+      $(this).find('img').css('opacity', '0').stop().attr("src", new_img_src + '0' + ($num + 1) + '.png').animate({
+        opacity: 1
+      }, 500);
+    })
+
   // -------------------------------------------------------------------------
 
   // visual-slide
