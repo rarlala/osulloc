@@ -9,26 +9,81 @@ $(function() {
   // 2. 이미지 바꾸기 [완료]
   // 3. 리뷰보기 | 장바구니 표시 [완료]
 
-  var $weeklylist = $('.weekly-best .review-rank-container li')
+  var $weeklylist = $('.weekly-best .rank-container li');
 
   $weeklylist
-      .on('mouseover', function() {
-          var img_src = $(this).find('img').attr("src");
-          var new_img_src = img_src.split('.')[1];
-          $(this).find('img').css('opacity', '0').stop().attr("src", '.' + new_img_src + '-1.png').animate({
-              opacity: 1
-          }, 500);
-          $(this).find('.detail').removeClass('hidden');
-      })
-      .on('mouseout', function() {
-          var img_src = $(this).find('img').attr("src");
-          var new_img_src = img_src.split('-')[0];
+    .on('mouseover', function() {
+      var img_src = $(this).find('img').attr("src");
+      var new_img_src = img_src.split('.')[1];
+      $(this).find('img').css('opacity', '0').stop().attr("src", '.' + new_img_src + '-1.png').animate({
+        opacity: 1
+      }, 500);
+      $(this).find('.detail').removeClass('hidden');
+    })
+    .on('mouseout', function() {
+      var img_src = $(this).find('img').attr("src");
+      var new_img_src = img_src.split('-')[0];
 
-          $(this).find('img').css('opacity', '0').stop().attr("src", new_img_src + '.png').animate({
-              opacity: 1
-          }, 500);
-          $(this).find('.detail').addClass('hidden');
-      })
+      $(this).find('img').css('opacity', '0').stop().attr("src", new_img_src + '.png').animate({
+        opacity: 1
+      }, 500);
+      $(this).find('.detail').addClass('hidden');
+    })
+
+  // -------------------------------------------------------------------------
+
+  // weekly-best 내 tab 기능
+  // 1. 리뷰순, 판매순 선택 시 active class 추가로 h3 color 확인
+  // 2. 해당하는 영역의 class를 가져다가 이미지 변경하기
+
+
+  var $weeklyBest = $('.weekly-best .wrap'),
+    $reviewTab = $('.weekly-best .wrap h3.review-tab'),
+    $saleTab = $('.weekly-best .wrap h3.sale-tab');
+
+  $reviewTab.on('click', function() {
+    if (!$(this).hasClass('active')) {
+      $(this).addClass('active');
+      $saleTab.removeClass('active');
+    }
+
+    if (!$weeklyBest.find('.review > .rank-container.review').hasClass('active')) {
+      $weeklyBest.find('.review > .rank-container.review').addClass('active');
+      $weeklyBest.find('.sale > .rank-container.sale').removeClass('active');
+    }
+
+    if (!$weeklyBest.find('.review > .arrow-area').hasClass('active')) {
+      $weeklyBest.find('.review > .arrow-area').addClass('active');
+      $weeklyBest.find('.sale > .arrow-area').removeClass('active');
+    }
+
+    if ($weeklyBest.find('.review > .progressBar').hasClass('active')) {
+      $weeklyBest.find('.review > .progressBar').addClass('active');
+      $weeklyBest.find('.sale > .progressBar').removeClass('active');
+    }
+  });
+
+  $saleTab.on('click', function() {
+    if (!$(this).hasClass('active')) {
+      $(this).addClass('active');
+      $reviewTab.removeClass('active');
+    }
+
+    if (!$weeklyBest.find('.sale > .rank-container.review').hasClass('active')) {
+      $weeklyBest.find('.sale > .rank-container.sale').addClass('active');
+      $weeklyBest.find('.review > .rank-container.review').removeClass('active');
+    }
+
+    if (!$weeklyBest.find('.sale > .arrow-area').hasClass('active')) {
+      $weeklyBest.find('.sale > .arrow-area').addClass('active');
+      $weeklyBest.find('.review > .arrow-area').removeClass('active');
+    }
+
+    if (!$weeklyBest.find('.sale > .progressBar').hasClass('active')) {
+      $weeklyBest.find('.sale > .progressBar').addClass('active');
+      $weeklyBest.find('.review > .progressBar').removeClass('active');
+    }
+  })
 
   // -------------------------------------------------------------------------
 
@@ -50,7 +105,7 @@ $(function() {
     $nowSelect = $selectList.find('.active').index(),
     $selectNum = $selectList.find('li').length;
 
-  var NextSlide = function () {
+  var NextSlide = function() {
     $visualSlide.find('a').eq($nowSlide).removeClass('active');
     $nowSlide = ($nowSlide + 1) % $slideNum;
     $visualSlide.find('a').eq($nowSlide).addClass('active');
@@ -62,7 +117,7 @@ $(function() {
 
   var repeat = setInterval(NextSlide, 5000);
 
-  $('.visual .btn-slide-state').on('click', function () {
+  $('.visual .btn-slide-state').on('click', function() {
     if ($(this).hasClass('stop')) {
       $(this).removeClass('stop');
       $(this).addClass('start');
@@ -91,7 +146,7 @@ $(function() {
 
   var $timer = $('.today-price .timer');
 
-  setInterval(function () {
+  setInterval(function() {
     const nowTime = new Date();
     const hours = 24 - nowTime.getHours();
     const minutes = 60 - nowTime.getMinutes();
@@ -119,7 +174,7 @@ $(function() {
     $gnbLogo = $('header .gnb-area .gnb h3'),
     $addMenu = $('.addmenu-list >li');
 
-  $window.scroll(function () {
+  $window.scroll(function() {
     if ($window.scrollTop() === 0) {
       $logoArea.css({
         display: 'block',
@@ -137,12 +192,12 @@ $(function() {
       });
       $gnb
         .find('.gnb-list li a')
-        .on('mouseover', function () {
+        .on('mouseover', function() {
           $(this).css({
             color: '#daf100',
           });
         })
-        .on('mouseout', function () {
+        .on('mouseout', function() {
           $(this).css({
             color: '#fff',
           });
@@ -175,12 +230,12 @@ $(function() {
       });
       $gnb
         .find('.gnb-list li a')
-        .on('mouseover', function () {
+        .on('mouseover', function() {
           $(this).css({
             color: '#6c801a',
           });
         })
-        .on('mouseout', function () {
+        .on('mouseout', function() {
           $(this).css({
             color: '#000',
           });
@@ -195,8 +250,7 @@ $(function() {
         filter: 'invert(100%)',
       });
     } else if ($window.scrollTop() > 300) {
-      $btnTop.stop(true).animate(
-        {
+      $btnTop.stop(true).animate({
           right: '10px',
         },
         200
@@ -204,17 +258,17 @@ $(function() {
       $btnTop.removeClass('hidden');
     } else {
       $btnTop.stop(true).animate({
-          right: '-100px'
+        right: '-100px'
       }, 200);
-    $btnTop.addClass('hidden');
-  }
-});
+      $btnTop.addClass('hidden');
+    }
+  });
 
-$btnTop.on('click', function(e) {
-  $scrollableElement.animate({
+  $btnTop.on('click', function(e) {
+    $scrollableElement.animate({
       scrollTop: 0
-  }, 1000, 'swing');
-})
+    }, 1000, 'swing');
+  })
 
-$window.trigger('scroll');
+  $window.trigger('scroll');
 });

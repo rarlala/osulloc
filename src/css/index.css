@@ -521,28 +521,30 @@ header .gnb-area .addmenu-list li .add-menu li+li {
 /* ------ start - weekly-best ------ */
 
 .weekly-best .wrap {
-  min-width: 1280px;
-  height: 610px;
+  max-height: 610px;
   margin: 100px auto;
   position: relative;
-}
-
-.weekly-best .review {
-  width: 1400px;
   overflow: hidden;
 }
 
-.review-rank-container {
+.weekly-best .wrap>.sale {
+  height: 380px;
+}
+
+.weekly-best .rank-container {
+  display: none;
+  width: 100vw;
   counter-reset: item;
   list-style-type: none;
-  overflow: hidden;
   font-size: 0;
-  width: 100vw;
   text-align: center;
-  height: 485px;
 }
 
-.review-rank-container li {
+.weekly-best .rank-container.active {
+  display: inline-block;
+}
+
+.weekly-best .rank-container li {
   display: block;
   position: relative;
   font-size: 15px;
@@ -550,11 +552,15 @@ header .gnb-area .addmenu-list li .add-menu li+li {
   float: left;
 }
 
-.review-rank-container li+li {
+.weekly-best .rank-container.sale li {
+  margin-top: 34px;
+}
+
+.weekly-best .rank-container li+li {
   margin-left: 50px;
 }
 
-.review-rank-container li:before {
+.weekly-best .rank-container li:before {
   content: counter(item);
   counter-increment: item;
   position: absolute;
@@ -568,11 +574,11 @@ header .gnb-area .addmenu-list li .add-menu li+li {
   z-index: 1;
 }
 
-.review-rank-container li:first-child:before {
+.weekly-best .rank-container li:first-child:before {
   color: red;
 }
 
-.review-rank-container li .image-wrap {
+.weekly-best .rank-container li .image-wrap {
   width: 100%;
   height: 270px;
   background: #f7f7f7;
@@ -580,11 +586,11 @@ header .gnb-area .addmenu-list li .add-menu li+li {
   box-sizing: border-box;
 }
 
-.review-rank-container li .image-wrap .detail.hidden {
+.weekly-best .rank-container li .image-wrap .detail.hidden {
   visibility: hidden;
 }
 
-.review-rank-container li .image-wrap .detail {
+.weekly-best .rank-container li .image-wrap .detail {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -593,7 +599,7 @@ header .gnb-area .addmenu-list li .add-menu li+li {
   background: rgba(0, 0, 0, 0.8);
 }
 
-.review-rank-container li .image-wrap .detail a {
+.weekly-best .rank-container li .image-wrap .detail a {
   position: relative;
   float: left;
   width: 120px;
@@ -602,7 +608,7 @@ header .gnb-area .addmenu-list li .add-menu li+li {
   cursor: pointer;
 }
 
-.review-rank-container li .image-wrap .detail a+a:before {
+.weekly-best .rank-container li .image-wrap .detail a+a:before {
   position: absolute;
   left: 0;
   top: 50%;
@@ -613,8 +619,7 @@ header .gnb-area .addmenu-list li .add-menu li+li {
   background: #fff;
 }
 
-.weekly-best .review h3,
-.weekly-best .sales h3 {
+.weekly-best .wrap h3 {
   font-size: 22px;
   margin-bottom: 30px;
   letter-spacing: -0.3px;
@@ -626,6 +631,10 @@ header .gnb-area .addmenu-list li .add-menu li+li {
   color: #000;
 }
 
+.weekly-best .wrap h3.active {
+  color: #748346;
+}
+
 .weekly-best .review>h3::after {
   content: '';
   display: inline-block;
@@ -635,18 +644,21 @@ header .gnb-area .addmenu-list li .add-menu li+li {
   background: url('../img/border_2x17.png');
 }
 
-.weekly-best .wrap .active h3 {
-  color: #748346;
-}
-
 .weekly-best .review .rate {
   font-size: 24px;
   margin: 10px 0;
   letter-spacing: -2px;
 }
 
-.weekly-best .review .item-title {
+.weekly-best .rank-container .item-title {
   font-size: 21px;
+  margin: 20px 0;
+  letter-spacing: -1px;
+}
+
+.weekly-best .rank-container .item-price {
+  font-size: 21px;
+  color: #8b8b8b;
   margin: 20px 0;
   letter-spacing: -1px;
 }
@@ -683,13 +695,11 @@ header .gnb-area .addmenu-list li .add-menu li+li {
   margin-right: 5px;
 }
 
-.weekly-best .sales h3 {
+.weekly-best .sale h3 {
   position: absolute;
   top: 82px;
   left: 120px;
 }
-
-
 
 /* progress Bar 공통 */
 
@@ -710,10 +720,9 @@ header .gnb-area .addmenu-list li .add-menu li+li {
   background: #000;
 }
 
-.sales-rank-container {
+.rank-container.sale {
   position: absolute;
   top: 112px;
-  display: none;
 }
 
 
