@@ -428,7 +428,7 @@ header .gnb-area .addmenu-list li .add-menu li+li {
   background: gray;
 }
 
-.visual-wrap .img-slide a time {
+.visual-wrap .img-slide a .time {
   font-size: 19px;
   letter-spacing: -0.3px;
 }
@@ -1194,7 +1194,6 @@ header .gnb-area .addmenu-list li .add-menu li+li {
 }
 
 .saleUp .image-area>.right .percent-area .number {
-  z-index: 10;
   position: absolute;
   top: 0;
 }
@@ -1214,6 +1213,7 @@ header .gnb-area .addmenu-list li .add-menu li+li {
   position: absolute;
   top: -20px;
   left: 0;
+
 }
 
 .saleUp .image-area>.right .percent-area .number span:nth-child(1)::after,

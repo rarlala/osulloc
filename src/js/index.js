@@ -218,6 +218,7 @@ $(function() {
       $gnbArea.css({
         position: 'fixed',
         background: '#fff',
+        borderBottom: '1px solid #ccc'
       });
       $gnb.css({
         background: '#fff',
