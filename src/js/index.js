@@ -353,11 +353,10 @@ $(function() {
   // scroll event
 
   // 고정 헤더 [완료]
-  // top button 클릭 시 맨 위로 움직이게 하기 [미완료]
+  // top button 클릭 시 맨 위로 움직이게 하기 [완료]
 
   var $window = $(window),
-    $btnTop = $('.btn-top'),
-    $scrollableElement = $('html', 'body');
+    $btnTop = $('.btn-top');
 
   var $logoArea = $('header .logo-area'),
     $gnbArea = $('header .gnb-area'),
@@ -403,6 +402,8 @@ $(function() {
         filter: 'invert(0%)',
       });
     } else if ($window.scrollTop() > 0 && $window.scrollTop() <= 300) {
+      $btnTop.stop(true).animate({right: '-100px'});
+
       $logoArea.css({
         display: 'none',
       });
@@ -442,20 +443,13 @@ $(function() {
           filter: 'invert(100%)',
         });
     } else if ($window.scrollTop() > 300) {
-      $btnTop.stop(true).animate({
-        right: '10px',
-      },
-      200
-    );
-      $btnTop.removeClass('hidden');
+      $btnTop.stop(true).animate({right: '10px',},200);
     }
   });
 
-  // $btnTop.on('click', function (e) {
-  //   console.log('click');
-  //   $scrollAbleElement.animate({ scrollTop: 0 }, 2000, 'swing');
-  // });
-
+  $btnTop.on('click', function() {
+    $('html').animate({scrollTop : 0}, 500);
+  });
 
   $window.trigger('scroll');
 });
