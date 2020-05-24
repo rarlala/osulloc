@@ -108,8 +108,6 @@ $(function() {
       });
 
       if ($reviewArrowClick === 0) {
-        console.log(0);
-
         $reviewPrevArrow.css({
           filter: 'invert(80%)',
         });
@@ -176,8 +174,6 @@ $(function() {
       });
 
       if ($saleArrowClick === 0) {
-        console.log(0);
-
         $salePrevArrow.css({
           filter: 'invert(80%)',
         });
@@ -195,7 +191,6 @@ $(function() {
       marginLeft: $saleMargin + 'px',
     });
 
-    console.log($saleMargin);
   });
 
   $saleNextArrow.on('click', function () {
@@ -226,7 +221,6 @@ $(function() {
       marginLeft: $saleMargin + 'px',
     });
 
-    console.log($saleMargin);
   });
 
   // -------------------------------------------------------------------------
@@ -401,8 +395,9 @@ $(function() {
       $addMenu.find('.add-menu').css({
         filter: 'invert(0%)',
       });
+      $btnTop.stop(true).animate({right: '-100px'},300);
     } else if ($window.scrollTop() > 0 && $window.scrollTop() <= 300) {
-      $btnTop.stop(true).animate({right: '-100px'});
+      $btnTop.stop(true).animate({right: '-100px'},300);
 
       $logoArea.css({
         display: 'none',
@@ -443,7 +438,7 @@ $(function() {
           filter: 'invert(100%)',
         });
     } else if ($window.scrollTop() > 300) {
-      $btnTop.stop(true).animate({right: '10px',},200);
+      $btnTop.stop(true).animate({right: '10px',},300);
     }
   });
 
