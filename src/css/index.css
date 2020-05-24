@@ -61,6 +61,25 @@ footer .wrap {
   background: url('../img/review/arr_r_12x21.png') no-repeat center;
 }
 
+/* progress Bar 공통 */
+
+.progressBar {
+  position: absolute;
+  top: 100px;
+  right: 200px;
+  width: 540px;
+  height: 3px;
+  background: #efefef;
+}
+
+.progressBar .progress {
+  position: absolute;
+  top: 0;
+  width: 16.66%;
+  height: 3px;
+  background: #000;
+}
+
 /* 나뭇잎 공통 */
 
 .section-title {
@@ -533,7 +552,7 @@ header .gnb-area .addmenu-list li .add-menu li+li {
 
 .weekly-best .rank-container {
   display: none;
-  width: 100vw;
+  width: 2850px;
   counter-reset: item;
   list-style-type: none;
   font-size: 0;
@@ -695,29 +714,20 @@ header .gnb-area .addmenu-list li .add-menu li+li {
   margin-right: 5px;
 }
 
+.weekly-best .progressBar,
+.weekly-best .arrow-area {
+  display: none;
+}
+
+.weekly-best .progressBar.active,
+.weekly-best .arrow-area.active {
+  display: inline-block;
+}
+
 .weekly-best .sale h3 {
   position: absolute;
   top: 82px;
   left: 120px;
-}
-
-/* progress Bar 공통 */
-
-.progressBar {
-  position: absolute;
-  top: 100px;
-  right: 200px;
-  width: 540px;
-  height: 3px;
-  background: #efefef;
-}
-
-.progressBar .progress {
-  position: absolute;
-  top: 0;
-  width: 20%;
-  height: 3px;
-  background: #000;
 }
 
 .rank-container.sale {
@@ -858,6 +868,7 @@ header .gnb-area .addmenu-list li .add-menu li+li {
 }
 
 .tea-ware-shop-left .move {
+  display: inline-block;
   margin-top: 30px;
   font-size: 20px;
 }
@@ -1007,7 +1018,7 @@ header .gnb-area .addmenu-list li .add-menu li+li {
   font-size: 36px;
 }
 
-.today-price .today-price-content .top .tommorow-item-area {
+.today-price .today-price-content .top .tomorrow-item-area {
   position: absolute;
   right: 20px;
   bottom: -50px;
@@ -1287,7 +1298,7 @@ header .gnb-area .addmenu-list li .add-menu li+li {
   width: 927px;
 }
 
-.shop .slide-area .top>ul>li img {
+.shop .slide-area .top>ul>li video {
   width: 927px;
   display: inline-block;
 }

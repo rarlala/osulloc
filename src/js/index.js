@@ -9,26 +9,26 @@ $(function() {
   // 2. 이미지 바꾸기 [완료]
   // 3. 리뷰보기 | 장바구니 표시 [완료]
 
-  var $weeklylist = $('.weekly-best .rank-container li');
+  var $weeklyList = $('.weekly-best .rank-container li');
 
-  $weeklylist
-    .on('mouseover', function() {
-      var img_src = $(this).find('img').attr("src");
-      var new_img_src = img_src.split('.')[1];
-      $(this).find('img').css('opacity', '0').stop().attr("src", '.' + new_img_src + '-1.png').animate({
-        opacity: 1
-      }, 500);
-      $(this).find('.detail').removeClass('hidden');
-    })
-    .on('mouseout', function() {
-      var img_src = $(this).find('img').attr("src");
-      var new_img_src = img_src.split('-')[0];
+  $weeklyList
+  .on('mouseover', function() {
+    var img_src = $(this).find('img').attr("src");
+    var new_img_src = img_src.split('.')[1];
+    $(this).find('img').css('opacity', '0').stop().attr("src", '.' + new_img_src + '-1.png').animate({
+      opacity: 1
+    }, 500);
+    $(this).find('.detail').removeClass('hidden');
+  })
+  .on('mouseout', function() {
+    var img_src = $(this).find('img').attr("src");
+    var new_img_src = img_src.split('-')[0];
 
-      $(this).find('img').css('opacity', '0').stop().attr("src", new_img_src + '.png').animate({
-        opacity: 1
-      }, 500);
-      $(this).find('.detail').addClass('hidden');
-    })
+    $(this).find('img').css('opacity', '0').stop().attr("src", new_img_src + '.png').animate({
+      opacity: 1
+    }, 500);
+    $(this).find('.detail').addClass('hidden');
+  })
 
   // -------------------------------------------------------------------------
 
@@ -57,7 +57,7 @@ $(function() {
       $weeklyBest.find('.sale > .arrow-area').removeClass('active');
     }
 
-    if ($weeklyBest.find('.review > .progressBar').hasClass('active')) {
+    if (!$weeklyBest.find('.review > .progressBar').hasClass('active')) {
       $weeklyBest.find('.review > .progressBar').addClass('active');
       $weeklyBest.find('.sale > .progressBar').removeClass('active');
     }
@@ -83,32 +83,176 @@ $(function() {
       $weeklyBest.find('.sale > .progressBar').addClass('active');
       $weeklyBest.find('.review > .progressBar').removeClass('active');
     }
-  })
+  });
 
   // -------------------------------------------------------------------------
 
-  // shopt list hover 효과 [완료]
+  // weekly best arrow slide 처리 [완료]
+
+  var $reviewRankContainer = $('.weekly-best .wrap .review .rank-container'),
+    $reviewPrevArrow = $('.weekly-best .wrap .review .arrow-area .prev'),
+    $reviewNextArrow = $('.weekly-best .wrap .review .arrow-area .next'),
+    $reviewProgress = $('.weekly-best .wrap .review .progressBar .progress'),
+    $reviewArrowClick = 0,
+    $reviewMargin = 0,
+    $r_progress = 16.66;
+
+  $reviewPrevArrow.on('click', function () {
+    if ($reviewArrowClick > 0) {
+      $reviewArrowClick -= 1;
+      $reviewMargin = $reviewArrowClick * -290;
+      $r_progress -= 16.66;
+
+      $reviewProgress.stop(true).animate({
+        width: $r_progress + '%',
+      });
+
+      if ($reviewArrowClick === 0) {
+        console.log(0);
+
+        $reviewPrevArrow.css({
+          filter: 'invert(80%)',
+        });
+      }
+
+      if ($reviewArrowClick !== 5) {
+        $reviewNextArrow.css({
+          filter: 'invert(0%)',
+        });
+      }
+    }
+
+    // 오른쪽으로 이미지 이동
+    $reviewRankContainer.stop(true).animate({
+      marginLeft: $reviewMargin + 'px',
+    });
+  });
+
+  $reviewNextArrow.on('click', function () {
+    if ($reviewArrowClick < 5) {
+      $reviewArrowClick += 1;
+      $reviewMargin = $reviewArrowClick * -290;
+      $r_progress = ($reviewArrowClick + 1) * 16.66;
+
+      $reviewProgress.stop(true).animate({
+        width: $r_progress + '%',
+      });
+
+      if ($reviewArrowClick === 5) {
+        $reviewNextArrow.css({
+          filter: 'invert(80%)',
+        });
+      }
+
+      if ($reviewArrowClick !== 0) {
+        $reviewPrevArrow.css({
+          filter: 'invert(0%)',
+        });
+      }
+    }
+
+    // 왼쪽으로 이미지 이동
+    $reviewRankContainer.stop(true).animate({
+      marginLeft: $reviewMargin + 'px',
+    });
+  });
+
+  var $saleRankContainer = $('.weekly-best .wrap .sale .rank-container'),
+    $salePrevArrow = $('.weekly-best .wrap .sale .arrow-area .prev'),
+    $saleNextArrow = $('.weekly-best .wrap .sale .arrow-area .next'),
+    $saleProgress = $('.weekly-best .wrap .sale .progressBar .progress'),
+    $saleMargin = 0,
+    $saleArrowClick = 0,
+    $s_progress = 16.66;
+
+  $salePrevArrow.on('click', function () {
+    if ($saleArrowClick > 0) {
+      $saleArrowClick -= 1;
+      $saleMargin = $saleArrowClick * -290;
+      $s_progress -= 16.66;
+
+      $saleProgress.stop(true).animate({
+        width: $s_progress + '%',
+      });
+
+      if ($saleArrowClick === 0) {
+        console.log(0);
+
+        $salePrevArrow.css({
+          filter: 'invert(80%)',
+        });
+      }
+
+      if ($saleArrowClick !== 5) {
+        $saleNextArrow.css({
+          filter: 'invert(0%)',
+        });
+      }
+    }
+
+    // 오른쪽으로 이미지 이동
+    $saleRankContainer.stop(true).animate({
+      marginLeft: $saleMargin + 'px',
+    });
+
+    console.log($saleMargin);
+  });
+
+  $saleNextArrow.on('click', function () {
+    if ($saleArrowClick < 5) {
+      $saleArrowClick += 1;
+      $saleMargin = $saleArrowClick * -290;
+      $s_progress = ($saleArrowClick + 1) * 16.66;
+
+      $saleProgress.stop(true).animate({
+        width: $s_progress + '%',
+      });
+
+      if ($saleArrowClick === 5) {
+        $saleNextArrow.css({
+          filter: 'invert(80%)',
+        });
+      }
+
+      if ($saleArrowClick !== 0) {
+        $salePrevArrow.css({
+          filter: 'invert(0%)',
+        });
+      }
+    }
+
+    // 왼쪽으로 이미지 이동
+    $saleRankContainer.stop(true).animate({
+      marginLeft: $saleMargin + 'px',
+    });
+
+    console.log($saleMargin);
+  });
+
+  // -------------------------------------------------------------------------
+
+  // shop list hover 효과 [완료]
 
   var $shopList = $('.shop .item-list li');
 
   $shopList
-    .on('mouseover', function() {
-      var img_src = $(this).find('img').attr("src");
-      var new_img_src = img_src.split('.')[1];
-      $(this).find('img').css('opacity', '0').stop().attr("src", '.' + new_img_src + '-1.png').animate({
-        opacity: 1
-      }, 500);
-      $(this).find('.detail').removeClass('hidden');
-    })
-    .on('mouseout', function() {
-      var img_src = $(this).find('img').attr("src");
-      var new_img_src = img_src.split('-')[0];
+  .on('mouseover', function() {
+    var img_src = $(this).find('img').attr("src");
+    var new_img_src = img_src.split('.')[1];
+    $(this).find('img').css('opacity', '0').stop().attr("src", '.' + new_img_src + '-1.png').animate({
+      opacity: 1
+    }, 500);
+    $(this).find('.detail').removeClass('hidden');
+  })
+  .on('mouseout', function() {
+    var img_src = $(this).find('img').attr("src");
+    var new_img_src = img_src.split('-')[0];
 
-      $(this).find('img').css('opacity', '0').stop().attr("src", new_img_src + '.png').animate({
-        opacity: 1
-      }, 500);
-      $(this).find('.detail').addClass('hidden');
-    })
+    $(this).find('img').css('opacity', '0').stop().attr("src", new_img_src + '.png').animate({
+      opacity: 1
+    }, 500);
+    $(this).find('.detail').addClass('hidden');
+  })
 
   // -------------------------------------------------------------------------
 
@@ -117,22 +261,22 @@ $(function() {
   var $mdPickList = $('.md-pick-right .md-pick-list li');
 
   $mdPickList.find('a')
-    .on('mouseover', function() {
-      var img_src = $(this).find('img').attr("src");
-      var new_img_src = img_src.split('0')[0];
-      $(this).find('img').css('opacity', '0').stop().attr("src", new_img_src + '-hover.png').animate({
-        opacity: 1
-      }, 500);
-    })
-    .on('mouseout', function() {
-      var $num = $(this).parent().index();
-      var img_src = $('.md-pick-list li').eq($num).find('img').attr("src");
-      var new_img_src = img_src.split('-hover')[0];
+  .on('mouseover', function() {
+    var img_src = $(this).find('img').attr("src");
+    var new_img_src = img_src.split('0')[0];
+    $(this).find('img').css('opacity', '0').stop().attr("src", new_img_src + '-hover.png').animate({
+      opacity: 1
+    }, 500);
+  })
+  .on('mouseout', function() {
+    var $num = $(this).parent().index();
+    var img_src = $('.md-pick-list li').eq($num).find('img').attr("src");
+    var new_img_src = img_src.split('-hover')[0];
 
-      $(this).find('img').css('opacity', '0').stop().attr("src", new_img_src + '0' + ($num + 1) + '.png').animate({
-        opacity: 1
-      }, 500);
-    })
+    $(this).find('img').css('opacity', '0').stop().attr("src", new_img_src + '0' + ($num + 1) + '.png').animate({
+      opacity: 1
+    }, 500);
+  })
 
   // -------------------------------------------------------------------------
 
@@ -195,9 +339,9 @@ $(function() {
 
   setInterval(function() {
     const nowTime = new Date();
-    const hours = 24 - nowTime.getHours();
-    const minutes = 60 - nowTime.getMinutes();
-    const seconds = 60 - nowTime.getSeconds();
+    const hours = 23 - nowTime.getHours();
+    const minutes = 59 - nowTime.getMinutes();
+    const seconds = 59 - nowTime.getSeconds();
 
     const time = (hours < 10 ? '0' + hours : hours) + ':' + (minutes < 10 ? '0' + minutes : minutes) + ':' + (seconds < 10 ? '0' + seconds : seconds);
 
@@ -209,7 +353,7 @@ $(function() {
   // scroll event
 
   // 고정 헤더 [완료]
-  // top button 클릭 시 맨 위로 움직이게 하기 [완료]
+  // top button 클릭 시 맨 위로 움직이게 하기 [미완료]
 
   var $window = $(window),
     $btnTop = $('.btn-top'),
@@ -258,7 +402,7 @@ $(function() {
       $addMenu.find('.add-menu').css({
         filter: 'invert(0%)',
       });
-    } else if ($window.scrollTop() > 0) {
+    } else if ($window.scrollTop() > 0 && $window.scrollTop() <= 300) {
       $logoArea.css({
         display: 'none',
       });
@@ -288,35 +432,30 @@ $(function() {
             color: '#000',
           });
         });
-      $gnbLogo.css({
-        display: 'inline-block',
-      });
-      $addMenu.css({
-        filter: 'invert(100%)',
-      });
-      $addMenu.find('.add-menu').css({
-        filter: 'invert(100%)',
-      });
+        $gnbLogo.css({
+          display: 'inline-block',
+        });
+        $addMenu.css({
+          filter: 'invert(100%)',
+        });
+        $addMenu.find('.add-menu').css({
+          filter: 'invert(100%)',
+        });
     } else if ($window.scrollTop() > 300) {
       $btnTop.stop(true).animate({
-          right: '10px',
-        },
-        200
-      );
+        right: '10px',
+      },
+      200
+    );
       $btnTop.removeClass('hidden');
-    } else {
-      $btnTop.stop(true).animate({
-        right: '-100px'
-      }, 200);
-      $btnTop.addClass('hidden');
     }
   });
 
-  $btnTop.on('click', function(e) {
-    $scrollableElement.animate({
-      scrollTop: 0
-    }, 1000, 'swing');
-  })
+  // $btnTop.on('click', function (e) {
+  //   console.log('click');
+  //   $scrollAbleElement.animate({ scrollTop: 0 }, 2000, 'swing');
+  // });
+
 
   $window.trigger('scroll');
 });
