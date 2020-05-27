@@ -12,23 +12,23 @@ $(function() {
   var $weeklyList = $('.weekly-best .rank-container li');
 
   $weeklyList
-  .on('mouseover', function() {
-    var img_src = $(this).find('img').attr("src");
-    var new_img_src = img_src.split('.')[1];
-    $(this).find('img').css('opacity', '0').stop().attr("src", '.' + new_img_src + '-1.png').animate({
-      opacity: 1
-    }, 500);
-    $(this).find('.detail').removeClass('hidden');
-  })
-  .on('mouseout', function() {
-    var img_src = $(this).find('img').attr("src");
-    var new_img_src = img_src.split('-')[0];
+    .on('mouseover', function() {
+      var img_src = $(this).find('img').attr("src");
+      var new_img_src = img_src.split('.')[1];
+      $(this).find('img').css('opacity', '0').stop().attr("src", '.' + new_img_src + '-1.png').animate({
+        opacity: 1
+      }, 500);
+      $(this).find('.detail').removeClass('hidden');
+    })
+    .on('mouseout', function() {
+      var img_src = $(this).find('img').attr("src");
+      var new_img_src = img_src.split('-')[0];
 
-    $(this).find('img').css('opacity', '0').stop().attr("src", new_img_src + '.png').animate({
-      opacity: 1
-    }, 500);
-    $(this).find('.detail').addClass('hidden');
-  })
+      $(this).find('img').css('opacity', '0').stop().attr("src", new_img_src + '.png').animate({
+        opacity: 1
+      }, 500);
+      $(this).find('.detail').addClass('hidden');
+    })
 
   // -------------------------------------------------------------------------
 
@@ -97,7 +97,7 @@ $(function() {
     $reviewMargin = 0,
     $r_progress = 16.66;
 
-  $reviewPrevArrow.on('click', function () {
+  $reviewPrevArrow.on('click', function() {
     if ($reviewArrowClick > 0) {
       $reviewArrowClick -= 1;
       $reviewMargin = $reviewArrowClick * -290;
@@ -126,7 +126,7 @@ $(function() {
     });
   });
 
-  $reviewNextArrow.on('click', function () {
+  $reviewNextArrow.on('click', function() {
     if ($reviewArrowClick < 5) {
       $reviewArrowClick += 1;
       $reviewMargin = $reviewArrowClick * -290;
@@ -163,7 +163,7 @@ $(function() {
     $saleArrowClick = 0,
     $s_progress = 16.66;
 
-  $salePrevArrow.on('click', function () {
+  $salePrevArrow.on('click', function() {
     if ($saleArrowClick > 0) {
       $saleArrowClick -= 1;
       $saleMargin = $saleArrowClick * -290;
@@ -193,7 +193,7 @@ $(function() {
 
   });
 
-  $saleNextArrow.on('click', function () {
+  $saleNextArrow.on('click', function() {
     if ($saleArrowClick < 5) {
       $saleArrowClick += 1;
       $saleMargin = $saleArrowClick * -290;
@@ -230,23 +230,23 @@ $(function() {
   var $shopList = $('.shop .item-list li');
 
   $shopList
-  .on('mouseover', function() {
-    var img_src = $(this).find('img').attr("src");
-    var new_img_src = img_src.split('.')[1];
-    $(this).find('img').css('opacity', '0').stop().attr("src", '.' + new_img_src + '-1.png').animate({
-      opacity: 1
-    }, 500);
-    $(this).find('.detail').removeClass('hidden');
-  })
-  .on('mouseout', function() {
-    var img_src = $(this).find('img').attr("src");
-    var new_img_src = img_src.split('-')[0];
+    .on('mouseover', function() {
+      var img_src = $(this).find('img').attr("src");
+      var new_img_src = img_src.split('.')[1];
+      $(this).find('img').css('opacity', '0').stop().attr("src", '.' + new_img_src + '-1.png').animate({
+        opacity: 1
+      }, 500);
+      $(this).find('.detail').removeClass('hidden');
+    })
+    .on('mouseout', function() {
+      var img_src = $(this).find('img').attr("src");
+      var new_img_src = img_src.split('-')[0];
 
-    $(this).find('img').css('opacity', '0').stop().attr("src", new_img_src + '.png').animate({
-      opacity: 1
-    }, 500);
-    $(this).find('.detail').addClass('hidden');
-  })
+      $(this).find('img').css('opacity', '0').stop().attr("src", new_img_src + '.png').animate({
+        opacity: 1
+      }, 500);
+      $(this).find('.detail').addClass('hidden');
+    })
 
   // -------------------------------------------------------------------------
 
@@ -255,22 +255,22 @@ $(function() {
   var $mdPickList = $('.md-pick-right .md-pick-list li');
 
   $mdPickList.find('a')
-  .on('mouseover', function() {
-    var img_src = $(this).find('img').attr("src");
-    var new_img_src = img_src.split('0')[0];
-    $(this).find('img').css('opacity', '0').stop().attr("src", new_img_src + '-hover.png').animate({
-      opacity: 1
-    }, 500);
-  })
-  .on('mouseout', function() {
-    var $num = $(this).parent().index();
-    var img_src = $('.md-pick-list li').eq($num).find('img').attr("src");
-    var new_img_src = img_src.split('-hover')[0];
+    .on('mouseover', function() {
+      var img_src = $(this).find('img').attr("src");
+      var new_img_src = img_src.split('0')[0];
+      $(this).find('img').css('opacity', '0').stop().attr("src", new_img_src + '-hover.png').animate({
+        opacity: 1
+      }, 500);
+    })
+    .on('mouseout', function() {
+      var $num = $(this).parent().index();
+      var img_src = $('.md-pick-list li').eq($num).find('img').attr("src");
+      var new_img_src = img_src.split('-hover')[0];
 
-    $(this).find('img').css('opacity', '0').stop().attr("src", new_img_src + '0' + ($num + 1) + '.png').animate({
-      opacity: 1
-    }, 500);
-  })
+      $(this).find('img').css('opacity', '0').stop().attr("src", new_img_src + '0' + ($num + 1) + '.png').animate({
+        opacity: 1
+      }, 500);
+    })
 
   // -------------------------------------------------------------------------
 
@@ -332,12 +332,12 @@ $(function() {
   var $timer = $('.today-price .timer');
 
   setInterval(function() {
-    const nowTime = new Date();
-    const hours = 23 - nowTime.getHours();
-    const minutes = 59 - nowTime.getMinutes();
-    const seconds = 59 - nowTime.getSeconds();
+    var nowTime = new Date();
+    var hours = 23 - nowTime.getHours();
+    var minutes = 59 - nowTime.getMinutes();
+    var seconds = 59 - nowTime.getSeconds();
 
-    const time = (hours < 10 ? '0' + hours : hours) + ':' + (minutes < 10 ? '0' + minutes : minutes) + ':' + (seconds < 10 ? '0' + seconds : seconds);
+    var time = (hours < 10 ? '0' + hours : hours) + ':' + (minutes < 10 ? '0' + minutes : minutes) + ':' + (seconds < 10 ? '0' + seconds : seconds);
 
     $timer.text(time);
   }, 1000);
@@ -389,15 +389,18 @@ $(function() {
       $gnbLogo.css({
         display: 'none',
       });
-      $addMenu.css({
-        filter: 'invert(0%)',
-      });
-      $addMenu.find('.add-menu').css({
-        filter: 'invert(0%)',
-      });
-      $btnTop.stop(true).animate({right: '-100px'},300);
+
+      $addMenu.filter('.btn-search').addClass('top');
+      $addMenu.filter('.cart').addClass('top');
+      $addMenu.filter('.add').addClass('top');
+
+      $btnTop.stop(true).animate({
+        right: '-100px'
+      }, 300);
     } else if ($window.scrollTop() > 0 && $window.scrollTop() <= 300) {
-      $btnTop.stop(true).animate({right: '-100px'},300);
+      $btnTop.stop(true).animate({
+        right: '-100px'
+      }, 300);
 
       $logoArea.css({
         display: 'none',
@@ -428,22 +431,34 @@ $(function() {
             color: '#000',
           });
         });
-        $gnbLogo.css({
-          display: 'inline-block',
-        });
-        $addMenu.css({
-          filter: 'invert(100%)',
-        });
-        $addMenu.find('.add-menu').css({
-          filter: 'invert(100%)',
-        });
+      $gnbLogo.css({
+        display: 'inline-block',
+      });
+
+      $addMenu.filter('.btn-search').removeClass('top');
+      $addMenu.filter('.cart').removeClass('top');
+      $addMenu.filter('.add').removeClass('top');
+
+      $addMenu.filter('.btn-search').css({
+        background: 'url(../src/img/header/ico_search2_off.png) no-repeat center'
+      });
+      $addMenu.filter('.cart').css({
+        background: 'url(../src/img/header/ico_gnbBucket2_off.png) no-repeat center'
+      });
+      $addMenu.filter('.add').css({
+        background: 'url(../src/img/header/ico_gnbMore2_off.png) no-repeat center'
+      });
     } else if ($window.scrollTop() > 300) {
-      $btnTop.stop(true).animate({right: '10px',},300);
+      $btnTop.stop(true).animate({
+        right: '10px',
+      }, 300);
     }
   });
 
   $btnTop.on('click', function() {
-    $('html').animate({scrollTop : 0}, 500);
+    $('html').animate({
+      scrollTop: 0
+    }, 500);
   });
 
   $window.trigger('scroll');

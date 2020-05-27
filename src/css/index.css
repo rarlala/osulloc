@@ -1,7 +1,8 @@
 @charset "utf-8";
 
 body {
-  font-family:'Noto Sans KR', '맑은 고딕';
+  font-family: 'Noto Sans KR', '맑은 고딕';
+  overflow-x: hidden;
 }
 
 .a11y-hidden {
@@ -31,7 +32,7 @@ header .gnb-area .gnb .sub-menu .wrap,
 .sns,
 .notice .wrap,
 footer .wrap {
-  max-width: 1400px;
+  width: 1400px;
   margin: 0 auto;
 }
 
@@ -123,7 +124,7 @@ header .logo-area .logo a {
 header .logo-area .tnb {
   position: absolute;
   top: 20%;
-  right: 10px;
+  right: 20px;
 }
 
 header .logo-area .tnb .util li {
@@ -164,15 +165,18 @@ header .gnb-area .gnb {
 }
 
 header .gnb-area .gnb h3 {
+  /*  position: absolute;*/
   float: left;
-  margin: 15px 0 0 40px;
+  /*  top: 50%;*/
+  /*  transition: translateY(-50%);*/
+  margin: 20px 0 0 40px;
   width: 90px;
-  height: 32px;
+  height: 40px;
   display: none;
 }
 
 header .gnb-area .gnb h3 a {
-  display: inline-block;
+  display: block;
   background: url('../img/header/logo_m.png') no-repeat center;
   background-size: cover;
   width: 90px;
@@ -303,18 +307,18 @@ header .gnb-area .gnb .addmenu-list {
 }
 
 header .gnb-area .addmenu-list li {
-  height: inherit;
+  height: 63px;
   width: 35px;
   display: inline-block;
 }
 
-header .gnb-area .addmenu-list .btn-search button {
+header .gnb-area .addmenu-list button {
   border: none;
   background: none;
   position: relative;
 }
 
-header .gnb-area .addmenu-list .btn-search::after {
+header .gnb-area .addmenu-list .btn-search.top::after {
   content: '';
   width: 40px;
   height: 40px;
@@ -330,8 +334,7 @@ header .gnb-area .addmenu-list .add {
   position: relative;
 }
 
-header .gnb-area .addmenu-list .cart a::after,
-header .gnb-area .addmenu-list .add::after {
+header .gnb-area .addmenu-list .cart.top::after {
   content: '';
   width: 40px;
   height: 40px;
@@ -342,7 +345,14 @@ header .gnb-area .addmenu-list .add::after {
   background: url('../img/header/ico_gnbBucket_off.png') no-repeat center;
 }
 
-header .gnb-area .addmenu-list .add::after {
+header .gnb-area .addmenu-list .add.top::after {
+  content: '';
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
   background: url('../img/header/ico_gnbMore_off.png') no-repeat center;
 }
 
@@ -1069,6 +1079,7 @@ header .gnb-area .addmenu-list li .add-menu li+li {
 }
 
 .custom-recommendation a:hover {
+  -webkit-filter: invert(80%);
   filter: opacity(80%);
 }
 
@@ -1350,17 +1361,20 @@ header .gnb-area .addmenu-list li .add-menu li+li {
 .shop .bottom .prev {
   left: 100px;
   top: 0;
+  -webkit-filter: invert(80%);
   filter: invert(80%);
 }
 
 .shop .bottom .next {
   right: 0;
+  -webkit-filter: invert(80%);
   filter: invert(80%);
 }
 
 .shop .bottom .prev:hover,
 .shop .bottom .next:hover {
   right: 0;
+  -webkit-filter: invert(80%);
   filter: invert(100%);
 }
 
