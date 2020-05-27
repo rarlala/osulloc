@@ -278,7 +278,7 @@ $(function() {
 
   // 1. n초마다 아래 'slide-select-area' 영역의 배경이 채워져야한다. [완료]
   // 2. n초마다 이미지가 바뀌어야한다. [완료]
-  // 3. 특정 'slide-select-area' 클릭 시 해당하는 영역의 배경이 나타나야한다. [보류]
+  // 3. 특정 'slide-select-area' 클릭 시 해당하는 영역의 배경이 나타나야한다. [완료]
   // 4. 일시정지 버튼 클릭 시 시작버튼으로 바뀌어야한다.[완료]
   // 5. 일시정지 버튼 클릭 시 움직이던 시간을 멈춰야한다.[완료]
 
@@ -316,16 +316,18 @@ $(function() {
     }
   });
 
-  //   $selectList.find('li').on('click', function () {
-  //     $selectList.find('.active').removeClass('active');
-  //     $visualSlide.find('.active').removeClass('active');
+  $selectList.find('li').on('click', function() {
+    $(this).parent().find('.active').removeClass('active');
+    $(this).parent().parent().parent().find('.imag-slide .active').removeClass('active');
 
-  //     $selectNum = $(this).index();
-  //     console.log($nowSelect, $selectNum);
+    $newSelectNum = $(this).index();
+    $(this).addClass('active');
+    $(this).parent().parent().parent().find('.img-slide a').eq($newSelectNum).addClass('active');
 
-  //     $visualSlide.find('a').eq($selectNum).addClass('active');
-  //     $(this).eq($selectNum).addClass('active');
-  //   });
+    $nowSelect = ($newSelectNum) % $slideNum;
+    clearInterval(repeat);
+    repeat = setInterval(NextSlide, 5000);
+  });
 
   // -------------------------------------------------------------------------
 
