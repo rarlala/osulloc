@@ -2,6 +2,28 @@ $(function() {
 
   // 메뉴 n번째 선택 시 해당하는 ul의 색상 변경 [미완료]
 
+  // var $gnbList = $('.gnb-list li'),
+  //   $subMenu = $('.sub-menu-area li');
+
+  // $gnbList
+  //   .on('mouseover', function() {
+  //     $gnbList.filter('.active').removeClass('active');
+  //     $(this).find('a').css({
+  //       color: '#daf100'
+  //     })
+  //     $(this).parent().parent().find('.sub-menu-area').find('.active').removeClass('active');
+
+  //     $(this).addClass('active');
+  //     $listNum = $(this).index();
+  //     $(this).parent().parent().find('.sub-menu-area').find('ul').eq($listNum).addClass('active');
+  //   })
+
+  // $subMenu.on('mouseover', function() {
+  //   $(this).parent().parent().parent().parent().find('.gnb-list').css({
+  //     background: 'red'
+  //   })
+  // })
+
   // -------------------------------------------------------------------------
 
   // weekly-best 내 li hover 효과
@@ -9,7 +31,7 @@ $(function() {
   // 2. 이미지 바꾸기 [완료]
   // 3. 리뷰보기 | 장바구니 표시 [완료]
 
-  var $weeklyList = $('.weekly-best .rank-container li');
+  var $weeklyList = $('.weekly-best .rank-container li .image-wrap');
 
   $weeklyList
     .on('mouseover', function() {
@@ -225,24 +247,63 @@ $(function() {
 
   // -------------------------------------------------------------------------
 
+  // tea-ware-shop-right 탭으로 이미지 변경하기
+
+  var $teaWareArea = $('.tea-ware-shop-right .wrap'),
+    $teaWareLeft = $('.tea-ware-shop .arrow-area .prev'),
+    $teaWareRight = $('.tea-ware-shop .arrow-area .next')
+  $teaWareProgress = $('.tea-ware-shop .progressBar .progress');
+
+  $teaWareLeft.on('click', function() {
+    $(this).css({
+      filter: 'invert(80%)'
+    })
+    $teaWareRight.css({
+      filter: 'invert(0)'
+    })
+    $teaWareArea.stop(true).animate({
+      marginLeft: '',
+    })
+    $teaWareProgress.stop(true).animate({
+      width: '50%'
+    })
+  })
+
+  $teaWareRight.on('click', function() {
+    $(this).css({
+      filter: 'invert(80%)'
+    })
+    $teaWareLeft.css({
+      filter: 'invert(0)'
+    })
+    $teaWareArea.stop(true).animate({
+      marginLeft: '-1050px',
+    })
+    $teaWareProgress.stop(true).animate({
+      width: '100%'
+    })
+  })
+
+  // -------------------------------------------------------------------------
+
   // shop list hover 효과 [완료]
 
-  var $shopList = $('.shop .item-list li');
+  var $shopList = $('.shop .item-list li img');
 
   $shopList
     .on('mouseover', function() {
-      var img_src = $(this).find('img').attr("src");
+      var img_src = $(this).attr("src");
       var new_img_src = img_src.split('.')[1];
-      $(this).find('img').css('opacity', '0').stop().attr("src", '.' + new_img_src + '-1.png').animate({
+      $(this).css('opacity', '0').stop().attr("src", '.' + new_img_src + '-1.png').animate({
         opacity: 1
       }, 500);
       $(this).find('.detail').removeClass('hidden');
     })
     .on('mouseout', function() {
-      var img_src = $(this).find('img').attr("src");
+      var img_src = $(this).attr("src");
       var new_img_src = img_src.split('-')[0];
 
-      $(this).find('img').css('opacity', '0').stop().attr("src", new_img_src + '.png').animate({
+      $(this).css('opacity', '0').stop().attr("src", new_img_src + '.png').animate({
         opacity: 1
       }, 500);
       $(this).find('.detail').addClass('hidden');

@@ -165,10 +165,7 @@ header .gnb-area .gnb {
 }
 
 header .gnb-area .gnb h3 {
-  /*  position: absolute;*/
   float: left;
-  /*  top: 50%;*/
-  /*  transition: translateY(-50%);*/
   margin: 20px 0 0 40px;
   width: 90px;
   height: 40px;
@@ -204,9 +201,9 @@ header .gnb-area .gnb .gnb-list>li>a {
   line-height: 63px;
 }
 
-header .gnb-area .gnb .gnb-list>li:hover a {
-  color: #daf100;
+header .gnb-area .gnb .gnb-list>li.active a {
   position: relative;
+  display: inline-block;
 }
 
 header .gnb-area .gnb .gnb-list>li>a:after {
@@ -215,10 +212,10 @@ header .gnb-area .gnb .gnb-list>li>a:after {
   width: 0;
 }
 
-header .gnb-area .gnb .gnb-list>li:hover>a:after {
+header .gnb-area .gnb .gnb-list>li.active:hover>a:after {
   content: '';
   position: absolute;
-  bottom: -10px;
+  bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
   width: 20px;
@@ -295,6 +292,10 @@ header .gnb-area .gnb .sub-menu .wrap ul li a:hover {
   color: #a1af1b;
 }
 
+header .gnb-area .gnb .sub-menu .sub-menu-area .active {
+  color: #555
+}
+
 
 /* add-menu */
 
@@ -355,10 +356,6 @@ header .gnb-area .addmenu-list .add.top::after {
   transform: translateY(-50%);
   background: url('../img/header/ico_gnbMore_off.png') no-repeat center;
 }
-
-/* 해결하지 못한 영역: hover 시 이미지에 filter로 이미지색 변경하기
- header .gnb-area .gnb .addmenu-list>li:hover::after {
-} */
 
 header .gnb-area .addmenu-list li:last-child {
   position: relative;
@@ -891,7 +888,6 @@ header .gnb-area .addmenu-list li .add-menu li+li {
 .tea-ware-shop {
   height: 620px;
   margin: 100px auto;
-  overflow: hidden;
   position: relative;
 }
 
@@ -918,40 +914,50 @@ header .gnb-area .addmenu-list li .add-menu li+li {
 }
 
 .tea-ware-shop-right {
+  overflow: hidden;
   float: right;
   width: 1050px;
   height: inherit;
   margin-top: 70px;
 }
 
-.tea-ware-shop-right .group1 {
-  overflow: hidden;
-  height: inherit;
+.tea-ware-shop-right .wrap {
+  width: 2200px;
 }
 
-.tea-ware-shop-right .group1 a:hover {
+.tea-ware-shop-right .group1,
+.tea-ware-shop-right .group2 {
+  float: left;
+  width: 1050px;
+}
+
+.tea-ware-shop-right .group1 a:hover,
+.tea-ware-shop-right .group2 a:hover {
   transform: scale(1.2);
   transition: all 1s;
 }
 
-.tea-ware-shop-right .group1 .left {
+.tea-ware-shop-right .group1 .left,
+.tea-ware-shop-right .group2 .left {
   float: left;
 }
 
-.tea-ware-shop-right .group1 .left .img-box {
+.tea-ware-shop-right .group1 .left .img-box,
+.tea-ware-shop-right .group2 .left .img-box {
   width: 580px;
   height: 250px;
   overflow: hidden;
 }
 
-.tea-ware-shop-right .group1 .left a {
+.tea-ware-shop-right .group1 .left a,
+.tea-ware-shop-right .group2 .left a {
   width: 580px;
   height: 250px;
-  background: green;
   display: block;
 }
 
-.tea-ware-shop-right .group1 .left .img-box:first-child {
+.tea-ware-shop-right .group1 .left .img-box:first-child,
+.tea-ware-shop-right .group2 .left .img-box:first-child {
   margin-bottom: 50px;
 }
 
@@ -965,18 +971,36 @@ header .gnb-area .addmenu-list li .add-menu li+li {
   background-size: cover;
 }
 
-.tea-ware-shop-right .group1 .right .img-box {
+.tea-ware-shop-right .group1 .right .img-box,
+.tea-ware-shop-right .group2 .right .img-box {
   width: 440px;
   height: 550px;
   overflow: hidden;
   float: right;
 }
 
-.tea-ware-shop-right .group1 .right a {
+.tea-ware-shop-right .group1 .right a,
+.tea-ware-shop-right .group2 .right a {
   display: block;
   width: inherit;
   height: inherit;
   background: url("../img/teaWare/torim.jpg") no-repeat center;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.tea-ware-shop-right .group2 .left .img-box:first-child a {
+  background: url("../img/teaWare/soilbaker.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.tea-ware-shop-right .group2 .left .img-box:nth-child(2) a {
+  background: url("../img/teaWare/sorosi.jpg") no-repeat center top;
+  background-size: cover;
+}
+
+.tea-ware-shop-right .group2 .right a {
+  background: url("../img/teaWare/kwangjuyo.jpg") no-repeat center;
   background-size: cover;
   overflow: hidden;
 }
