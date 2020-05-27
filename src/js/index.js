@@ -335,6 +335,45 @@ $(function() {
 
   // -------------------------------------------------------------------------
 
+  // md-pick 슬라이드 처리
+
+  var $mdPickArea = $('.md-pick-right .md-pick-list'),
+    $mdPickLeft = $('.md-pick-right .arrow-area .prev'),
+    $mdPickRight = $('.md-pick-right .arrow-area .next'),
+    $mdPickProgress = $('.md-pick-right .progressBar .progress');
+
+  $mdPickLeft.on('click', function() {
+    $(this).css({
+      filter: 'invert(80%)'
+    })
+    $mdPickRight.css({
+      filter: 'invert(0)'
+    })
+    $mdPickArea.stop(true).animate({
+      marginLeft: '',
+    })
+    $mdPickProgress.stop(true).animate({
+      width: '50%'
+    })
+  })
+
+  $mdPickRight.on('click', function() {
+    $(this).css({
+      filter: 'invert(80%)'
+    })
+    $mdPickLeft.css({
+      filter: 'invert(0)'
+    })
+    $mdPickArea.stop(true).animate({
+      marginLeft: '-340px',
+    })
+    $mdPickProgress.stop(true).animate({
+      width: '100%'
+    })
+  })
+
+  // -------------------------------------------------------------------------
+
   // visual-slide
 
   // 1. n초마다 아래 'slide-select-area' 영역의 배경이 채워져야한다. [완료]
