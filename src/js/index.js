@@ -303,6 +303,8 @@ $(function() {
   var repeat = setInterval(NextSlide, 5000);
 
   $('.visual .btn-slide-state').on('click', function() {
+    $(this).parent().find('.active').toggleClass('paused')
+
     if ($(this).hasClass('stop')) {
       $(this).removeClass('stop');
       $(this).addClass('start');

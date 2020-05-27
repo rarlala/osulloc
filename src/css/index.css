@@ -507,11 +507,43 @@ header .gnb-area .addmenu-list li .add-menu li+li {
   font-size: 17px;
 }
 
-.visual-wrap .slide-select-area ul li:hover,
-.visual-wrap .slide-select-area ul li.active {
+.visual-wrap .slide-select-area ul li:hover {
   background: #a1af1b;
   color: #fff;
-  transition: all 0.5s;
+  transition: all 0.5s ease;
+}
+
+@keyframes fillSelect {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+.visual-wrap .slide-select-area ul li.active {
+  background: #bbbbbb;
+  position: relative;
+  color: #fff;
+  transform-origin: left;
+  z-index: 1;
+}
+
+.visual-wrap .slide-select-area ul li.active:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: inherit;
+  background: #a1af1b;
+  animation: fillSelect 5s ease;
+  z-index: -1;
+}
+
+.visual-wrap .slide-select-area ul li.active.paused:after {
+  animation-play-state: paused;
 }
 
 .visual-wrap .slide-select-area ul li a {
