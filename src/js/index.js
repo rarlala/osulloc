@@ -448,6 +448,50 @@ $(function() {
 
   // -------------------------------------------------------------------------
 
+  // shop 동영상 슬라이드 [미완료]
+
+  var $shopSlideImg = $('.shop .slide-area .top ul'),
+    $shopArrowPrev = $('.shop .slide-area .bottom .arrow-area .prev'),
+    $shopArrowNext = $('.shop .slide-area .bottom .arrow-area .next'),
+    $shopList = $('.shop .bottom ul li'),
+    num = 0;
+
+  $shopArrowPrev.on('click', function() {
+    if (num > 0) {
+      $shopList.eq(num).removeClass('active')
+      num -= 1;
+
+      $shopSlideImg.stop(true).animate({
+        marginLeft: (-927 * num) + 'px'
+      })
+      $shopList.eq(num).addClass('active')
+    }
+  })
+
+  $shopArrowNext.on('click', function() {
+    if (num < 3) {
+      $shopList.eq(num).removeClass('active')
+      num += 1;
+
+      $shopSlideImg.stop(true).animate({
+        marginLeft: (-927 * num) + 'px'
+      })
+      $shopList.eq(num).addClass('active')
+    }
+  })
+
+  $shopList.on('click', function() {
+    $shopList.filter('.active').removeClass('active');
+    $(this).addClass('active');
+    num = $(this).index();
+    $shopSlideImg.stop(true).animate({
+      marginLeft: (-927 * num) + 'px'
+    })
+    $shopSlideImg.find('li').eq(num).find('video').attr('autoplay', 'true');
+  })
+
+  // -------------------------------------------------------------------------
+
   // scroll event
 
   // 고정 헤더 [완료]
