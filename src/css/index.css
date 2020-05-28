@@ -52,6 +52,8 @@ footer .wrap {
   width: 12px;
   height: 21px;
   background: url('../img/review/arr_l_12x21.png') no-repeat center;
+  -webkit-filter: invert(100%);
+  -ms-filter: invert(100%);
   filter: invert(80%);
 }
 
@@ -815,6 +817,7 @@ header .gnb-area .addmenu-list li .add-menu li+li {
 
 .md-pick-left a .move img {
   -webkit-filter: invert(100%);
+  -ms-filter: invert(100%);
   filter: invert(100%);
   margin-left: 10px;
 }
@@ -1137,6 +1140,7 @@ header .gnb-area .addmenu-list li .add-menu li+li {
 
 .custom-recommendation a:hover {
   -webkit-filter: invert(80%);
+  -ms-filter: invert(80%);
   filter: opacity(80%);
 }
 
@@ -1429,6 +1433,8 @@ header .gnb-area .addmenu-list li .add-menu li+li {
 .shop .bottom .next {
   position: absolute;
   right: 20px;
+  -webkit-filter: invert(100%);
+  -ms-filter: invert(100%);
   filter: invert(80%);
 }
 
@@ -1638,6 +1644,8 @@ header .gnb-area .addmenu-list li .add-menu li+li {
 }
 
 .sns li:hover {
+  -webkit-filter: invert(100%);
+  -ms-filter: invert(100%);
   filter: opacity(0.8);
 }
 
