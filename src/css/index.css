@@ -502,6 +502,7 @@ header .gnb-area .addmenu-list li .add-menu li+li {
   background: #7f7e69;
   color: #fff;
   font-size: 17px;
+  cursor: pointer;
 }
 
 .visual-wrap .slide-select-area ul li:hover {
@@ -550,11 +551,11 @@ header .gnb-area .addmenu-list li .add-menu li+li {
 .visual-wrap .btn-slide-state {
   float: right;
   width: 6%;
-  /* width: 60px; */
   height: 40px;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
   border: none;
   margin-left: 60px;
+  cursor: pointer;
 }
 
 .visual-wrap .btn-slide-state::after {
@@ -1451,6 +1452,7 @@ header .gnb-area .addmenu-list li .add-menu li+li {
   right: 255px;
   font-size: 18px;
   color: #8b8b8b;
+  cursor: pointer;
 }
 
 .shop .item-list .bestseller h3 {
@@ -1465,7 +1467,7 @@ header .gnb-area .addmenu-list li .add-menu li+li {
   right: 15px;
 }
 
-.shop .item-list .active h3 a.active {
+.shop .item-list .active h3 a {
   position: relative;
   color: #748346;
   border-bottom: 3px solid #748346;

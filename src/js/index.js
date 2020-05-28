@@ -1,28 +1,24 @@
-$(function() {
-
+$(function () {
   // 메뉴 n번째 선택 시 해당하는 ul의 색상 변경 [미완료]
 
-  // var $gnbList = $('.gnb-list li'),
-  //   $subMenu = $('.sub-menu-area li');
+  var $gnbList = $('.gnb-list li'),
+    $subMenu = $('.sub-menu-area li');
 
-  // $gnbList
-  //   .on('mouseover', function() {
-  //     $gnbList.filter('.active').removeClass('active');
-  //     $(this).find('a').css({
-  //       color: '#daf100'
-  //     })
-  //     $(this).parent().parent().find('.sub-menu-area').find('.active').removeClass('active');
+  $gnbList
+    .on('mouseover', function () {
+      $(this).parent().parent().find('.sub-menu-area').find('.active').removeClass('active');
 
-  //     $(this).addClass('active');
-  //     $listNum = $(this).index();
-  //     $(this).parent().parent().find('.sub-menu-area').find('ul').eq($listNum).addClass('active');
-  //   })
+      $(this).addClass('active');
+      $listNum = $(this).index();
+      $(this).parent().parent().find('.sub-menu-area').find('ul').eq($listNum).addClass('active');
+    })
+    .on('mouseleave', function () {
+      $(this).parent().parent().find('.sub-menu-area').find('.active').removeClass('active');
 
-  // $subMenu.on('mouseover', function() {
-  //   $(this).parent().parent().parent().parent().find('.gnb-list').css({
-  //     background: 'red'
-  //   })
-  // })
+      $(this).removeClass('active');
+      $listNum = $(this).index();
+      $(this).parent().parent().find('.sub-menu-area').find('ul').eq($listNum).removeClass('active');
+    });
 
   // -------------------------------------------------------------------------
 
@@ -34,23 +30,39 @@ $(function() {
   var $weeklyList = $('.weekly-best .rank-container li .image-wrap');
 
   $weeklyList
-    .on('mouseover', function() {
-      var img_src = $(this).find('img').attr("src");
+    .on('mouseover', function () {
+      var img_src = $(this).find('img').attr('src');
       var new_img_src = img_src.split('.')[1];
-      $(this).find('img').css('opacity', '0').stop().attr("src", '.' + new_img_src + '-1.png').animate({
-        opacity: 1
-      }, 500);
+      $(this)
+        .find('img')
+        .css('opacity', '0')
+        .stop()
+        .attr('src', '.' + new_img_src + '-1.png')
+        .animate(
+          {
+            opacity: 1,
+          },
+          500
+        );
       $(this).find('.detail').removeClass('hidden');
     })
-    .on('mouseout', function() {
-      var img_src = $(this).find('img').attr("src");
+    .on('mouseout', function () {
+      var img_src = $(this).find('img').attr('src');
       var new_img_src = img_src.split('-')[0];
 
-      $(this).find('img').css('opacity', '0').stop().attr("src", new_img_src + '.png').animate({
-        opacity: 1
-      }, 500);
+      $(this)
+        .find('img')
+        .css('opacity', '0')
+        .stop()
+        .attr('src', new_img_src + '.png')
+        .animate(
+          {
+            opacity: 1,
+          },
+          500
+        );
       $(this).find('.detail').addClass('hidden');
-    })
+    });
 
   // -------------------------------------------------------------------------
 
@@ -58,12 +70,11 @@ $(function() {
   // 1. 리뷰순, 판매순 선택 시 active class 추가로 h3 color 확인
   // 2. 해당하는 영역의 class를 가져다가 이미지 변경하기
 
-
   var $weeklyBest = $('.weekly-best .wrap'),
     $reviewTab = $('.weekly-best .wrap h3.review-tab'),
     $saleTab = $('.weekly-best .wrap h3.sale-tab');
 
-  $reviewTab.on('click', function() {
+  $reviewTab.on('click', function () {
     if (!$(this).hasClass('active')) {
       $(this).addClass('active');
       $saleTab.removeClass('active');
@@ -85,7 +96,7 @@ $(function() {
     }
   });
 
-  $saleTab.on('click', function() {
+  $saleTab.on('click', function () {
     if (!$(this).hasClass('active')) {
       $(this).addClass('active');
       $reviewTab.removeClass('active');
@@ -119,7 +130,7 @@ $(function() {
     $reviewMargin = 0,
     $r_progress = 16.66;
 
-  $reviewPrevArrow.on('click', function() {
+  $reviewPrevArrow.on('click', function () {
     if ($reviewArrowClick > 0) {
       $reviewArrowClick -= 1;
       $reviewMargin = $reviewArrowClick * -290;
@@ -148,7 +159,7 @@ $(function() {
     });
   });
 
-  $reviewNextArrow.on('click', function() {
+  $reviewNextArrow.on('click', function () {
     if ($reviewArrowClick < 5) {
       $reviewArrowClick += 1;
       $reviewMargin = $reviewArrowClick * -290;
@@ -185,7 +196,7 @@ $(function() {
     $saleArrowClick = 0,
     $s_progress = 16.66;
 
-  $salePrevArrow.on('click', function() {
+  $salePrevArrow.on('click', function () {
     if ($saleArrowClick > 0) {
       $saleArrowClick -= 1;
       $saleMargin = $saleArrowClick * -290;
@@ -212,10 +223,9 @@ $(function() {
     $saleRankContainer.stop(true).animate({
       marginLeft: $saleMargin + 'px',
     });
-
   });
 
-  $saleNextArrow.on('click', function() {
+  $saleNextArrow.on('click', function () {
     if ($saleArrowClick < 5) {
       $saleArrowClick += 1;
       $saleMargin = $saleArrowClick * -290;
@@ -242,7 +252,6 @@ $(function() {
     $saleRankContainer.stop(true).animate({
       marginLeft: $saleMargin + 'px',
     });
-
   });
 
   // -------------------------------------------------------------------------
@@ -251,38 +260,38 @@ $(function() {
 
   var $teaWareArea = $('.tea-ware-shop-right .wrap'),
     $teaWareLeft = $('.tea-ware-shop .arrow-area .prev'),
-    $teaWareRight = $('.tea-ware-shop .arrow-area .next')
+    $teaWareRight = $('.tea-ware-shop .arrow-area .next');
   $teaWareProgress = $('.tea-ware-shop .progressBar .progress');
 
-  $teaWareLeft.on('click', function() {
+  $teaWareLeft.on('click', function () {
     $(this).css({
-      filter: 'invert(80%)'
-    })
+      filter: 'invert(80%)',
+    });
     $teaWareRight.css({
-      filter: 'invert(0)'
-    })
+      filter: 'invert(0)',
+    });
     $teaWareArea.stop(true).animate({
       marginLeft: '',
-    })
+    });
     $teaWareProgress.stop(true).animate({
-      width: '50%'
-    })
-  })
+      width: '50%',
+    });
+  });
 
-  $teaWareRight.on('click', function() {
+  $teaWareRight.on('click', function () {
     $(this).css({
-      filter: 'invert(80%)'
-    })
+      filter: 'invert(80%)',
+    });
     $teaWareLeft.css({
-      filter: 'invert(0)'
-    })
+      filter: 'invert(0)',
+    });
     $teaWareArea.stop(true).animate({
       marginLeft: '-1050px',
-    })
+    });
     $teaWareProgress.stop(true).animate({
-      width: '100%'
-    })
-  })
+      width: '100%',
+    });
+  });
 
   // -------------------------------------------------------------------------
 
@@ -291,23 +300,37 @@ $(function() {
   var $shopList = $('.shop .item-list li img');
 
   $shopList
-    .on('mouseover', function() {
-      var img_src = $(this).attr("src");
+    .on('mouseover', function () {
+      var img_src = $(this).attr('src');
       var new_img_src = img_src.split('.')[1];
-      $(this).css('opacity', '0').stop().attr("src", '.' + new_img_src + '-1.png').animate({
-        opacity: 1
-      }, 500);
+      $(this)
+        .css('opacity', '0')
+        .stop()
+        .attr('src', '.' + new_img_src + '-1.png')
+        .animate(
+          {
+            opacity: 1,
+          },
+          500
+        );
       $(this).find('.detail').removeClass('hidden');
     })
-    .on('mouseout', function() {
-      var img_src = $(this).attr("src");
+    .on('mouseout', function () {
+      var img_src = $(this).attr('src');
       var new_img_src = img_src.split('-')[0];
 
-      $(this).css('opacity', '0').stop().attr("src", new_img_src + '.png').animate({
-        opacity: 1
-      }, 500);
+      $(this)
+        .css('opacity', '0')
+        .stop()
+        .attr('src', new_img_src + '.png')
+        .animate(
+          {
+            opacity: 1,
+          },
+          500
+        );
       $(this).find('.detail').addClass('hidden');
-    })
+    });
 
   // -------------------------------------------------------------------------
 
@@ -315,23 +338,40 @@ $(function() {
 
   var $mdPickList = $('.md-pick-right .md-pick-list li');
 
-  $mdPickList.find('a')
-    .on('mouseover', function() {
-      var img_src = $(this).find('img').attr("src");
+  $mdPickList
+    .find('a')
+    .on('mouseover', function () {
+      var img_src = $(this).find('img').attr('src');
       var new_img_src = img_src.split('0')[0];
-      $(this).find('img').css('opacity', '0').stop().attr("src", new_img_src + '-hover.png').animate({
-        opacity: 1
-      }, 500);
+      $(this)
+        .find('img')
+        .css('opacity', '0')
+        .stop()
+        .attr('src', new_img_src + '-hover.png')
+        .animate(
+          {
+            opacity: 1,
+          },
+          500
+        );
     })
-    .on('mouseout', function() {
+    .on('mouseout', function () {
       var $num = $(this).parent().index();
-      var img_src = $('.md-pick-list li').eq($num).find('img').attr("src");
+      var img_src = $('.md-pick-list li').eq($num).find('img').attr('src');
       var new_img_src = img_src.split('-hover')[0];
 
-      $(this).find('img').css('opacity', '0').stop().attr("src", new_img_src + '0' + ($num + 1) + '.png').animate({
-        opacity: 1
-      }, 500);
-    })
+      $(this)
+        .find('img')
+        .css('opacity', '0')
+        .stop()
+        .attr('src', new_img_src + '0' + ($num + 1) + '.png')
+        .animate(
+          {
+            opacity: 1,
+          },
+          500
+        );
+    });
 
   // -------------------------------------------------------------------------
 
@@ -342,35 +382,35 @@ $(function() {
     $mdPickRight = $('.md-pick-right .arrow-area .next'),
     $mdPickProgress = $('.md-pick-right .progressBar .progress');
 
-  $mdPickLeft.on('click', function() {
+  $mdPickLeft.on('click', function () {
     $(this).css({
-      filter: 'invert(80%)'
-    })
+      filter: 'invert(80%)',
+    });
     $mdPickRight.css({
-      filter: 'invert(0)'
-    })
+      filter: 'invert(0)',
+    });
     $mdPickArea.stop(true).animate({
       marginLeft: '',
-    })
+    });
     $mdPickProgress.stop(true).animate({
-      width: '50%'
-    })
-  })
+      width: '50%',
+    });
+  });
 
-  $mdPickRight.on('click', function() {
+  $mdPickRight.on('click', function () {
     $(this).css({
-      filter: 'invert(80%)'
-    })
+      filter: 'invert(80%)',
+    });
     $mdPickLeft.css({
-      filter: 'invert(0)'
-    })
+      filter: 'invert(0)',
+    });
     $mdPickArea.stop(true).animate({
       marginLeft: '-340px',
-    })
+    });
     $mdPickProgress.stop(true).animate({
-      width: '100%'
-    })
-  })
+      width: '100%',
+    });
+  });
 
   // -------------------------------------------------------------------------
 
@@ -390,7 +430,7 @@ $(function() {
     $nowSelect = $selectList.find('.active').index(),
     $selectNum = $selectList.find('li').length;
 
-  var NextSlide = function() {
+  var NextSlide = function () {
     $visualSlide.find('a').eq($nowSlide).removeClass('active');
     $nowSlide = ($nowSlide + 1) % $slideNum;
     $visualSlide.find('a').eq($nowSlide).addClass('active');
@@ -402,8 +442,8 @@ $(function() {
 
   var repeat = setInterval(NextSlide, 5000);
 
-  $('.visual .btn-slide-state').on('click', function() {
-    $(this).parent().find('.active').toggleClass('paused')
+  $('.visual .btn-slide-state').on('click', function () {
+    $(this).parent().find('.active').toggleClass('paused');
 
     if ($(this).hasClass('stop')) {
       $(this).removeClass('stop');
@@ -416,7 +456,7 @@ $(function() {
     }
   });
 
-  $selectList.find('li').on('click', function() {
+  $selectList.find('li').on('click', function () {
     $(this).parent().find('.active').removeClass('active');
     $(this).parent().parent().parent().find('.imag-slide .active').removeClass('active');
 
@@ -424,7 +464,7 @@ $(function() {
     $(this).addClass('active');
     $(this).parent().parent().parent().find('.img-slide a').eq($newSelectNum).addClass('active');
 
-    $nowSelect = ($newSelectNum) % $slideNum;
+    $nowSelect = $newSelectNum % $slideNum;
     clearInterval(repeat);
     repeat = setInterval(NextSlide, 5000);
   });
@@ -435,7 +475,7 @@ $(function() {
 
   var $timer = $('.today-price .timer');
 
-  setInterval(function() {
+  setInterval(function () {
     var nowTime = new Date();
     var hours = 23 - nowTime.getHours();
     var minutes = 59 - nowTime.getMinutes();
@@ -448,7 +488,7 @@ $(function() {
 
   // -------------------------------------------------------------------------
 
-  // shop 동영상 슬라이드 [미완료]
+  // shop 동영상 슬라이드 [완료]
 
   var $shopSlideImg = $('.shop .slide-area .top ul'),
     $shopArrowPrev = $('.shop .slide-area .bottom .arrow-area .prev'),
@@ -456,39 +496,55 @@ $(function() {
     $shopList = $('.shop .bottom ul li'),
     num = 0;
 
-  $shopArrowPrev.on('click', function() {
+  $shopArrowPrev.on('click', function () {
     if (num > 0) {
-      $shopList.eq(num).removeClass('active')
+      $shopList.eq(num).removeClass('active');
       num -= 1;
 
       $shopSlideImg.stop(true).animate({
-        marginLeft: (-927 * num) + 'px'
-      })
-      $shopList.eq(num).addClass('active')
+        marginLeft: -927 * num + 'px',
+      });
+      $shopList.eq(num).addClass('active');
     }
-  })
+  });
 
-  $shopArrowNext.on('click', function() {
+  $shopArrowNext.on('click', function () {
     if (num < 3) {
-      $shopList.eq(num).removeClass('active')
+      $shopList.eq(num).removeClass('active');
       num += 1;
 
       $shopSlideImg.stop(true).animate({
-        marginLeft: (-927 * num) + 'px'
-      })
-      $shopList.eq(num).addClass('active')
+        marginLeft: -927 * num + 'px',
+      });
+      $shopList.eq(num).addClass('active');
     }
-  })
+  });
 
-  $shopList.on('click', function() {
+  $shopList.on('click', function () {
+    var preVideoNum = $shopList.filter('.active').index();
+    var preVideo = $shopSlideImg.find('li').eq(preVideoNum).find('video')[0];
+    preVideo.pause();
+
     $shopList.filter('.active').removeClass('active');
     $(this).addClass('active');
     num = $(this).index();
     $shopSlideImg.stop(true).animate({
-      marginLeft: (-927 * num) + 'px'
-    })
-    $shopSlideImg.find('li').eq(num).find('video').attr('autoplay', 'true');
-  })
+      marginLeft: -927 * num + 'px',
+    });
+    var nowVideo = $shopSlideImg.find('li').eq(num).find('video')[0];
+    nowVideo.play();
+  });
+
+  // -------------------------------------------------------------------------
+
+  // shop item list tab [완료]
+
+  var $shopTab = $('.shop .item-list h3');
+
+  $shopTab.on('click', function () {
+    $shopTab.parent().filter('.active').removeClass('active');
+    $(this).parent().addClass('active');
+  });
 
   // -------------------------------------------------------------------------
 
@@ -506,7 +562,7 @@ $(function() {
     $gnbLogo = $('header .gnb-area .gnb h3'),
     $addMenu = $('.addmenu-list >li');
 
-  $window.scroll(function() {
+  $window.scroll(function () {
     if ($window.scrollTop() === 0) {
       $logoArea.css({
         display: 'block',
@@ -524,12 +580,12 @@ $(function() {
       });
       $gnb
         .find('.gnb-list li a')
-        .on('mouseover', function() {
+        .on('mouseover', function () {
           $(this).css({
             color: '#daf100',
           });
         })
-        .on('mouseout', function() {
+        .on('mouseout', function () {
           $(this).css({
             color: '#fff',
           });
@@ -542,13 +598,19 @@ $(function() {
       $addMenu.filter('.cart').addClass('top');
       $addMenu.filter('.add').addClass('top');
 
-      $btnTop.stop(true).animate({
-        right: '-100px'
-      }, 300);
+      $btnTop.stop(true).animate(
+        {
+          right: '-100px',
+        },
+        300
+      );
     } else if ($window.scrollTop() > 0 && $window.scrollTop() <= 300) {
-      $btnTop.stop(true).animate({
-        right: '-100px'
-      }, 300);
+      $btnTop.stop(true).animate(
+        {
+          right: '-100px',
+        },
+        300
+      );
 
       $logoArea.css({
         display: 'none',
@@ -556,7 +618,7 @@ $(function() {
       $gnbArea.css({
         position: 'fixed',
         background: '#fff',
-        borderBottom: '1px solid #ccc'
+        borderBottom: '1px solid #ccc',
       });
       $gnb.css({
         background: '#fff',
@@ -569,12 +631,12 @@ $(function() {
       });
       $gnb
         .find('.gnb-list li a')
-        .on('mouseover', function() {
+        .on('mouseover', function () {
           $(this).css({
             color: '#6c801a',
           });
         })
-        .on('mouseout', function() {
+        .on('mouseout', function () {
           $(this).css({
             color: '#000',
           });
@@ -588,25 +650,36 @@ $(function() {
       $addMenu.filter('.add').removeClass('top');
 
       $addMenu.filter('.btn-search').css({
-        background: 'url(../src/img/header/ico_search2_off.png) no-repeat center'
+        background: 'url(../src/img/header/ico_search2_off.png) no-repeat center',
       });
       $addMenu.filter('.cart').css({
-        background: 'url(../src/img/header/ico_gnbBucket2_off.png) no-repeat center'
+        background: 'url(../src/img/header/ico_gnbBucket2_off.png) no-repeat center',
       });
       $addMenu.filter('.add').css({
-        background: 'url(../src/img/header/ico_gnbMore2_off.png) no-repeat center'
+        background: 'url(../src/img/header/ico_gnbMore2_off.png) no-repeat center',
       });
     } else if ($window.scrollTop() > 300) {
-      $btnTop.stop(true).animate({
-        right: '10px',
-      }, 300);
+      $btnTop.stop(true).animate(
+        {
+          right: '10px',
+        },
+        300
+      );
+    }
+
+    if ($window.scrollTop() > 3900) {
+      var autoPlay = $shopSlideImg.find('li').eq(0).find('video')[0];
+      autoPlay.play();
     }
   });
 
-  $btnTop.on('click', function() {
-    $('html').animate({
-      scrollTop: 0
-    }, 500);
+  $btnTop.on('click', function () {
+    $('html').animate(
+      {
+        scrollTop: 0,
+      },
+      500
+    );
   });
 
   $window.trigger('scroll');
