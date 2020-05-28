@@ -1344,7 +1344,8 @@ header .gnb-area .addmenu-list li .add-menu li+li {
 }
 
 .shop .slide-area .top ul {
-  width: 100vw;
+  width: 4000px;
+  height: 522px;
   font-size: 0;
   position: relative;
 }
@@ -1354,7 +1355,7 @@ header .gnb-area .addmenu-list li .add-menu li+li {
   content: '';
   position: absolute;
   width: 237px;
-  height: 525px;
+  height: 522px;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
 }
 
@@ -1363,9 +1364,10 @@ header .gnb-area .addmenu-list li .add-menu li+li {
   left: 1163px;
 }
 
-.shop .slide-area .top>ul>li {
-  display: inline-block;
+.shop .slide-area .top ul li {
+  float: left;
   width: 927px;
+  height: inherit;
 }
 
 .shop .slide-area .top>ul>li video {
@@ -1374,7 +1376,7 @@ header .gnb-area .addmenu-list li .add-menu li+li {
 }
 
 .shop .slide-area .top li:first-child {
-  margin-left: -690px;
+  margin-left: 236px;
 }
 
 .shop .bottom {
