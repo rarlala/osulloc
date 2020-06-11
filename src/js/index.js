@@ -458,13 +458,15 @@ $(function () {
 
   $selectList.find('li').on('click', function () {
     $(this).parent().find('.active').removeClass('active');
-    $(this).parent().parent().parent().find('.imag-slide .active').removeClass('active');
+    $(this).parent().parent().parent().find('.img-slide .active').removeClass('active');
 
-    $newSelectNum = $(this).index();
+    var $newSelectNum = $(this).index();
     $(this).addClass('active');
     $(this).parent().parent().parent().find('.img-slide a').eq($newSelectNum).addClass('active');
 
     $nowSelect = $newSelectNum % $slideNum;
+    $nowSlide = $newSelectNum % $slideNum;
+
     clearInterval(repeat);
     repeat = setInterval(NextSlide, 5000);
   });
