@@ -1,943 +1,951 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>오설록, 차와 제주가 선사하는 삶의 아름다움</title>
-    <link rel="stylesheet" href="./src/css/reset.css" />
-    <link rel="stylesheet" href="./src/css/font.css" />
-    <link rel="stylesheet" href="./src/css/index.css" />
-    <link rel="shortcut icon" href="/src/img/header/favicons.png" />
-    <script src="./src/js/jquery-1.10.2.min.js"></script>
-    <script type="text/javascript" src="./src/js/index.js"></script>
-  </head>
 
-  <body>
-    <header>
-      <div class="logo-area">
-        <h1 class="logo">
-          <a href="#"><img src="./src/img/header/logo_m.png" alt="오설록 로고" /></a>
-        </h1>
-        <nav class="tnb">
-          <ul class="util">
-            <li><a href="#">로그인</a></li>
-            <li><a href="#">회원가입</a></li>
-            <li class="language">
-              <select name="language">
-                <option value="korean" selected>한국어</option>
-                <option value="English">English</option>
-                <option value="chinese">中文</option>
-              </select>
-            </li>
-          </ul>
-        </nav>
-      </div>
-      <div class="gnb-area">
-        <h2 class="a11y-hidden">메뉴</h2>
-        <nav class="gnb">
-          <h3>
-            <a href="#"><span class="a11y-hidden">logo</span></a>
-          </h3>
-          <ul class="gnb-list">
-            <li><a href="#">Shop</a></li>
-            <li><a href="#">Tea Life</a></li>
-            <li><a href="#">Event</a></li>
-            <li><a href="#">About OSULLOC</a></li>
-            <li><a href="#">Jeju Tea Museum</a></li>
-          </ul>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="author" content="rarlala(jungsuji)">
+  <meta name="apple-mobile-web-app-title" content="오설록">
+  <title>오설록, 차와 제주가 선사하는 삶의 아름다움</title>
+  <meta name="description" content="오설록 웹사이트">
+  <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+  <link rel="stylesheet" href="./src/css/reset.css" />
+  <link rel="stylesheet" href="./src/css/font.css" />
+  <link rel="stylesheet" href="./src/css/index.css" />
+  <link rel="shortcut icon" href="/src/img/header/favicons.png" />
+  <script src="./src/js/jquery-1.10.2.min.js"></script>
+  <script type="text/javascript" src="./src/js/index.js"></script>
+</head>
 
-          <div class="sub-menu">
-            <div class="wrap">
-              <div class="ad-area">
-                <p class="title">오늘만 이가격</p>
-                <p class="text">30% 할인된 가격에 구매할 기회! <br />놓치지 마세요~</p>
-                <img src="./src/img/header/sub-menu-img.png" width="150" alt="이벤트 상품" />
-              </div>
-              <div class="sub-menu-area">
-                <ul>
-                  <li><a href="#">Tea Shop</a></li>
-                  <li><a href="#">Tea wear Shop</a></li>
-                  <li><a href="#">Gift Shop</a></li>
-                  <li><a href="#">Weekly Best</a></li>
-                  <li><a href="#">공동구매</a></li>
-                  <li><a href="#">오설록 라운지</a></li>
-                </ul>
-                <ul>
-                  <li><a href="#">상품 구매후기</a></li>
-                  <li><a href="#">선물하기</a></li>
-                  <li><a href="#">다다일상(정기구독)</a></li>
-                  <li><a href="#">맞춤추천</a></li>
-                  <li><a href="#">MD's PICK</a></li>
-                  <li><a href="#">매장 방문기</a></li>
-                </ul>
-                <ul>
-                  <li><a href="#">2020 GOLDEN PICK</a></li>
-                  <li><a href="#">이벤트</a></li>
-                  <li><a href="#">온라인 쇼핑혜택</a></li>
-                  <li><a href="#">인스타그램</a></li>
-                  <li><a href="#">About Tea</a></li>
-                </ul>
-                <ul>
-                  <li><a href="#">Brand Story</a></li>
-                  <li><a href="#">Since 1979</a></li>
-                  <li><a href="#">오설록 차밭 이야기</a></li>
-                  <li><a href="#">숫자로 보는 오설록</a></li>
-                  <li><a href="#">티하우스 메뉴</a></li>
-                  <li><a href="#">매거진</a></li>
-                </ul>
-                <ul>
-                  <li><a href="#">티뮤지엄 소개</a></li>
-                  <li><a href="#">티스톤 예약</a></li>
-                  <li><a href="#">제주 오설록 맵</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
+<body>
+  <a href="#main" id="skip-nav">본문 바로가기</a>
 
-          <ul class="addmenu-list">
-            <li class="btn-search top">
-              <button type="button"><span class="a11y-hidden">검색</span></button>
-            </li>
-            <li class="cart top">
-              <button type="button"><span class="a11y-hidden">장바구니</span></button>
-            </li>
-            <li class="add top">
-              <span class="a11y-hidden">더보기</span>
-              <ul class="add-menu">
-                <li><a href="#">고객센터</a></li>
-                <li><a href="#">매장찾기</a></li>
-                <li><a href="#">주문배송 조회</a></li>
-                <li><a href="#">뷰티포인트 추후적립</a></li>
-              </ul>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-
-    <div class="visual">
-      <div class="visual-wrap">
-        <div class="img-slide">
-          <a href="#" class="slide one active">
-            <p class="title">2020 GOLDEN PICK</p>
-            <p class="sub-title">이맘때에만 만날 수 있는 황금빛 찻잎</p>
-            <p class="time">2020년 4월 29일 ~ 2020년 5월 31일</p>
-          </a>
-          <a href="#" class="slide two">
-            <p class="title">MAY Be Love, 5월 출석체크</p>
-            <p class="sub-title">행사의 달, 오설록으로 뜻깊은 마음을 전하세요.</p>
-            <p class="time">2020년 5월 01일 ~ 2020년 5월 31일</p>
-          </a>
-          <a href="#" class="slide three">
-            <p class="title">다다일상, 집에서 즐기는 싱그러운 제주여행</p>
-            <p class="sub-title">싱그러운 5월의 제주를 집에서도 즐겨보세요!</p>
-            <p class="time">2020년 4월 29일 ~ 2020년 5월 31일</p>
-          </a>
-          <a href="#" class="slide four">
-            <p class="title">텅장에도 포기할 수 없는 티타임을 위해</p>
-            <p class="sub-title">지출이 많은 5월엔 프리미엄 티백으로 티타임 어떠세요?</p>
-            <p class="time">2020년 5월 18일 ~ 2020년 5월 31일</p>
-          </a>
+  <header id="header">
+    <div class="logo-area">
+      <h1 class="logo">
+        <a href="#"><img src="./src/img/header/logo_m.png" alt="오설록 로고" /></a>
+      </h1>
+      <nav class="tnb">
+        <ul class="util">
+          <li><a href="#">로그인</a></li>
+          <li><a href="#">회원가입</a></li>
+          <li class="language">
+            <select name="language" title="언어선택">
+              <option value="korean" selected>한국어</option>
+              <option value="English">English</option>
+              <option value="chinese">中文</option>
+            </select>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="gnb-area">
+      <h2 class="a11y-hidden">메뉴</h2>
+      <nav class="gnb" id="gnb">
+        <h3>
+          <a href="#"><span class="a11y-hidden">logo</span></a>
+        </h3>
+        <ul class="gnb-list">
+          <li><a href="#">Shop</a>
+            <ul class="sub-menu">
+              <li><a href="#">Tea Shop</a></li>
+              <li><a href="#">Tea wear Shop</a></li>
+              <li><a href="#">Gift Shop</a></li>
+              <li><a href="#">Weekly Best</a></li>
+              <li><a href="#">공동구매</a></li>
+              <li><a href="#">오설록 라운지</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Tea Life</a>
+            <ul class="sub-menu">
+              <li><a href="#">상품 구매후기</a></li>
+              <li><a href="#">선물하기</a></li>
+              <li><a href="#">다다일상(정기구독)</a></li>
+              <li><a href="#">맞춤추천</a></li>
+              <li><a href="#">MD's PICK</a></li>
+              <li><a href="#">매장 방문기</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Event</a>
+            <ul class="sub-menu">
+              <li><a href="#">2020 GOLDEN PICK</a></li>
+              <li><a href="#">이벤트</a></li>
+              <li><a href="#">온라인 쇼핑혜택</a></li>
+              <li><a href="#">인스타그램</a></li>
+              <li><a href="#">About Tea</a></li>
+            </ul>
+          </li>
+          <li><a href="#">About OSULLOC</a>
+            <ul class="sub-menu">
+              <li><a href="#">Brand Story</a></li>
+              <li><a href="#">Since 1979</a></li>
+              <li><a href="#">오설록 차밭 이야기</a></li>
+              <li><a href="#">숫자로 보는 오설록</a></li>
+              <li><a href="#">티하우스 메뉴</a></li>
+              <li><a href="#">매거진</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Jeju Tea Museum</a>
+            <ul class="sub-menu">
+              <li><a href="#">티뮤지엄 소개</a></li>
+              <li><a href="#">티스톤 예약</a></li>
+              <li><a href="#">제주 오설록 맵</a></li>
+            </ul>
+          </li>
+        </ul>
+        <div class="ad-area">
+          <p class="title">오늘만 이가격</p>
+          <p class="text">30% 할인된 가격에 구매할 기회! <br />놓치지 마세요~</p>
+          <img src="./src/img/header/sub-menu-img.png" width="150" alt="이벤트 상품" />
         </div>
 
-        <div class="slide-select-area">
-          <ul>
-            <li class="active">
-              <a>한정판 골든 티켓 증정</a>
-            </li>
-            <li>
-              <a>5월 출석체크</a>
-            </li>
-            <li>
-              <a>차 정기구독</a>
-            </li>
-            <li>
-              <a>텅장을 위한 티타임</a>
-            </li>
-          </ul>
-          <button class="btn-slide-state stop"><span class="a11y-hidden">슬라이드 일시정지</span></button>
-        </div>
+        <ul class="addmenu-list">
+          <li class="btn-search top">
+            <button type="button"><span class="a11y-hidden">검색</span></button>
+          </li>
+          <li class="cart top">
+            <button type="button"><span class="a11y-hidden">장바구니</span></button>
+          </li>
+          <li class="add top">
+            <span class="a11y-hidden">더보기</span>
+            <ul class="add-menu">
+              <li><a href="#">고객센터</a></li>
+              <li><a href="#">매장찾기</a></li>
+              <li><a href="#">주문배송 조회</a></li>
+              <li><a href="#">뷰티포인트 추후적립</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="visual">
+    <div class="visual-wrap">
+      <div class="img-slide">
+        <a href="#" class="slide one active">
+          <p class="title">2020 GOLDEN PICK</p>
+          <p class="sub-title">이맘때에만 만날 수 있는 황금빛 찻잎</p>
+          <p class="time">2020년 4월 29일 ~ 2020년 5월 31일</p>
+        </a>
+        <a href="#" class="slide two">
+          <p class="title">MAY Be Love, 5월 출석체크</p>
+          <p class="sub-title">행사의 달, 오설록으로 뜻깊은 마음을 전하세요.</p>
+          <p class="time">2020년 5월 01일 ~ 2020년 5월 31일</p>
+        </a>
+        <a href="#" class="slide three">
+          <p class="title">다다일상, 집에서 즐기는 싱그러운 제주여행</p>
+          <p class="sub-title">싱그러운 5월의 제주를 집에서도 즐겨보세요!</p>
+          <p class="time">2020년 4월 29일 ~ 2020년 5월 31일</p>
+        </a>
+        <a href="#" class="slide four">
+          <p class="title">텅장에도 포기할 수 없는 티타임을 위해</p>
+          <p class="sub-title">지출이 많은 5월엔 프리미엄 티백으로 티타임 어떠세요?</p>
+          <p class="time">2020년 5월 18일 ~ 2020년 5월 31일</p>
+        </a>
+      </div>
+
+      <div class="slide-select-area">
+        <ul>
+          <li class="active">
+            <a>한정판 골든 티켓 증정</a>
+          </li>
+          <li>
+            <a>5월 출석체크</a>
+          </li>
+          <li>
+            <a>차 정기구독</a>
+          </li>
+          <li>
+            <a>텅장을 위한 티타임</a>
+          </li>
+        </ul>
+        <button class="btn-slide-state stop"><span class="a11y-hidden">슬라이드 일시정지</span></button>
       </div>
     </div>
+  </div>
 
-    <main>
-      <section class="weekly-best">
-        <div class="wrap">
-          <h2 class="section-title">Weekly Best</h2>
-          <div class="review">
-            <h3 class="review-tab active">
-              <a role="button">리뷰순</a>
-            </h3>
-            <ol class="rank-container review active">
-              <li>
-                <div class="image-wrap">
-                  <a href="#">
-                    <img src="./src/img/review/review01.png" alt="" />
-                  </a>
-                  <div class="detail hidden">
-                    <a>리뷰보기</a>
-                    <a>장바구니</a>
-                  </div>
+  <main id="main">
+    <section class="weekly-best">
+      <div class="wrap">
+        <h2 class="section-title">Weekly Best</h2>
+        <div class="review">
+          <h3 class="review-tab active">
+            <a role="button">리뷰순</a>
+          </h3>
+          <ol class="rank-container review active">
+            <li>
+              <div class="image-wrap">
+                <a href="#">
+                  <img src="./src/img/review/review01.png" alt="" />
+                </a>
+                <div class="detail hidden">
+                  <a>리뷰보기</a>
+                  <a>장바구니</a>
                 </div>
-                <div class="rate">★★★★★</div>
-                <p class="item-title"><a href="#">프리미엄 티 컬렉션</a></p>
-                <div class="review-content">
-                  <p class="review-text">선물용이라 받자마자 급하게 드리고 오느라 사진은 못찍었지만 향도 다르고 고급져요.</p>
-                  <div class="write-info">
-                    <span class="id">ism*****</span>
-                    <span class="date">2020.05.17</span>
-                  </div>
+              </div>
+              <div class="rate">★★★★★</div>
+              <p class="item-title"><a href="#">프리미엄 티 컬렉션</a></p>
+              <div class="review-content">
+                <p class="review-text">선물용이라 받자마자 급하게 드리고 오느라 사진은 못찍었지만 향도 다르고 고급져요.</p>
+                <div class="write-info">
+                  <span class="id">ism*****</span>
+                  <span class="date">2020.05.17</span>
                 </div>
-              </li>
-              <li>
-                <div class="image-wrap">
-                  <a href="#">
-                    <img src="./src/img/review/review02.png" alt="" />
-                  </a>
-                  <div class="detail hidden">
-                    <a>리뷰보기</a>
-                    <a>장바구니</a>
-                  </div>
+              </div>
+            </li>
+            <li>
+              <div class="image-wrap">
+                <a href="#">
+                  <img src="./src/img/review/review02.png" alt="" />
+                </a>
+                <div class="detail hidden">
+                  <a>리뷰보기</a>
+                  <a>장바구니</a>
                 </div>
-                <div class="rate">★★★★★</div>
-                <p class="item-title"><a href="#">그린티 웨하스 100g</a></p>
-                <div class="review-content">
-                  <p class="review-text">맛있게 먹었어요. 택배 오면서 부서지지 말라고 포장도 꼼꼼해서 마음에 들었어요.</p>
-                  <div class="write-info">
-                    <span class="id">sjb*****</span>
-                    <span class="date">2020.05.18</span>
-                  </div>
+              </div>
+              <div class="rate">★★★★★</div>
+              <p class="item-title"><a href="#">그린티 웨하스 100g</a></p>
+              <div class="review-content">
+                <p class="review-text">맛있게 먹었어요. 택배 오면서 부서지지 말라고 포장도 꼼꼼해서 마음에 들었어요.</p>
+                <div class="write-info">
+                  <span class="id">sjb*****</span>
+                  <span class="date">2020.05.18</span>
                 </div>
-              </li>
-              <li>
-                <div class="image-wrap">
-                  <a href="#">
-                    <img src="./src/img/review/review03.png" alt="" />
-                  </a>
-                  <div class="detail hidden">
-                    <a>리뷰보기</a>
-                    <a>장바구니</a>
-                  </div>
+              </div>
+            </li>
+            <li>
+              <div class="image-wrap">
+                <a href="#">
+                  <img src="./src/img/review/review03.png" alt="" />
+                </a>
+                <div class="detail hidden">
+                  <a>리뷰보기</a>
+                  <a>장바구니</a>
                 </div>
-                <div class="rate">★★★★☆</div>
-                <p class="item-title"><a href="#">그린티 롤케이크(화이트)</a></p>
-                <div class="review-content">
-                  <p class="review-text">오설록 롤케이크는 프리미엄 간식입니다. 차나 커피랑 함께하면 정말 맛있습니다.</p>
-                  <div class="write-info">
-                    <span class="id">moo*****</span>
-                    <span class="date">2020.05.12</span>
-                  </div>
+              </div>
+              <div class="rate">★★★★☆</div>
+              <p class="item-title"><a href="#">그린티 롤케이크(화이트)</a></p>
+              <div class="review-content">
+                <p class="review-text">오설록 롤케이크는 프리미엄 간식입니다. 차나 커피랑 함께하면 정말 맛있습니다.</p>
+                <div class="write-info">
+                  <span class="id">moo*****</span>
+                  <span class="date">2020.05.12</span>
                 </div>
-              </li>
-              <li>
-                <div class="image-wrap">
-                  <a href="#">
-                    <img src="./src/img/review/review04.png" alt="" />
-                  </a>
-                  <div class="detail hidden">
-                    <a>리뷰보기</a>
-                    <a>장바구니</a>
-                  </div>
+              </div>
+            </li>
+            <li>
+              <div class="image-wrap">
+                <a href="#">
+                  <img src="./src/img/review/review04.png" alt="" />
+                </a>
+                <div class="detail hidden">
+                  <a>리뷰보기</a>
+                  <a>장바구니</a>
                 </div>
-                <div class="rate">★★★★★</div>
-                <p class="item-title"><a href="#">러블리티박스</a></p>
-                <div class="review-content">
-                  <p class="review-text">아이 과외선생님 선물로 딱 좋아요</p>
-                  <div class="write-info">
-                    <span class="id">jin*****</span>
-                    <span class="date">2020.05.18</span>
-                  </div>
+              </div>
+              <div class="rate">★★★★★</div>
+              <p class="item-title"><a href="#">러블리티박스</a></p>
+              <div class="review-content">
+                <p class="review-text">아이 과외선생님 선물로 딱 좋아요</p>
+                <div class="write-info">
+                  <span class="id">jin*****</span>
+                  <span class="date">2020.05.18</span>
                 </div>
-              </li>
-              <li>
-                <div class="image-wrap">
-                  <a href="#">
-                    <img src="./src/img/review/review05.png" alt="" />
-                  </a>
-                  <div class="detail hidden">
-                    <a>리뷰보기</a>
-                    <a>장바구니</a>
-                  </div>
+              </div>
+            </li>
+            <li>
+              <div class="image-wrap">
+                <a href="#">
+                  <img src="./src/img/review/review05.png" alt="" />
+                </a>
+                <div class="detail hidden">
+                  <a>리뷰보기</a>
+                  <a>장바구니</a>
                 </div>
-                <div class="rate">★★★★★</div>
-                <p class="item-title"><a href="#">그린티 랑드샤 10입</a></p>
-                <div class="review-content">
-                  <p class="review-text">가격이 조금 아쉽지만 그래도 넘 맛있게 먹었어요~~</p>
-                  <div class="write-info">
-                    <span class="id">sjb*****</span>
-                    <span class="date">2020.05.18</span>
-                  </div>
+              </div>
+              <div class="rate">★★★★★</div>
+              <p class="item-title"><a href="#">그린티 랑드샤 10입</a></p>
+              <div class="review-content">
+                <p class="review-text">가격이 조금 아쉽지만 그래도 넘 맛있게 먹었어요~~</p>
+                <div class="write-info">
+                  <span class="id">sjb*****</span>
+                  <span class="date">2020.05.18</span>
                 </div>
-              </li>
-              <li>
-                <div class="image-wrap">
-                  <a href="#">
-                    <img src="./src/img/review/review06.png" alt="" />
-                  </a>
-                  <div class="detail hidden">
-                    <a>리뷰보기</a>
-                    <a>장바구니</a>
-                  </div>
+              </div>
+            </li>
+            <li>
+              <div class="image-wrap">
+                <a href="#">
+                  <img src="./src/img/review/review06.png" alt="" />
+                </a>
+                <div class="detail hidden">
+                  <a>리뷰보기</a>
+                  <a>장바구니</a>
                 </div>
-                <div class="rate">★★★★★</div>
-                <p class="item-title"><a href="#">마스터블렌드</a></p>
-                <div class="review-content">
-                  <p class="review-text">좋은 제품, 좋은 가격으로 지인들 선물용으로 3개세트 잘 구매했습니다. 앞으로도</p>
-                  <div class="write-info">
-                    <span class="id">bus*****</span>
-                    <span class="date">2020.05.16 </span>
-                  </div>
+              </div>
+              <div class="rate">★★★★★</div>
+              <p class="item-title"><a href="#">마스터블렌드</a></p>
+              <div class="review-content">
+                <p class="review-text">좋은 제품, 좋은 가격으로 지인들 선물용으로 3개세트 잘 구매했습니다. 앞으로도</p>
+                <div class="write-info">
+                  <span class="id">bus*****</span>
+                  <span class="date">2020.05.16 </span>
                 </div>
-              </li>
-              <li>
-                <div class="image-wrap">
-                  <a href="#">
-                    <img src="./src/img/review/review07.png" alt="" />
-                  </a>
-                  <div class="detail hidden">
-                    <a>리뷰보기</a>
-                    <a>장바구니</a>
-                  </div>
+              </div>
+            </li>
+            <li>
+              <div class="image-wrap">
+                <a href="#">
+                  <img src="./src/img/review/review07.png" alt="" />
+                </a>
+                <div class="detail hidden">
+                  <a>리뷰보기</a>
+                  <a>장바구니</a>
                 </div>
-                <div class="rate">★★★★★</div>
-                <p class="item-title"><a href="#">세작 40g(잎차)</a></p>
-                <div class="review-content">
-                  <p class="review-text">차를 즐기는 조카에게 선물했어요 깔끔하게 즐길거에요</p>
-                  <div class="write-info">
-                    <span class="id">nem*****</span>
-                    <span class="date">2020.05.10</span>
-                  </div>
+              </div>
+              <div class="rate">★★★★★</div>
+              <p class="item-title"><a href="#">세작 40g(잎차)</a></p>
+              <div class="review-content">
+                <p class="review-text">차를 즐기는 조카에게 선물했어요 깔끔하게 즐길거에요</p>
+                <div class="write-info">
+                  <span class="id">nem*****</span>
+                  <span class="date">2020.05.10</span>
                 </div>
-              </li>
-              <li>
-                <div class="image-wrap">
-                  <a href="#">
-                    <img src="./src/img/review/review08.png" alt="" />
-                  </a>
-                  <div class="detail hidden">
-                    <a>리뷰보기</a>
-                    <a>장바구니</a>
-                  </div>
+              </div>
+            </li>
+            <li>
+              <div class="image-wrap">
+                <a href="#">
+                  <img src="./src/img/review/review08.png" alt="" />
+                </a>
+                <div class="detail hidden">
+                  <a>리뷰보기</a>
+                  <a>장바구니</a>
                 </div>
-                <div class="rate">★★★★★</div>
-                <p class="item-title"><a href="#">덖음차 50g (햇차, 2020)</a></p>
-                <div class="review-content">
-                  <p class="review-text">깔끔하고 개운합니다.햇차라 더 좋으네요.</p>
-                  <div class="write-info">
-                    <span class="id">hjh*****</span>
-                    <span class="date">2020.05.16</span>
-                  </div>
+              </div>
+              <div class="rate">★★★★★</div>
+              <p class="item-title"><a href="#">덖음차 50g (햇차, 2020)</a></p>
+              <div class="review-content">
+                <p class="review-text">깔끔하고 개운합니다.햇차라 더 좋으네요.</p>
+                <div class="write-info">
+                  <span class="id">hjh*****</span>
+                  <span class="date">2020.05.16</span>
                 </div>
-              </li>
-              <li>
-                <div class="image-wrap">
-                  <a href="#">
-                    <img src="./src/img/review/review09.png" alt="" />
-                  </a>
-                  <div class="detail hidden">
-                    <a>리뷰보기</a>
-                    <a>장바구니</a>
-                  </div>
+              </div>
+            </li>
+            <li>
+              <div class="image-wrap">
+                <a href="#">
+                  <img src="./src/img/review/review09.png" alt="" />
+                </a>
+                <div class="detail hidden">
+                  <a>리뷰보기</a>
+                  <a>장바구니</a>
                 </div>
-                <div class="rate">★★★★☆</div>
-                <p class="item-title"><a href="#">제주 녹차 크레이프 케이크</a></p>
-                <div class="review-content">
-                  <p class="review-text">이 제품 아주 중독성있네요. 녹차맛이 좋아 자꾸자꾸 먹게되네요. 기념일도 아닌데</p>
-                  <div class="write-info">
-                    <span class="id">moo*****</span>
-                    <span class="date">2020.05.14</span>
-                  </div>
+              </div>
+              <div class="rate">★★★★☆</div>
+              <p class="item-title"><a href="#">제주 녹차 크레이프 케이크</a></p>
+              <div class="review-content">
+                <p class="review-text">이 제품 아주 중독성있네요. 녹차맛이 좋아 자꾸자꾸 먹게되네요. 기념일도 아닌데</p>
+                <div class="write-info">
+                  <span class="id">moo*****</span>
+                  <span class="date">2020.05.14</span>
                 </div>
-              </li>
-              <li>
-                <div class="image-wrap">
-                  <a href="#">
-                    <img src="./src/img/review/review10.png" alt="" />
-                  </a>
-                  <div class="detail hidden">
-                    <a>리뷰보기</a>
-                    <a>장바구니</a>
-                  </div>
+              </div>
+            </li>
+            <li>
+              <div class="image-wrap">
+                <a href="#">
+                  <img src="./src/img/review/review10.png" alt="" />
+                </a>
+                <div class="detail hidden">
+                  <a>리뷰보기</a>
+                  <a>장바구니</a>
                 </div>
-                <div class="rate">★★★★☆</div>
-                <p class="item-title"><a href="#">삼다꿀배티 20입(티백)</a></p>
-                <div class="review-content">
-                  <p class="review-text">그냥 향긋함도 좋지만 달달한 느낌이 좋네요</p>
-                  <div class="write-info">
-                    <span class="id">alf*****</span>
-                    <span class="date">2020.05.16</span>
-                  </div>
+              </div>
+              <div class="rate">★★★★☆</div>
+              <p class="item-title"><a href="#">삼다꿀배티 20입(티백)</a></p>
+              <div class="review-content">
+                <p class="review-text">그냥 향긋함도 좋지만 달달한 느낌이 좋네요</p>
+                <div class="write-info">
+                  <span class="id">alf*****</span>
+                  <span class="date">2020.05.16</span>
                 </div>
-              </li>
-            </ol>
-            <div class="arrow-area review active">
-              <a class="prev" role="button"><span class="a11y-hidden">prev</span></a>
-              <a class="next" role="button"><span class="a11y-hidden">next</span></a>
-            </div>
-            <div class="progressBar review active">
-              <div class="progress"></div>
-            </div>
+              </div>
+            </li>
+          </ol>
+          <div class="arrow-area review active">
+            <a class="prev" role="button"><span class="a11y-hidden">prev</span></a>
+            <a class="next" role="button"><span class="a11y-hidden">next</span></a>
           </div>
-          <div class="sale">
-            <h3 class="sale-tab">
-              <a role="button">판매순</a>
-            </h3>
-            <ol class="rank-container sale">
-              <li>
-                <div class="image-wrap">
-                  <a href="#">
-                    <img src="./src/img/review/sale01.png" alt="" />
-                  </a>
-                  <div class="detail hidden">
-                    <a>리뷰보기</a>
-                    <a>장바구니</a>
-                  </div>
-                </div>
-                <p class="item-title"><a href="#">프리미엄 티 컬렉션</a></p>
-                <p class="item-price">25,000원</p>
-              </li>
-              <li>
-                <div class="image-wrap">
-                  <a href="#">
-                    <img src="./src/img/review/sale02.png" alt="" />
-                  </a>
-                  <div class="detail hidden">
-                    <a>리뷰보기</a>
-                    <a>장바구니</a>
-                  </div>
-                </div>
-                <p class="item-title"><a href="#">녹차밀크스프레드 200 g</a></p>
-                <p class="item-price">8,500원</p>
-              </li>
-              <li>
-                <div class="image-wrap">
-                  <a href="#">
-                    <img src="./src/img/review/sale03.png" alt="" />
-                  </a>
-                  <div class="detail hidden">
-                    <a>리뷰보기</a>
-                    <a>장바구니</a>
-                  </div>
-                </div>
-                <p class="item-title"><a href="#">그린티 롤케이크(화이트)</a></p>
-                <p class="item-price">25,000원</p>
-              </li>
-              <li>
-                <div class="image-wrap">
-                  <a href="#">
-                    <img src="./src/img/review/sale04.png" alt="" />
-                  </a>
-                  <div class="detail hidden">
-                    <a>리뷰보기</a>
-                    <a>장바구니</a>
-                  </div>
-                </div>
-                <p class="item-title"><a href="#">러블리티박스</a></p>
-                <p class="item-price"><a href="#">25,000원</a></p>
-              </li>
-              <li>
-                <div class="image-wrap">
-                  <a href="#">
-                    <img src="./src/img/review/sale05.png" alt="" />
-                  </a>
-                  <div class="detail hidden">
-                    <a>리뷰보기</a>
-                    <a>장바구니</a>
-                  </div>
-                </div>
-                <p class="item-title"><a href="#">웨딩그린티 3입(피라미드)</a></p>
-                <p class="item-price"><a href="#">4,500 원</a></p>
-              </li>
-              <li>
-                <div class="image-wrap">
-                  <a href="#">
-                    <img src="./src/img/review/sale06.png" alt="" />
-                  </a>
-                  <div class="detail hidden">
-                    <a>리뷰보기</a>
-                    <a>장바구니</a>
-                  </div>
-                </div>
-                <p class="item-title"><a href="#">제주순수녹차 20입(티백)</a></p>
-                <p class="item-price"><a href="#">6,800원</a></p>
-              </li>
-              <li>
-                <div class="image-wrap">
-                  <a href="#">
-                    <img src="./src/img/review/sale07.png" alt="" />
-                  </a>
-                  <div class="detail hidden">
-                    <a>리뷰보기</a>
-                    <a>장바구니</a>
-                  </div>
-                </div>
-                <p class="item-title"><a href="#">세작 40g(잎차)</a></p>
-                <p class="item-price"><a href="#">17,000 원</a></p>
-              </li>
-              <li>
-                <div class="image-wrap">
-                  <a href="#"><img src="./src/img/review/sale08.png" alt="" /></a>
-                  <div class="detail hidden">
-                    <a>리뷰보기</a>
-                    <a>장바구니</a>
-                  </div>
-                </div>
-                <p class="item-title"><a href="#">세작 피라미드 20입 (햇차, 2020)</a></p>
-                <p class="item-price"><a href="#">25,000 원</a></p>
-              </li>
-              <li>
-                <div class="image-wrap">
-                  <a href="#"><img src="./src/img/review/sale09.png" alt="" /></a>
-                  <div class="detail hidden">
-                    <a>리뷰보기</a>
-                    <a>장바구니</a>
-                  </div>
-                </div>
-                <p class="item-title"><a href="#">제주유채&꿀티 20입(티백)</a></p>
-                <p class="item-price"><a href="#">6,800 원</a></p>
-              </li>
-              <li>
-                <div class="image-wrap">
-                  <a href="#"><img src="./src/img/review/sale10.png" alt="" /></a>
-                  <div class="detail hidden">
-                    <a>리뷰보기</a>
-                    <a>장바구니</a>
-                  </div>
-                </div>
-                <p class="item-title"><a href="#">달빛걱기 20입 (피라미드))</a></p>
-                <p class="item-price"><a href="#">23,000 원</a></p>
-              </li>
-            </ol>
-            <div class="arrow-area sale">
-              <a class="prev" role="button"><span class="a11y-hidden">prev</span></a>
-              <a class="next" role="button"><span class="a11y-hidden">next</span></a>
-            </div>
-            <div class="progressBar sale">
-              <div class="progress"></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="md-pick">
-        <h2 class="a11y-hidden">MD PICK</h2>
-        <div class="md-pick-left">
-          <a class="img-area" href="#">
-            <p class="sub-title">올해 갓 채엽한 햇차의 매력</p>
-            <p class="title">이맘때에만 볼 수 있는<br />골든픽 (GOLDEN PICK)</p>
-            <p class="move">MD'S PICK 더 보기 <img src="./src/img/md-pick/arr_42x12.png" alt="" /></p>
-          </a>
-        </div>
-        <div class="md-pick-right">
-          <p><span class="point">Vol 9</span> 2020.5 MD PICK</p>
-          <ul class="md-pick-list">
-            <li>
-              <a href="#"><img src="./src/img/md-pick/md-pick01.png" alt="" /></a>
-              <p class="item-title">세작 80g (햇차, 2020)</p>
-              <p class="item-price">40,000원</p>
-            </li>
-            <li>
-              <a href="#"><img src="./src/img/md-pick/md-pick02.png" alt="" /></a>
-              <p class="item-title">세작 10입 (햇차, 2020)</p>
-              <p class="item-price">20,000원</p>
-            </li>
-            <li>
-              <a href="#"><img src="./src/img/md-pick/md-pick03.png" alt="" /></a>
-              <p class="item-title">세작 피라미드 20입 (햇차, 2020)</p>
-              <p class="item-price">25,000원</p>
-            </li>
-            <li>
-              <a href="#"><img src="./src/img/md-pick/md-pick04.png" alt="" /></a>
-              <p class="item-title">세작 3입 (햇차, 2020)</p>
-              <p class="item-price">4,800원</p>
-            </li>
-          </ul>
-          <div class="arrow-area">
-            <div class="a11y-hidden prev">prev</div>
-            <div class="a11y-hidden next">next</div>
-          </div>
-          <div class="progressBar">
+          <div class="progressBar review active">
             <div class="progress"></div>
           </div>
         </div>
-      </section>
-
-      <section class="tea-ware-shop">
-        <div class="tea-ware-shop-left">
-          <h2 class="section-title">Tea ware shop</h2>
-          <p class="text">다채로운 오설록의 차를 즐길 수 있는 다양한 Tea ware를 만나보세요.</p>
-          <a href="#" class="move">전체보기 <img src="./src/img/md-pick/arr_42x12.png" alt="" /></a>
-        </div>
-        <div class="tea-ware-shop-right">
-          <div class="wrap">
-            <div class="group1">
-              <div class="left">
-                <div class="img-box">
-                  <a href="#"><span class="a11y-hidden">kinto</span></a>
-                </div>
-                <div class="img-box">
-                  <a href="#"><span class="a11y-hidden">seoul bund</span> </a>
+        <div class="sale">
+          <h3 class="sale-tab">
+            <a role="button">판매순</a>
+          </h3>
+          <ol class="rank-container sale">
+            <li>
+              <div class="image-wrap">
+                <a href="#">
+                  <img src="./src/img/review/sale01.png" alt="" />
+                </a>
+                <div class="detail hidden">
+                  <a>리뷰보기</a>
+                  <a>장바구니</a>
                 </div>
               </div>
-              <div class="right">
-                <div class="img-box">
-                  <a href="#"><span class="a11y-hidden">torim</span></a>
+              <p class="item-title"><a href="#">프리미엄 티 컬렉션</a></p>
+              <p class="item-price">25,000원</p>
+            </li>
+            <li>
+              <div class="image-wrap">
+                <a href="#">
+                  <img src="./src/img/review/sale02.png" alt="" />
+                </a>
+                <div class="detail hidden">
+                  <a>리뷰보기</a>
+                  <a>장바구니</a>
                 </div>
               </div>
-            </div>
-            <div class="group2">
-              <div class="left">
-                <div class="img-box">
-                  <a href="#"><span class="a11y-hidden">soilbaker</span></a>
-                </div>
-                <div class="img-box">
-                  <a href="#"><span class="a11y-hidden">sorosi</span> </a>
-                </div>
-              </div>
-              <div class="right">
-                <div class="img-box">
-                  <a href="#"><span class="a11y-hidden">kwangjuyo</span></a>
+              <p class="item-title"><a href="#">녹차밀크스프레드 200 g</a></p>
+              <p class="item-price">8,500원</p>
+            </li>
+            <li>
+              <div class="image-wrap">
+                <a href="#">
+                  <img src="./src/img/review/sale03.png" alt="" />
+                </a>
+                <div class="detail hidden">
+                  <a>리뷰보기</a>
+                  <a>장바구니</a>
                 </div>
               </div>
-            </div>
+              <p class="item-title"><a href="#">그린티 롤케이크(화이트)</a></p>
+              <p class="item-price">25,000원</p>
+            </li>
+            <li>
+              <div class="image-wrap">
+                <a href="#">
+                  <img src="./src/img/review/sale04.png" alt="" />
+                </a>
+                <div class="detail hidden">
+                  <a>리뷰보기</a>
+                  <a>장바구니</a>
+                </div>
+              </div>
+              <p class="item-title"><a href="#">러블리티박스</a></p>
+              <p class="item-price"><a href="#">25,000원</a></p>
+            </li>
+            <li>
+              <div class="image-wrap">
+                <a href="#">
+                  <img src="./src/img/review/sale05.png" alt="" />
+                </a>
+                <div class="detail hidden">
+                  <a>리뷰보기</a>
+                  <a>장바구니</a>
+                </div>
+              </div>
+              <p class="item-title"><a href="#">웨딩그린티 3입(피라미드)</a></p>
+              <p class="item-price"><a href="#">4,500 원</a></p>
+            </li>
+            <li>
+              <div class="image-wrap">
+                <a href="#">
+                  <img src="./src/img/review/sale06.png" alt="" />
+                </a>
+                <div class="detail hidden">
+                  <a>리뷰보기</a>
+                  <a>장바구니</a>
+                </div>
+              </div>
+              <p class="item-title"><a href="#">제주순수녹차 20입(티백)</a></p>
+              <p class="item-price"><a href="#">6,800원</a></p>
+            </li>
+            <li>
+              <div class="image-wrap">
+                <a href="#">
+                  <img src="./src/img/review/sale07.png" alt="" />
+                </a>
+                <div class="detail hidden">
+                  <a>리뷰보기</a>
+                  <a>장바구니</a>
+                </div>
+              </div>
+              <p class="item-title"><a href="#">세작 40g(잎차)</a></p>
+              <p class="item-price"><a href="#">17,000 원</a></p>
+            </li>
+            <li>
+              <div class="image-wrap">
+                <a href="#"><img src="./src/img/review/sale08.png" alt="" /></a>
+                <div class="detail hidden">
+                  <a>리뷰보기</a>
+                  <a>장바구니</a>
+                </div>
+              </div>
+              <p class="item-title"><a href="#">세작 피라미드 20입 (햇차, 2020)</a></p>
+              <p class="item-price"><a href="#">25,000 원</a></p>
+            </li>
+            <li>
+              <div class="image-wrap">
+                <a href="#"><img src="./src/img/review/sale09.png" alt="" /></a>
+                <div class="detail hidden">
+                  <a>리뷰보기</a>
+                  <a>장바구니</a>
+                </div>
+              </div>
+              <p class="item-title"><a href="#">제주유채&꿀티 20입(티백)</a></p>
+              <p class="item-price"><a href="#">6,800 원</a></p>
+            </li>
+            <li>
+              <div class="image-wrap">
+                <a href="#"><img src="./src/img/review/sale10.png" alt="" /></a>
+                <div class="detail hidden">
+                  <a>리뷰보기</a>
+                  <a>장바구니</a>
+                </div>
+              </div>
+              <p class="item-title"><a href="#">달빛걱기 20입 (피라미드))</a></p>
+              <p class="item-price"><a href="#">23,000 원</a></p>
+            </li>
+          </ol>
+          <div class="arrow-area sale">
+            <a class="prev" role="button"><span class="a11y-hidden">prev</span></a>
+            <a class="next" role="button"><span class="a11y-hidden">next</span></a>
+          </div>
+          <div class="progressBar sale">
+            <div class="progress"></div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="md-pick">
+      <h2 class="a11y-hidden">MD PICK</h2>
+      <div class="md-pick-left">
+        <a class="img-area" href="#">
+          <p class="sub-title">올해 갓 채엽한 햇차의 매력</p>
+          <p class="title">이맘때에만 볼 수 있는<br />골든픽 (GOLDEN PICK)</p>
+          <p class="move">MD'S PICK 더 보기 <img src="./src/img/md-pick/arr_42x12.png" alt="" /></p>
+        </a>
+      </div>
+      <div class="md-pick-right">
+        <p><span class="point">Vol 9</span> 2020.5 MD PICK</p>
+        <ul class="md-pick-list">
+          <li>
+            <a href="#"><img src="./src/img/md-pick/md-pick01.png" alt="" /></a>
+            <p class="item-title">세작 80g (햇차, 2020)</p>
+            <p class="item-price">40,000원</p>
+          </li>
+          <li>
+            <a href="#"><img src="./src/img/md-pick/md-pick02.png" alt="" /></a>
+            <p class="item-title">세작 10입 (햇차, 2020)</p>
+            <p class="item-price">20,000원</p>
+          </li>
+          <li>
+            <a href="#"><img src="./src/img/md-pick/md-pick03.png" alt="" /></a>
+            <p class="item-title">세작 피라미드 20입 (햇차, 2020)</p>
+            <p class="item-price">25,000원</p>
+          </li>
+          <li>
+            <a href="#"><img src="./src/img/md-pick/md-pick04.png" alt="" /></a>
+            <p class="item-title">세작 3입 (햇차, 2020)</p>
+            <p class="item-price">4,800원</p>
+          </li>
+        </ul>
         <div class="arrow-area">
-          <a class="prev" role="button"><span class="a11y-hidden">prev</span></a>
-          <a class="next" role="button"><span class="a11y-hidden">next</span></a>
+          <div class="a11y-hidden prev">prev</div>
+          <div class="a11y-hidden next">next</div>
         </div>
         <div class="progressBar">
           <div class="progress"></div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="today-price">
-        <h2 class="section-title">오늘만 이 가격</h2>
-        <p>오늘 하루만 이 가격으로 구매할 수 있는 상품을 지금 바로 만나보세요.</p>
-        <div class="today-price-content">
-          <div class="top">
-            <p class="timer">11:34:12</p>
-            <p class="item-title">달꽃이바라보는바당 10입(피라미드)</p>
-            <div class="item-price">
-              <p class="sale">30% 할인</p>
+    <section class="tea-ware-shop">
+      <div class="tea-ware-shop-left">
+        <h2 class="section-title">Tea ware shop</h2>
+        <p class="text">다채로운 오설록의 차를 즐길 수 있는 다양한 Tea ware를 만나보세요.</p>
+        <a href="#" class="move">전체보기 <img src="./src/img/md-pick/arr_42x12.png" alt="" /></a>
+      </div>
+      <div class="tea-ware-shop-right">
+        <div class="wrap">
+          <div class="group1">
+            <div class="left">
+              <div class="img-box">
+                <a href="#"><span class="a11y-hidden">kinto</span></a>
+              </div>
+              <div class="img-box">
+                <a href="#"><span class="a11y-hidden">seoul bund</span> </a>
+              </div>
+            </div>
+            <div class="right">
+              <div class="img-box">
+                <a href="#"><span class="a11y-hidden">torim</span></a>
+              </div>
+            </div>
+          </div>
+          <div class="group2">
+            <div class="left">
+              <div class="img-box">
+                <a href="#"><span class="a11y-hidden">soilbaker</span></a>
+              </div>
+              <div class="img-box">
+                <a href="#"><span class="a11y-hidden">sorosi</span> </a>
+              </div>
+            </div>
+            <div class="right">
+              <div class="img-box">
+                <a href="#"><span class="a11y-hidden">kwangjuyo</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="arrow-area">
+        <a class="prev" role="button"><span class="a11y-hidden">prev</span></a>
+        <a class="next" role="button"><span class="a11y-hidden">next</span></a>
+      </div>
+      <div class="progressBar">
+        <div class="progress"></div>
+      </div>
+    </section>
+
+    <section class="today-price">
+      <h2 class="section-title">오늘만 이 가격</h2>
+      <p>오늘 하루만 이 가격으로 구매할 수 있는 상품을 지금 바로 만나보세요.</p>
+      <div class="today-price-content">
+        <div class="top">
+          <p class="timer">11:34:12</p>
+          <p class="item-title">달꽃이바라보는바당 10입(피라미드)</p>
+          <div class="item-price">
+            <p class="sale">30% 할인</p>
+            <p class="price">15,000원</p>
+            <p class="t-price">10,500원</p>
+          </div>
+          <div class="tomorrow-item-area">
+            <p class="text">내일은 이제품이 올라와요</p>
+            <img src="./src/img/today-price/tommorrow-item.png" alt="" />
+          </div>
+        </div>
+        <div class="bottom">
+          <a class="btn-buy" href="#">바로구매</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="custom-recommendation">
+      <h2 class="a11y-hidden">맞춤추천</h2>
+      <a class="left-img" href="#"><img src="./src/img/recommend/recommend01.jpg" alt="맞춤추천" /></a>
+      <a class="right-img" href="#"><img src="./src/img/recommend/recommend02.jpg" alt="차 어렵지 않아요" /></a>
+    </section>
+
+    <section class="saleUp">
+      <h2 class="section-title">뭉치면 할인 <strong>UP</strong></h2>
+      <p>모이면 모일수록 커지는 할인쿠폰 혜택을 만나보세요 !</p>
+      <div class="image-area">
+        <a href="#" class="left">
+          <div class="text-area">
+            <div class="left">
+              <p class="item-title">귤꽃향을 품은 우잣담 10입(피라미드)</p>
+              <p class="date">신청기간 05.11 ~ 05.24</p>
+            </div>
+            <div class="right">
               <p class="price">15,000원</p>
-              <p class="t-price">10,500원</p>
-            </div>
-            <div class="tomorrow-item-area">
-              <p class="text">내일은 이제품이 올라와요</p>
-              <img src="./src/img/today-price/tommorrow-item.png" alt="" />
+              <p class="s-price">목표할인가 <span>12,000원</span></p>
             </div>
           </div>
-          <div class="bottom">
-            <a class="btn-buy" href="#">바로구매</a>
+        </a>
+        <div class="right">
+          <div class="coupon-area">
+            <p class="coupon-text"><span>20%</span><br />쿠폰 지급예정</p>
+            <p>
+              <span class="red">11</span>개만 더 모이면 <span class="green">20%</span> 쿠폰이 지급됩니다.<br />
+              주변 사람들에게 소문내고, 최대 할인율에 도전하세요!
+            </p>
           </div>
-        </div>
-      </section>
-
-      <section class="custom-recommendation">
-        <h2 class="a11y-hidden">맞춤추천</h2>
-        <a class="left-img" href="#"><img src="./src/img/recommend/recommend01.jpg" alt="맞춤추천" /></a>
-        <a class="right-img" href="#"><img src="./src/img/recommend/recommend02.jpg" alt="차 어렵지 않아요" /></a>
-      </section>
-
-      <section class="saleUp">
-        <h2 class="section-title">뭉치면 할인 <strong>UP</strong></h2>
-        <p>모이면 모일수록 커지는 할인쿠폰 혜택을 만나보세요 !</p>
-        <div class="image-area">
-          <a href="#" class="left">
-            <div class="text-area">
-              <div class="left">
-                <p class="item-title">귤꽃향을 품은 우잣담 10입(피라미드)</p>
-                <p class="date">신청기간 05.11 ~ 05.24</p>
-              </div>
-              <div class="right">
-                <p class="price">15,000원</p>
-                <p class="s-price">목표할인가 <span>12,000원</span></p>
-              </div>
+          <div class="percent-area">
+            <div class="percent"></div>
+            <div class="number">
+              <span>100</span>
+              <span></span>
+              <span>300</span>
+              <span></span>
+              <span>500</span>
             </div>
-          </a>
-          <div class="right">
-            <div class="coupon-area">
-              <p class="coupon-text"><span>20%</span><br />쿠폰 지급예정</p>
-              <p>
-                <span class="red">11</span>개만 더 모이면 <span class="green">20%</span> 쿠폰이 지급됩니다.<br />
-                주변 사람들에게 소문내고, 최대 할인율에 도전하세요!
-              </p>
-            </div>
-            <div class="percent-area">
-              <div class="percent"></div>
-              <div class="number">
-                <span>100</span>
-                <span></span>
-                <span>300</span>
-                <span></span>
-                <span>500</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="shop">
-        <h2 class="section-title">Shop</h2>
-        <p>오설록이 준비한 티 라인에서 당신이 찾는 티 스타일을 찾아보세요.</p>
-        <div class="slide-area">
-          <div class="top">
-            <ul>
-              <li>
-                <video muted>
-                  <source src="https://www.osulloc.com/upload/teashop_8.mp4" preload="auto" type="video/mp4" />
-                  video를 재생할 수 없습니다.
-                </video>
-              </li>
-              <li>
-                <video muted>
-                  <source src="https://www.osulloc.com/upload/teashop_4.mp4" preload="auto" type="video/mp4" />
-                  video를 재생할 수 없습니다.
-                </video>
-              </li>
-              <li>
-                <video muted>
-                  <source src="https://www.osulloc.com/upload/herb.mp4" preload="auto" type="video/mp4" />
-                  video를 재생할 수 없습니다.
-                </video>
-              </li>
-              <li>
-                <video muted>
-                  <source src="https://www.osulloc.com/upload/teashop_3.mp4" preload="auto" />
-                  video를 재생할 수 없습니다.
-                </video>
-              </li>
-            </ul>
-          </div>
-          <div class="bottom">
-            <ul class="shop-list">
-              <li class="active">명차</li>
-              <li>녹차/발효차/홍차</li>
-              <li>허브티(무카페인)</li>
-              <li>블렌디드티</li>
-            </ul>
-            <div class="arrow-area">
-              <div class="prev"><span class="a11y-hidden">prev</span></div>
-              <div class="next"><span class="a11y-hidden">next</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="item-list">
-          <div class="review active">
-            <h3>
-              <a class="active" role="button">리뷰많은순</a>
-            </h3>
-            <ul>
-              <li>
-                <a href="#">
-                  <img src="./src/img/shop/review01.png" alt="" />
-                  <p class="item-title best">세작 20입(피라미드)</p>
-                  <p class="item-price">25,000원</p>
-                  <div>
-                    <span class="heart">12</span>
-                    <span class="review">274</span>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <img src="./src/img/shop/review02.png" alt="" />
-                  <p class="item-title best">찬물녹차 20입(아이스티)</p>
-                  <p class="item-price">7,500원</p>
-                  <div>
-                    <span class="heart">10</span>
-                    <span class="review">261</span>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <img src="./src/img/shop/review03.png" alt="" />
-                  <p class="item-title best">세작 40g(잎차)</p>
-                  <p class="item-price">17,000원</p>
-                  <div>
-                    <span class="heart">16</span>
-                    <span class="review">245</span>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <img src="./src/img/shop/review04.png" alt="" />
-                  <p class="item-title">세작 80g(잎차)</p>
-                  <p class="item-price">40,000원</p>
-                  <div>
-                    <span class="heart">5</span>
-                    <span class="review">176</span>
-                  </div>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="bestseller">
-            <h3><a role="button">베스트셀러</a></h3>
-            <ul>
-              <li>
-                <a href="#">
-                  <img src="./src/img/shop/review03.png" alt="" />
-                  <p class="item-title best">세작 40g(잎차)</p>
-                  <p class="item-price">17,000원</p>
-                  <div>
-                    <span class="heart">16</span>
-                    <span class="review">245</span>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <img src="./src/img/shop/review02.png" alt="" />
-                  <p class="item-title best">찬물녹차 20입(아이스티)</p>
-                  <p class="item-price">7,500원</p>
-                  <div>
-                    <span class="heart">10</span>
-                    <span class="review">261</span>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <img src="./src/img/shop/review01.png" alt="" />
-                  <p class="item-title best">세작 20입(피라미드)</p>
-                  <p class="item-price">25,000원</p>
-                  <div>
-                    <span class="heart">12</span>
-                    <span class="review">274</span>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <img src="./src/img/shop/review04.png" alt="" />
-                  <p class="item-title">세작 80g(잎차)</p>
-                  <p class="item-price">40,000원</p>
-                  <div>
-                    <span class="heart">5</span>
-                    <span class="review">176</span>
-                  </div>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="sale">
-            <h3><a role="button">할인상품</a></h3>
-            <ul>
-              <li>
-                할인중인 상품이 없습니다.
-              </li>
-            </ul>
-          </div>
-        </div>
-        <a class="btn-all-item-view" role="button">전체 상품 보기</a>
-      </section>
-
-      <section class="sns">
-        <h3>Follow Us <span>#OSULLOC</span></h3>
-        <ul>
-          <li>
-            <a href="#"><img src="./src/img/sns/sns01.jpg" alt="그린티 슈페너" /></a>
-          </li>
-          <li>
-            <a href="#"><img src="./src/img/sns/sns02.jpg" alt="오설록 제주 차 밭" /></a>
-          </li>
-          <li>
-            <a href="#"><img src="./src/img/sns/sns03.jpg" alt="토림도예 개완" /></a>
-          </li>
-          <li>
-            <a href="#"><img src="./src/img/sns/sns04.jpg" alt="20년 햇차" /></a>
-          </li>
-          <li>
-            <a href="#"><img src="./src/img/sns/sns05.jpg" alt="오설록 햇차 출시" /></a>
-          </li>
-          <li>
-            <a href="#"><img src="./src/img/sns/sns06.jpg" alt="루이보스티 한잔" /></a>
-          </li>
-        </ul>
-      </section>
-
-      <section class="notice">
-        <div class="wrap">
-          <h2 class="section-title">공지사항</h2>
-          <ul>
-            <li><a href="#">[공지] L.POINT 서비스 점검(일시중단) 안내_ 3/16(월) 00:00~08:10</a></li>
-            <li><a href="#">[공지] 구매사은품 지류쿠폰 지급 종료 및 혜택 변경 예정 안내</a></li>
-          </ul>
-          <a class="view-more" href="#">+더보기</a>
-          <div class="sns-icon">
-            <a href="https://www.facebook.com/Jeju.OSULLOC" class="facebook"><img src="./src/img/notice/sns_f.png" alt="" /></a>
-
-            <a href="https://www.instagram.com/osulloc_official/" class="instagram"><img src="./src/img/notice/sns_i.png" alt="" /></a>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <div class="top">
-        <div class="wrap">
-          <div class="left">
-            <div class="tel1">
-              <p>고객상담센터 · 주문/배송문의</p>
-              <a href="tel:080-805-5555">080-805-5555</a>
-              <p>평일 09:30 - 17:00 (점심 11:30 - 13:00)</p>
-            </div>
-            <div class="tel2">
-              <p>특판, 대량구매 문의</p>
-              <a href="mailto">help@osulloc.com</a>
-              <p>010-2515-1979 / 카톡ID : osullocmall</p>
-              <p>평일 09:30 - 17:00 (점심 11:30 - 13:00)</p>
-            </div>
-          </div>
-          <div class="icon">
-            <a href=""><img src="./src/img/footer/f1.png" alt="" />매장안내</a>
-            <a href=""><img src="./src/img/footer/f2.png" alt="" />멤버십혜택</a>
-            <a href=""><img src="./src/img/footer/f3.png" alt="" />FAQ</a>
-            <a href=""><img src="./src/img/footer/f4.png" alt="" />1:1문의</a>
           </div>
         </div>
       </div>
-      <div class="bottom">
-        <div class="wrap">
-          <img class="footer-logo" src="./src/img/footer/f_logo.png" alt="" />
+    </section>
+
+    <section class="shop">
+      <h2 class="section-title">Shop</h2>
+      <p>오설록이 준비한 티 라인에서 당신이 찾는 티 스타일을 찾아보세요.</p>
+      <div class="slide-area">
+        <div class="top">
           <ul>
-            <li><a href="">회사소개</a></li>
-            <li><a href="">서비스 이용약관</a></li>
             <li>
-              <a href=""><strong>개인정보 처리방침</strong></a>
+              <video muted>
+                <source src="https://www.osulloc.com/upload/teashop_8.mp4" preload="auto" type="video/mp4" />
+                video를 재생할 수 없습니다.
+              </video>
             </li>
-            <li><a href="">영상정보 처리방침</a></li>
-            <li><a href="">뷰티포인트</a></li>
-            <li><a href="">임직원할인</a></li>
-            <li><a href="">사이트맵</a></li>
-            <li><a href="">전자공고</a></li>
+            <li>
+              <video muted>
+                <source src="https://www.osulloc.com/upload/teashop_4.mp4" preload="auto" type="video/mp4" />
+                video를 재생할 수 없습니다.
+              </video>
+            </li>
+            <li>
+              <video muted>
+                <source src="https://www.osulloc.com/upload/herb.mp4" preload="auto" type="video/mp4" />
+                video를 재생할 수 없습니다.
+              </video>
+            </li>
+            <li>
+              <video muted>
+                <source src="https://www.osulloc.com/upload/teashop_3.mp4" preload="auto" />
+                video를 재생할 수 없습니다.
+              </video>
+            </li>
           </ul>
-          <div class="company-info">
-            <p>㈜ 오설록</p>
-            <span>대표이사:서혁제</span>
-            <address>주소:서울특별시 용산구 한강대로 100, 14층(한강로2가)</address>
-            <span>사업자등록번호: 390-87-01499</span>
-            <a href="" role="button">사업자 정보확인 ></a><br />
-            <span>통신판매업신고번호:2019-서울용산-1173호 호스팅제공자: ㈜오설록</span>
+        </div>
+        <div class="bottom">
+          <ul class="shop-list">
+            <li class="active">명차</li>
+            <li>녹차/발효차/홍차</li>
+            <li>허브티(무카페인)</li>
+            <li>블렌디드티</li>
+          </ul>
+          <div class="arrow-area">
+            <div class="prev"><span class="a11y-hidden">prev</span></div>
+            <div class="next"><span class="a11y-hidden">next</span></div>
           </div>
-          <p class="message">
-            (주)오설록은 오설록 브랜드를 제외한 입점 브랜드에 대해서는 통신판매중개자 이며 통신판매의 당사자가 아닙니다.<br />
-            따라서 입점판매자가 등록한 상품정보 및 거래에 대해 책임을 지지 않습니다.
-          </p>
-          <dl class="escrow">
-            <dt>(주)이니시스 구매안전서비스</dt>
-            <dd><img src="./src/img/footer/escrow_43x43_gray.png" alt="escrow 인증마크" /></dd>
-            <dd>고객님의 안전거래를 위해 현금 거래에 대해 이니페이 에스크로서비스를 이용하실 수 있습니다.</dd>
-          </dl>
         </div>
       </div>
-    </footer>
+      <div class="item-list">
+        <div class="review active">
+          <h3>
+            <a class="active" role="button">리뷰많은순</a>
+          </h3>
+          <ul>
+            <li>
+              <a href="#">
+                <img src="./src/img/shop/review01.png" alt="" />
+                <p class="item-title best">세작 20입(피라미드)</p>
+                <p class="item-price">25,000원</p>
+                <div>
+                  <span class="heart">12</span>
+                  <span class="review">274</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./src/img/shop/review02.png" alt="" />
+                <p class="item-title best">찬물녹차 20입(아이스티)</p>
+                <p class="item-price">7,500원</p>
+                <div>
+                  <span class="heart">10</span>
+                  <span class="review">261</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./src/img/shop/review03.png" alt="" />
+                <p class="item-title best">세작 40g(잎차)</p>
+                <p class="item-price">17,000원</p>
+                <div>
+                  <span class="heart">16</span>
+                  <span class="review">245</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./src/img/shop/review04.png" alt="" />
+                <p class="item-title">세작 80g(잎차)</p>
+                <p class="item-price">40,000원</p>
+                <div>
+                  <span class="heart">5</span>
+                  <span class="review">176</span>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="bestseller">
+          <h3><a role="button">베스트셀러</a></h3>
+          <ul>
+            <li>
+              <a href="#">
+                <img src="./src/img/shop/review03.png" alt="" />
+                <p class="item-title best">세작 40g(잎차)</p>
+                <p class="item-price">17,000원</p>
+                <div>
+                  <span class="heart">16</span>
+                  <span class="review">245</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./src/img/shop/review02.png" alt="" />
+                <p class="item-title best">찬물녹차 20입(아이스티)</p>
+                <p class="item-price">7,500원</p>
+                <div>
+                  <span class="heart">10</span>
+                  <span class="review">261</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./src/img/shop/review01.png" alt="" />
+                <p class="item-title best">세작 20입(피라미드)</p>
+                <p class="item-price">25,000원</p>
+                <div>
+                  <span class="heart">12</span>
+                  <span class="review">274</span>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./src/img/shop/review04.png" alt="" />
+                <p class="item-title">세작 80g(잎차)</p>
+                <p class="item-price">40,000원</p>
+                <div>
+                  <span class="heart">5</span>
+                  <span class="review">176</span>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="sale">
+          <h3><a role="button">할인상품</a></h3>
+          <ul>
+            <li>
+              할인중인 상품이 없습니다.
+            </li>
+          </ul>
+        </div>
+      </div>
+      <a class="btn-all-item-view" role="button">전체 상품 보기</a>
+    </section>
 
-    <a class="btn-top hidden"><img src="./src/img/btn_goTop.png" alt="" /></a>
-  </body>
+    <section class="sns">
+      <h3>Follow Us <span>#OSULLOC</span></h3>
+      <ul>
+        <li>
+          <a href="#"><img src="./src/img/sns/sns01.jpg" alt="그린티 슈페너" /></a>
+        </li>
+        <li>
+          <a href="#"><img src="./src/img/sns/sns02.jpg" alt="오설록 제주 차 밭" /></a>
+        </li>
+        <li>
+          <a href="#"><img src="./src/img/sns/sns03.jpg" alt="토림도예 개완" /></a>
+        </li>
+        <li>
+          <a href="#"><img src="./src/img/sns/sns04.jpg" alt="20년 햇차" /></a>
+        </li>
+        <li>
+          <a href="#"><img src="./src/img/sns/sns05.jpg" alt="오설록 햇차 출시" /></a>
+        </li>
+        <li>
+          <a href="#"><img src="./src/img/sns/sns06.jpg" alt="루이보스티 한잔" /></a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="notice">
+      <div class="wrap">
+        <h2 class="section-title">공지사항</h2>
+        <ul>
+          <li><a href="#">[공지] L.POINT 서비스 점검(일시중단) 안내_ 3/16(월) 00:00~08:10</a></li>
+          <li><a href="#">[공지] 구매사은품 지류쿠폰 지급 종료 및 혜택 변경 예정 안내</a></li>
+        </ul>
+        <a class="view-more" href="#">+더보기</a>
+        <div class="sns-icon">
+          <a href="https://www.facebook.com/Jeju.OSULLOC" target="blank" class="facebook"><img
+              src="./src/img/notice/sns_f.png" alt=facebook /><span class="a11y-hidden">오설록 페이스북으로 이동(새창)</span></a>
+
+          <a href="https://www.instagram.com/osulloc_official/" target="blank" class="instagram"><img
+              src="./src/img/notice/sns_i.png" alt="instagram" /><span class="a11y-hidden">오설록 인스타그램으로 이동(새창)</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="top">
+      <div class="wrap">
+        <div class="left">
+          <div class="tel1">
+            <p>고객상담센터 · 주문/배송문의</p>
+            <a href="tel:080-805-5555">080-805-5555</a>
+            <p>평일 09:30 - 17:00 (점심 11:30 - 13:00)</p>
+          </div>
+          <div class="tel2">
+            <p>특판, 대량구매 문의</p>
+            <a href="mailto">help@osulloc.com</a>
+            <p>010-2515-1979 / 카톡ID : osullocmall</p>
+            <p>평일 09:30 - 17:00 (점심 11:30 - 13:00)</p>
+          </div>
+        </div>
+        <div class="icon">
+          <a href=""><img src="./src/img/footer/f1.png" alt="" />매장안내</a>
+          <a href=""><img src="./src/img/footer/f2.png" alt="" />멤버십혜택</a>
+          <a href=""><img src="./src/img/footer/f3.png" alt="" />FAQ</a>
+          <a href=""><img src="./src/img/footer/f4.png" alt="" />1:1문의</a>
+        </div>
+      </div>
+    </div>
+    <div class="bottom">
+      <div class="wrap">
+        <img class="footer-logo" src="./src/img/footer/f_logo.png" alt="" />
+        <ul>
+          <li><a href="">회사소개</a></li>
+          <li><a href="">서비스 이용약관</a></li>
+          <li>
+            <a href=""><strong>개인정보 처리방침</strong></a>
+          </li>
+          <li><a href="">영상정보 처리방침</a></li>
+          <li><a href="">뷰티포인트</a></li>
+          <li><a href="">임직원할인</a></li>
+          <li><a href="">사이트맵</a></li>
+          <li><a href="">전자공고</a></li>
+        </ul>
+        <div class="company-info">
+          <p>㈜ 오설록</p>
+          <span>대표이사:서혁제</span>
+          <address>주소:서울특별시 용산구 한강대로 100, 14층(한강로2가)</address>
+          <span>사업자등록번호: 390-87-01499</span>
+          <a href="" role="button">사업자 정보확인 ></a><br />
+          <span>통신판매업신고번호:2019-서울용산-1173호 호스팅제공자: ㈜오설록</span>
+        </div>
+        <p class="message">
+          (주)오설록은 오설록 브랜드를 제외한 입점 브랜드에 대해서는 통신판매중개자 이며 통신판매의 당사자가 아닙니다.<br />
+          따라서 입점판매자가 등록한 상품정보 및 거래에 대해 책임을 지지 않습니다.
+        </p>
+        <dl class="escrow">
+          <dt>(주)이니시스 구매안전서비스</dt>
+          <dd><img src="./src/img/footer/escrow_43x43_gray.png" alt="escrow 인증마크" /></dd>
+          <dd>고객님의 안전거래를 위해 현금 거래에 대해 이니페이 에스크로서비스를 이용하실 수 있습니다.</dd>
+        </dl>
+      </div>
+    </div>
+  </footer>
+
+  <a class="btn-top hidden"><img src="./src/img/btn_goTop.png" alt="" /></a>
+</body>
+
 </html>

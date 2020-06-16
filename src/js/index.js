@@ -1,27 +1,4 @@
-$(function () {
-  // 메뉴 n번째 선택 시 해당하는 ul의 색상 변경 [미완료]
-
-  var $gnbList = $('.gnb-list li'),
-    $subMenu = $('.sub-menu-area li');
-
-  $gnbList
-    .on('mouseover', function () {
-      $(this).parent().parent().find('.sub-menu-area').find('.active').removeClass('active');
-
-      $(this).addClass('active');
-      $listNum = $(this).index();
-      $(this).parent().parent().find('.sub-menu-area').find('ul').eq($listNum).addClass('active');
-    })
-    .on('mouseleave', function () {
-      $(this).parent().parent().find('.sub-menu-area').find('.active').removeClass('active');
-
-      $(this).removeClass('active');
-      $listNum = $(this).index();
-      $(this).parent().parent().find('.sub-menu-area').find('ul').eq($listNum).removeClass('active');
-    });
-
-  // -------------------------------------------------------------------------
-
+$(function() {
   // weekly-best 내 li hover 효과
   // 1. list-style: none; [미완료]
   // 2. 이미지 바꾸기 [완료]
@@ -30,7 +7,7 @@ $(function () {
   var $weeklyList = $('.weekly-best .rank-container li .image-wrap');
 
   $weeklyList
-    .on('mouseover', function () {
+    .on('mouseenter', function() {
       var img_src = $(this).find('img').attr('src');
       var new_img_src = img_src.split('.')[1];
       $(this)
@@ -38,15 +15,14 @@ $(function () {
         .css('opacity', '0')
         .stop()
         .attr('src', '.' + new_img_src + '-1.png')
-        .animate(
-          {
+        .animate({
             opacity: 1,
           },
           500
         );
       $(this).find('.detail').removeClass('hidden');
     })
-    .on('mouseout', function () {
+    .on('mouseout', function() {
       var img_src = $(this).find('img').attr('src');
       var new_img_src = img_src.split('-')[0];
 
@@ -55,8 +31,7 @@ $(function () {
         .css('opacity', '0')
         .stop()
         .attr('src', new_img_src + '.png')
-        .animate(
-          {
+        .animate({
             opacity: 1,
           },
           500
@@ -74,7 +49,7 @@ $(function () {
     $reviewTab = $('.weekly-best .wrap h3.review-tab'),
     $saleTab = $('.weekly-best .wrap h3.sale-tab');
 
-  $reviewTab.on('click', function () {
+  $reviewTab.on('click', function() {
     if (!$(this).hasClass('active')) {
       $(this).addClass('active');
       $saleTab.removeClass('active');
@@ -96,7 +71,7 @@ $(function () {
     }
   });
 
-  $saleTab.on('click', function () {
+  $saleTab.on('click', function() {
     if (!$(this).hasClass('active')) {
       $(this).addClass('active');
       $reviewTab.removeClass('active');
@@ -130,7 +105,7 @@ $(function () {
     $reviewMargin = 0,
     $r_progress = 16.66;
 
-  $reviewPrevArrow.on('click', function () {
+  $reviewPrevArrow.on('click', function() {
     if ($reviewArrowClick > 0) {
       $reviewArrowClick -= 1;
       $reviewMargin = $reviewArrowClick * -290;
@@ -159,7 +134,7 @@ $(function () {
     });
   });
 
-  $reviewNextArrow.on('click', function () {
+  $reviewNextArrow.on('click', function() {
     if ($reviewArrowClick < 5) {
       $reviewArrowClick += 1;
       $reviewMargin = $reviewArrowClick * -290;
@@ -196,7 +171,7 @@ $(function () {
     $saleArrowClick = 0,
     $s_progress = 16.66;
 
-  $salePrevArrow.on('click', function () {
+  $salePrevArrow.on('click', function() {
     if ($saleArrowClick > 0) {
       $saleArrowClick -= 1;
       $saleMargin = $saleArrowClick * -290;
@@ -225,7 +200,7 @@ $(function () {
     });
   });
 
-  $saleNextArrow.on('click', function () {
+  $saleNextArrow.on('click', function() {
     if ($saleArrowClick < 5) {
       $saleArrowClick += 1;
       $saleMargin = $saleArrowClick * -290;
@@ -263,7 +238,7 @@ $(function () {
     $teaWareRight = $('.tea-ware-shop .arrow-area .next');
   $teaWareProgress = $('.tea-ware-shop .progressBar .progress');
 
-  $teaWareLeft.on('click', function () {
+  $teaWareLeft.on('click', function() {
     $(this).css({
       filter: 'invert(80%)',
     });
@@ -278,7 +253,7 @@ $(function () {
     });
   });
 
-  $teaWareRight.on('click', function () {
+  $teaWareRight.on('click', function() {
     $(this).css({
       filter: 'invert(80%)',
     });
@@ -300,22 +275,21 @@ $(function () {
   var $shopList = $('.shop .item-list li img');
 
   $shopList
-    .on('mouseover', function () {
+    .on('mouseenter', function() {
       var img_src = $(this).attr('src');
       var new_img_src = img_src.split('.')[1];
       $(this)
         .css('opacity', '0')
         .stop()
         .attr('src', '.' + new_img_src + '-1.png')
-        .animate(
-          {
+        .animate({
             opacity: 1,
           },
           500
         );
       $(this).find('.detail').removeClass('hidden');
     })
-    .on('mouseout', function () {
+    .on('mouseout', function() {
       var img_src = $(this).attr('src');
       var new_img_src = img_src.split('-')[0];
 
@@ -323,8 +297,7 @@ $(function () {
         .css('opacity', '0')
         .stop()
         .attr('src', new_img_src + '.png')
-        .animate(
-          {
+        .animate({
             opacity: 1,
           },
           500
@@ -340,7 +313,7 @@ $(function () {
 
   $mdPickList
     .find('a')
-    .on('mouseover', function () {
+    .on('mouseenter', function() {
       var img_src = $(this).find('img').attr('src');
       var new_img_src = img_src.split('0')[0];
       $(this)
@@ -348,14 +321,13 @@ $(function () {
         .css('opacity', '0')
         .stop()
         .attr('src', new_img_src + '-hover.png')
-        .animate(
-          {
+        .animate({
             opacity: 1,
           },
           500
         );
     })
-    .on('mouseout', function () {
+    .on('mouseout', function() {
       var $num = $(this).parent().index();
       var img_src = $('.md-pick-list li').eq($num).find('img').attr('src');
       var new_img_src = img_src.split('-hover')[0];
@@ -365,8 +337,7 @@ $(function () {
         .css('opacity', '0')
         .stop()
         .attr('src', new_img_src + '0' + ($num + 1) + '.png')
-        .animate(
-          {
+        .animate({
             opacity: 1,
           },
           500
@@ -382,7 +353,7 @@ $(function () {
     $mdPickRight = $('.md-pick-right .arrow-area .next'),
     $mdPickProgress = $('.md-pick-right .progressBar .progress');
 
-  $mdPickLeft.on('click', function () {
+  $mdPickLeft.on('click', function() {
     $(this).css({
       filter: 'invert(80%)',
     });
@@ -397,7 +368,7 @@ $(function () {
     });
   });
 
-  $mdPickRight.on('click', function () {
+  $mdPickRight.on('click', function() {
     $(this).css({
       filter: 'invert(80%)',
     });
@@ -430,7 +401,7 @@ $(function () {
     $nowSelect = $selectList.find('.active').index(),
     $selectNum = $selectList.find('li').length;
 
-  var NextSlide = function () {
+  var NextSlide = function() {
     $visualSlide.find('a').eq($nowSlide).removeClass('active');
     $nowSlide = ($nowSlide + 1) % $slideNum;
     $visualSlide.find('a').eq($nowSlide).addClass('active');
@@ -442,7 +413,7 @@ $(function () {
 
   var repeat = setInterval(NextSlide, 5000);
 
-  $('.visual .btn-slide-state').on('click', function () {
+  $('.visual .btn-slide-state').on('click', function() {
     $(this).parent().find('.active').toggleClass('paused');
 
     if ($(this).hasClass('stop')) {
@@ -456,7 +427,7 @@ $(function () {
     }
   });
 
-  $selectList.find('li').on('click', function () {
+  $selectList.find('li').on('click', function() {
     $(this).parent().find('.active').removeClass('active');
     $(this).parent().parent().parent().find('.img-slide .active').removeClass('active');
 
@@ -477,7 +448,7 @@ $(function () {
 
   var $timer = $('.today-price .timer');
 
-  setInterval(function () {
+  setInterval(function() {
     var nowTime = new Date();
     var hours = 23 - nowTime.getHours();
     var minutes = 59 - nowTime.getMinutes();
@@ -498,7 +469,7 @@ $(function () {
     $shopList = $('.shop .bottom ul li'),
     num = 0;
 
-  $shopArrowPrev.on('click', function () {
+  $shopArrowPrev.on('click', function() {
     if (num > 0) {
       $shopList.eq(num).removeClass('active');
       num -= 1;
@@ -510,7 +481,7 @@ $(function () {
     }
   });
 
-  $shopArrowNext.on('click', function () {
+  $shopArrowNext.on('click', function() {
     if (num < 3) {
       $shopList.eq(num).removeClass('active');
       num += 1;
@@ -522,7 +493,7 @@ $(function () {
     }
   });
 
-  $shopList.on('click', function () {
+  $shopList.on('click', function() {
     var preVideoNum = $shopList.filter('.active').index();
     var preVideo = $shopSlideImg.find('li').eq(preVideoNum).find('video')[0];
     preVideo.pause();
@@ -543,10 +514,32 @@ $(function () {
 
   var $shopTab = $('.shop .item-list h3');
 
-  $shopTab.on('click', function () {
+  $shopTab.on('click', function() {
     $shopTab.parent().filter('.active').removeClass('active');
     $(this).parent().addClass('active');
   });
+
+  // -------------------------------------------------------------------------
+
+  // header event
+
+  $('.gnb-area').on('mouseenter', function() {
+    $(this).addClass('open');
+    $('#header').addClass('open');
+  })
+
+  $('#header').on('mouseleave', function() {
+    $('.gnb-area').removeClass('open');
+    $('#header').removeClass('open');
+  })
+
+  $('#gnb .gnb-list li')
+    .on('mouseenter', function() {
+      $(this).addClass('active')
+    })
+    .on('mouseleave', function() {
+      $(this).removeClass('active')
+    })
 
   // -------------------------------------------------------------------------
 
@@ -558,57 +551,29 @@ $(function () {
   var $window = $(window),
     $btnTop = $('.btn-top');
 
-  var $logoArea = $('header .logo-area'),
-    $gnbArea = $('header .gnb-area'),
-    $gnb = $gnbArea.find('.gnb'),
-    $gnbLogo = $('header .gnb-area .gnb h3'),
-    $addMenu = $('.addmenu-list >li');
+  var $logoArea = $('#header .logo-area'),
+    $gnbArea = $('#header .gnb-area'),
+    $addMenu = $('.addmenu-list > li');
 
-  $window.scroll(function () {
+  $window.scroll(function() {
     if ($window.scrollTop() === 0) {
       $logoArea.css({
         display: 'block',
       });
-      $gnbArea.css({
-        position: 'relative',
-        background: '#67625d',
-      });
-      $gnb.css({
-        background: '#67625d',
-      });
-      $gnb.find('.gnb-list li a').css({
-        color: '#fff',
-        marginLeft: '0',
-      });
-      $gnb
-        .find('.gnb-list li a')
-        .on('mouseover', function () {
-          $(this).css({
-            color: '#daf100',
-          });
-        })
-        .on('mouseout', function () {
-          $(this).css({
-            color: '#fff',
-          });
-        });
-      $gnbLogo.css({
-        display: 'none',
-      });
+
+      $gnbArea.removeClass('scrolled');
 
       $addMenu.filter('.btn-search').addClass('top');
       $addMenu.filter('.cart').addClass('top');
       $addMenu.filter('.add').addClass('top');
 
-      $btnTop.stop(true).animate(
-        {
+      $btnTop.stop(true).animate({
           right: '-100px',
         },
         300
       );
     } else if ($window.scrollTop() > 0 && $window.scrollTop() <= 300) {
-      $btnTop.stop(true).animate(
-        {
+      $btnTop.stop(true).animate({
           right: '-100px',
         },
         300
@@ -617,35 +582,8 @@ $(function () {
       $logoArea.css({
         display: 'none',
       });
-      $gnbArea.css({
-        position: 'fixed',
-        background: '#fff',
-        borderBottom: '1px solid #ccc',
-      });
-      $gnb.css({
-        background: '#fff',
-        width: '1400px',
-        margin: '0 auto',
-      });
-      $gnb.find('.gnb-list li a').css({
-        marginLeft: '-70px',
-        color: '#000',
-      });
-      $gnb
-        .find('.gnb-list li a')
-        .on('mouseover', function () {
-          $(this).css({
-            color: '#6c801a',
-          });
-        })
-        .on('mouseout', function () {
-          $(this).css({
-            color: '#000',
-          });
-        });
-      $gnbLogo.css({
-        display: 'inline-block',
-      });
+
+      $gnbArea.addClass('scrolled');
 
       $addMenu.filter('.btn-search').removeClass('top');
       $addMenu.filter('.cart').removeClass('top');
@@ -661,8 +599,7 @@ $(function () {
         background: 'url(../src/img/header/ico_gnbMore2_off.png) no-repeat center',
       });
     } else if ($window.scrollTop() > 300) {
-      $btnTop.stop(true).animate(
-        {
+      $btnTop.stop(true).animate({
           right: '10px',
         },
         300
@@ -675,13 +612,10 @@ $(function () {
     }
   });
 
-  $btnTop.on('click', function () {
-    $('html').animate(
-      {
-        scrollTop: 0,
-      },
-      500
-    );
+  $btnTop.on('click', function() {
+    $('html').animate({
+      scrollTop: 0,
+    }, 500);
   });
 
   $window.trigger('scroll');

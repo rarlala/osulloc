@@ -15,10 +15,10 @@ caption, figcaption, .blind{
   font-size: 0;
   line-height: 0;
   overflow: hidden;
+  line-height: 90px;
   height: 0;
   text-indent: -9999px;
 }
-  *:focus { outline: none;}
 .clear::before, .clear::after{
   clear: both;
   display: block;
