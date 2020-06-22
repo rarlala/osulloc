@@ -1,6 +1,6 @@
 # 오설록 웹사이트 퍼블리싱 작업
 
-### 웹 점근성 및 SEO 처리
+### 웹 근성 및 SEO 처리
 - meta tag 추가 및 favicon 추가
 - tab 시작 시 본문 바로가기 기능 추가
 - header 영역 tab으로 알맞은 순서로 진행되도록 markup
