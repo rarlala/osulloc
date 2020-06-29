@@ -1,53 +1,78 @@
 $(function() {
-  // weekly-best 내 li hover 효과
-  // 1. list-style: none; [미완료]
-  // 2. 이미지 바꾸기 [완료]
-  // 3. 리뷰보기 | 장바구니 표시 [완료]
+  preventDefaultAnchor();
+
+  function preventDefaultAnchor() {
+    $(document).on('click', 'a[href="#"]', function (e) {
+      e.preventDefault();
+    });
+  }
+
+  // -------------------------------------------------------------------------
+
+  // imgChange
+  function imgChange(selector, split1, split2, num1, num2, format1, format2) {
+    selector
+      .on('mouseenter focus', function() {
+        var img_src = $(this).find('img').attr('src');
+        var new_img_src = img_src.split(split1)[num1];
+
+        $(this)
+          .find('img')
+          .css('opacity', '0')
+          .attr('src', '.' + new_img_src + format1)
+          .stop(true)
+          .animate(
+            {
+              opacity: 1,
+            },
+            500
+          );
+        $(this).find('.detail').removeClass('hidden');
+      })
+      .on('mouseout focusout', function() {
+        var img_src = $(this).find('img').attr('src');
+        var new_img_src = img_src.split(split2)[num2];
+
+        if (!new_img_src.match(format2)) {
+          $(this)
+            .find('img')
+            .css('opacity', '0')
+            .attr('src', new_img_src + format2)
+            .stop(true)
+            .animate(
+              {
+                opacity: 1,
+              },
+              500
+            );
+          $(this).find('.detail').addClass('hidden');
+        }
+      });
+  }
 
   var $weeklyList = $('.weekly-best .rank-container li .image-wrap');
+  imgChange($weeklyList, '.', '-', 1, 0, '-1.png', '.png');
 
-  $weeklyList
-    .on('mouseenter', function() {
-      var img_src = $(this).find('img').attr('src');
-      var new_img_src = img_src.split('.')[1];
-      $(this)
-        .find('img')
-        .css('opacity', '0')
-        .stop()
-        .attr('src', '.' + new_img_src + '-1.png')
-        .animate({
-            opacity: 1,
-          },
-          500
-        );
-      $(this).find('.detail').removeClass('hidden');
-    })
-    .on('mouseout', function() {
-      var img_src = $(this).find('img').attr('src');
-      var new_img_src = img_src.split('-')[0];
+  var $mdPickList = $('.md-pick-right .md-pick-list li a');
+  imgChange($mdPickList, '.', '-1', 1, 0, '-1.png', '.png');
 
-      $(this)
-        .find('img')
-        .css('opacity', '0')
-        .stop()
-        .attr('src', new_img_src + '.png')
-        .animate({
-            opacity: 1,
-          },
-          500
-        );
-      $(this).find('.detail').addClass('hidden');
-    });
+  var $shopList = $('.shop .item-list li');
+  imgChange($shopList, '.', '-', 1, 0, '-1.png', '.png');
 
   // -------------------------------------------------------------------------
 
   // weekly-best 내 tab 기능
-  // 1. 리뷰순, 판매순 선택 시 active class 추가로 h3 color 확인
-  // 2. 해당하는 영역의 class를 가져다가 이미지 변경하기
 
   var $weeklyBest = $('.weekly-best .wrap'),
     $reviewTab = $('.weekly-best .wrap h3.review-tab'),
     $saleTab = $('.weekly-best .wrap h3.sale-tab');
+
+  function addRemove(select1, select2) {
+    if (!$weeklyBest.find(select1).hasClass('active')) {
+      $weeklyBest.find(select1).addClass('active');
+      $weeklyBest.find(select2).removeClass('active');
+    }
+  }
 
   $reviewTab.on('click', function() {
     if (!$(this).hasClass('active')) {
@@ -55,20 +80,9 @@ $(function() {
       $saleTab.removeClass('active');
     }
 
-    if (!$weeklyBest.find('.review > .rank-container.review').hasClass('active')) {
-      $weeklyBest.find('.review > .rank-container.review').addClass('active');
-      $weeklyBest.find('.sale > .rank-container.sale').removeClass('active');
-    }
-
-    if (!$weeklyBest.find('.review > .arrow-area').hasClass('active')) {
-      $weeklyBest.find('.review > .arrow-area').addClass('active');
-      $weeklyBest.find('.sale > .arrow-area').removeClass('active');
-    }
-
-    if (!$weeklyBest.find('.review > .progressBar').hasClass('active')) {
-      $weeklyBest.find('.review > .progressBar').addClass('active');
-      $weeklyBest.find('.sale > .progressBar').removeClass('active');
-    }
+    addRemove('.review > .rank-container.review', '.sale > .rank-container.sale');
+    addRemove('.review > .arrow-area', '.sale > .arrow-area');
+    addRemove('.review > .progressBar', '.sale > .progressBar');
   });
 
   $saleTab.on('click', function() {
@@ -77,20 +91,9 @@ $(function() {
       $reviewTab.removeClass('active');
     }
 
-    if (!$weeklyBest.find('.sale > .rank-container.review').hasClass('active')) {
-      $weeklyBest.find('.sale > .rank-container.sale').addClass('active');
-      $weeklyBest.find('.review > .rank-container.review').removeClass('active');
-    }
-
-    if (!$weeklyBest.find('.sale > .arrow-area').hasClass('active')) {
-      $weeklyBest.find('.sale > .arrow-area').addClass('active');
-      $weeklyBest.find('.review > .arrow-area').removeClass('active');
-    }
-
-    if (!$weeklyBest.find('.sale > .progressBar').hasClass('active')) {
-      $weeklyBest.find('.sale > .progressBar').addClass('active');
-      $weeklyBest.find('.review > .progressBar').removeClass('active');
-    }
+    addRemove('.sale > .rank-container.sale', '.review > .rank-container.review');
+    addRemove('.sale > .arrow-area', '.review > .arrow-area');
+    addRemove('.sale > .progressBar', '.review > .progressBar');
   });
 
   // -------------------------------------------------------------------------
@@ -270,82 +273,6 @@ $(function() {
 
   // -------------------------------------------------------------------------
 
-  // shop list hover 효과 [완료]
-
-  var $shopList = $('.shop .item-list li img');
-
-  $shopList
-    .on('mouseenter', function() {
-      var img_src = $(this).attr('src');
-      var new_img_src = img_src.split('.')[1];
-      $(this)
-        .css('opacity', '0')
-        .stop()
-        .attr('src', '.' + new_img_src + '-1.png')
-        .animate({
-            opacity: 1,
-          },
-          500
-        );
-      $(this).find('.detail').removeClass('hidden');
-    })
-    .on('mouseout', function() {
-      var img_src = $(this).attr('src');
-      var new_img_src = img_src.split('-')[0];
-
-      $(this)
-        .css('opacity', '0')
-        .stop()
-        .attr('src', new_img_src + '.png')
-        .animate({
-            opacity: 1,
-          },
-          500
-        );
-      $(this).find('.detail').addClass('hidden');
-    });
-
-  // -------------------------------------------------------------------------
-
-  // md-pick-list hover 시 이미지 변경 [완료]
-
-  var $mdPickList = $('.md-pick-right .md-pick-list li');
-
-  $mdPickList
-    .find('a')
-    .on('mouseenter', function() {
-      var img_src = $(this).find('img').attr('src');
-      var new_img_src = img_src.split('0')[0];
-      $(this)
-        .find('img')
-        .css('opacity', '0')
-        .stop()
-        .attr('src', new_img_src + '-hover.png')
-        .animate({
-            opacity: 1,
-          },
-          500
-        );
-    })
-    .on('mouseout', function() {
-      var $num = $(this).parent().index();
-      var img_src = $('.md-pick-list li').eq($num).find('img').attr('src');
-      var new_img_src = img_src.split('-hover')[0];
-
-      $(this)
-        .find('img')
-        .css('opacity', '0')
-        .stop()
-        .attr('src', new_img_src + '0' + ($num + 1) + '.png')
-        .animate({
-            opacity: 1,
-          },
-          500
-        );
-    });
-
-  // -------------------------------------------------------------------------
-
   // md-pick 슬라이드 처리
 
   var $mdPickArea = $('.md-pick-right .md-pick-list'),
@@ -386,12 +313,6 @@ $(function() {
   // -------------------------------------------------------------------------
 
   // visual-slide
-
-  // 1. n초마다 아래 'slide-select-area' 영역의 배경이 채워져야한다. [완료]
-  // 2. n초마다 이미지가 바뀌어야한다. [완료]
-  // 3. 특정 'slide-select-area' 클릭 시 해당하는 영역의 배경이 나타나야한다. [완료]
-  // 4. 일시정지 버튼 클릭 시 시작버튼으로 바뀌어야한다.[완료]
-  // 5. 일시정지 버튼 클릭 시 움직이던 시간을 멈춰야한다.[완료]
 
   var $visualSlide = $('.visual .img-slide'),
     $nowSlide = $visualSlide.find('.active').index(),
@@ -523,18 +444,23 @@ $(function() {
 
   // header event
 
-  $('.gnb-area').on('mouseenter', function() {
+  $('.gnb-area').on('mouseenter focus', function() {
     $(this).addClass('open');
     $('#header').addClass('open');
   })
 
-  $('#header').on('mouseleave', function() {
+  $('#gnb li a').on('mouseenter focus', function() {
+    $('.gnb-area').addClass('open');
+    $('#header').addClass('open');
+  })
+
+  $('#header').on('mouseleave focusout', function() {
     $('.gnb-area').removeClass('open');
     $('#header').removeClass('open');
   })
 
   $('#gnb .gnb-list li')
-    .on('mouseenter', function() {
+    .on('mouseenter focus', function() {
       $(this).addClass('active')
     })
     .on('mouseleave', function() {
@@ -562,12 +488,10 @@ $(function() {
       });
 
       $gnbArea.removeClass('scrolled');
+      $addMenu.addClass('top');
 
-      $addMenu.filter('.btn-search').addClass('top');
-      $addMenu.filter('.cart').addClass('top');
-      $addMenu.filter('.add').addClass('top');
-
-      $btnTop.stop(true).animate({
+      $btnTop.stop(true).animate(
+        {
           right: '-100px',
         },
         300
@@ -584,20 +508,7 @@ $(function() {
       });
 
       $gnbArea.addClass('scrolled');
-
-      $addMenu.filter('.btn-search').removeClass('top');
-      $addMenu.filter('.cart').removeClass('top');
-      $addMenu.filter('.add').removeClass('top');
-
-      $addMenu.filter('.btn-search').css({
-        background: 'url(../src/img/header/ico_search2_off.png) no-repeat center',
-      });
-      $addMenu.filter('.cart').css({
-        background: 'url(../src/img/header/ico_gnbBucket2_off.png) no-repeat center',
-      });
-      $addMenu.filter('.add').css({
-        background: 'url(../src/img/header/ico_gnbMore2_off.png) no-repeat center',
-      });
+      $addMenu.removeClass('top');
     } else if ($window.scrollTop() > 300) {
       $btnTop.stop(true).animate({
           right: '10px',
@@ -614,8 +525,8 @@ $(function() {
 
   $btnTop.on('click', function() {
     $('html').animate({
-      scrollTop: 0,
-    }, 500);
+        scrollTop: 0,
+      }, 500);
   });
 
   $window.trigger('scroll');
