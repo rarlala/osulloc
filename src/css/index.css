@@ -2,7 +2,11 @@
 
 body {
   font-family: 'Noto Sans KR', '맑은 고딕';
-  overflow-x: hidden;
+}
+
+.wrapper{
+  min-width: 1440px;
+  margin: 0 auto;
 }
 
 .a11y-hidden {
@@ -337,12 +341,22 @@ footer .wrap {
 
 /* ad-area */
 
+@keyframes adAreaOpacity{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
 #header .ad-area {
   position: absolute;
   top: 90px;
   left: 0;
   display: none;
-  transition: all 0.3s;
+  opacity: 0;
+  transition: all 1s;
 }
 
 #header .ad-area .title {
@@ -356,6 +370,7 @@ footer .wrap {
 
 #header.open .ad-area {
   display: inline-block;
+  animation: adAreaOpacity 1s 1 forwards;
 }
 
 /* add-menu */
@@ -1546,6 +1561,7 @@ footer .wrap {
 
 .shop .item-list .active h3 a {
   position: relative;
+  display: block;
   color: #748346;
   border-bottom: 3px solid #748346;
   padding-bottom: 11px;
@@ -1578,13 +1594,15 @@ footer .wrap {
 
 .shop .item-list li a img {
   height: 300px;
+  display: block;
+  margin: 0 auto;
 }
 
 .shop .item-list li a:hover::after {
   content: '';
   position: absolute;
   right: 10px;
-  bottom: 150px;
+  bottom: 0px;
   background: url('../img/shop/ico_big_bucket_filled.png') no-repeat center;
   width: 70px;
   height: 70px;
@@ -1601,7 +1619,7 @@ footer .wrap {
 
 .shop .item-list ul li .item-title {
   color: #555;
-  margin-bottom: 20px;
+  margin: 30px 0;
 }
 
 .shop .item-list ul li .item-price {
@@ -1637,13 +1655,8 @@ footer .wrap {
   background: url('../img/shop/ico_comment.gif');
 }
 
-
 .shop .item-list ul li .item-title.best {
   position: relative;
-}
-
-.shop .item-list ul li img {
-  margin: 0 0 30px 20px;
 }
 
 .shop .item-list ul li .item-title.best::before {

@@ -12,7 +12,7 @@ $(function() {
   // imgChange
   function imgChange(selector, split1, split2, num1, num2, format1, format2) {
     selector
-      .on('mouseenter focus', function() {
+      .on('mouseover focus', function() {
         var img_src = $(this).find('img').attr('src');
         var new_img_src = img_src.split(split1)[num1];
 
@@ -56,7 +56,7 @@ $(function() {
   var $mdPickList = $('.md-pick-right .md-pick-list li a');
   imgChange($mdPickList, '.', '-1', 1, 0, '-1.png', '.png');
 
-  var $shopList = $('.shop .item-list li');
+  var $shopList = $('.shop .item-list li a');
   imgChange($shopList, '.', '-', 1, 0, '-1.png', '.png');
 
   // -------------------------------------------------------------------------
@@ -498,8 +498,8 @@ $(function() {
       );
     } else if ($window.scrollTop() > 0 && $window.scrollTop() <= 300) {
       $btnTop.stop(true).animate({
-          right: '-100px',
-        },
+        right: '-100px',
+      },
         300
       );
 
@@ -511,8 +511,8 @@ $(function() {
       $addMenu.removeClass('top');
     } else if ($window.scrollTop() > 300) {
       $btnTop.stop(true).animate({
-          right: '10px',
-        },
+        right: '10px',
+      },
         300
       );
     }
@@ -525,8 +525,8 @@ $(function() {
 
   $btnTop.on('click', function() {
     $('html').animate({
-        scrollTop: 0,
-      }, 500);
+      scrollTop: 0,
+    }, 500);
   });
 
   $window.trigger('scroll');
